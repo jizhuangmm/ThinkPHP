@@ -1,0 +1,37 @@
+nginx:
+    image: zsz/nginx-1.10.1
+    ports:
+      - "12080:80"
+    links:
+      - "php"
+    volumes:
+      - .:/opt/htdocs
+
+php:
+    image: zsz/php-5.3.29
+    ports:
+      - "18400:9000"
+      - "18022:22"
+    links:
+      - "mysql"
+    volumes:
+      - .:/opt/htdocs
+
+mysql:
+    image: zsz/mysql-5.6
+    ports:
+      - "14346:3306"
+    volumes:
+      - ../mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: zhouzheng
+      MYSQL_PASSWORD: zsz123
+
+
+
+    
+
+
+
