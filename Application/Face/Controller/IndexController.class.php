@@ -12,9 +12,11 @@ class IndexController extends Controller {
      * @param $appkey
      * @return string
      */
-   private function getReturn(){
+   public function getReturn(){
+
        // 图片base64编码
-       $path   = 'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8%20%E7%BE%8E%E5%A5%B3&step_word=&hs=2&pn=21&spn=0&di=40799163900&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=443718640%2C4214776948&os=3143183869%2C4090677163&simid=0%2C0&adpicid=0&lpn=0&ln=3972&fr=&fmq=1389861203899_R&fm=&ic=0&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=wallpaper&bdtype=0&oriquery=%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8&objurl=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2%2F587c39fe7d98d.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Botg9aaa_z%26e3Bv54AzdH3Fowssrwrj6_kt2_8da9ad_c_z%26e3Bip4s&gsm=0&rpstart=0&rpnum=0';
+//       $path   = 'static/images/girl.jpg';
+       $path   = I('post.imageUrl');
        $data   = file_get_contents($path);
        $base64 = base64_encode($data);
 
@@ -33,7 +35,8 @@ class IndexController extends Controller {
        // 执行API调用
        $url = 'https://api.ai.qq.com/fcgi-bin/face/face_detectface';
        $response = $this->doHttpPost($url, $params);
-       echo $response;
+       $this -> ajaxReturn($response);
+//       echo $response;
    }
 
 

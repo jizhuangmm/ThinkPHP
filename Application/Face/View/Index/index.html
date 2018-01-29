@@ -56,7 +56,23 @@
     // 触发拍照动作
     document.getElementById("snap").addEventListener("click", function() {
         context.drawImage(video, 0, 0, 640, 480);
+        var canvans = document.getElementById("canvas");
+        var imgData = canvans.toDataURL();
+        $.ajax({
+            type:"POST",
+            url:"{:U('getReturn')}",
+            dataType:"json",
+            data:{'imageUrl':imgData},
+            success:function(data){
+                // var returnData = eval( data );
+                alert(data);
+
+            }
+        });
     });
+
 </script>
+<js href='__ROOT__/static/js/jquery-1.8.3.min.js' />
+<js href='__ROOT__/static/js/common.js' />
 </body>
 </html>
