@@ -33,7 +33,7 @@ class IndexController extends Controller {
        $params['sign'] = $this->getReqSign($params, $appkey);
 
        // 执行API调用
-       $url = 'https://api.ai.qq.com/fcgi-bin/face/face_detectface';
+       $url = C('FACE_URL');
        $response = $this->doHttpPost($url, $params);
        $this -> ajaxReturn($response);
 //       echo $response;

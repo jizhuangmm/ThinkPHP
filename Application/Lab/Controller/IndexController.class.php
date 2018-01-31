@@ -37,7 +37,7 @@ class IndexController extends Controller {
        $params['sign'] = getReqSign($params, $appkey);
 
        // 执行API调用
-       $url = 'https://api.ai.qq.com/fcgi-bin/nlp/nlp_texttrans';
+       $url = C('LAB_URL');
        $response = doHttpPost($url, $params);
        $re = json_decode($response,true);
        print_r($re['data']['trans_text']);
