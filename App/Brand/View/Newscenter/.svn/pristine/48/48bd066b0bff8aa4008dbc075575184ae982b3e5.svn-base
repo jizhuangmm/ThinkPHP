@@ -1,0 +1,149 @@
+﻿
+<extend name="Common:base" />
+<block name="main">
+ 
+
+<div class="row-fluid">
+  <div class="span12">
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+    <h3 class="page-title">企业风采</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/index/index')}">首页</a> <span class="divider">/</span></li>
+      <li class="active">企业风采</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+          <!-- <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div> -->
+        </form>
+      </li>
+    </ul>
+    <div>
+
+<div class="clearfix">
+<div class="btn-group">
+<button id="editable-sample_new" class="btn green" onclick="javascript:window.location.href='{:U('Admin/Basicinf/enterprise_add')}'">
+新增信息 <i class="icon-plus"></i>
+</button>
+</div>
+</div>
+<div class="space15"></div>
+<table class="table table-striped table-bordered table-advance table-hover">
+<thead>
+<tr>
+<th> 序号</th>
+<th >企业简介</th>
+<th>具体内容</th>
+<th>图片</th>
+<th>视频</th>
+<th>音频</th>
+<th>链接</th>                     
+<th>时间</th>
+<th>显示</th>
+<th>查看</th>
+<th>编辑</th>
+<th>删除</th>
+</tr>
+              </thead>
+          <?php if(empty($data)) { ?>
+          <tr class="">
+          <td colspan="13">暂无内容</td>
+          </tr>
+          <?php } ?>
+              <volist name="data" id="vo">
+        <tbody>
+
+            <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.introduce} </td>
+            <td>{$vo.centent}</td>
+            <td><img src="/upload/basic/{$vo.image}" height="50px" width="50px"/></td>
+           
+            <td><img src="/upload/basic/{$vo.video_img}" height="50px" width="50px"/> </td>
+            <td>
+            <audio controls="controls">  
+            <source src="/upload/basic/{$vo.music}" /> 
+            </audio> 
+            </td>
+            <td>{$vo.url} </td>
+            <td>{$vo.time} </td>
+            <td><php>if($vo[is_show] == 1){ echo "显示";}else{ echo "不显示";}</php></td>
+            <td><a href="{:U('Admin/Basicinf/enterprise_details?id='.$vo[id])}" /><i class="icon-envelope-alt"></i>详情 </td>
+            <td>
+            <a href="{:U('Admin/Basicinf/enterprise_edit?id='.$vo[id])}"><i class=" icon-edit"></i>编辑</a>
+            </td>
+            <td>
+            <a href="{:U('Admin/Basicinf/enterprise_delete',array('id'=>$vo[id]))}"><i class="icon-trash"></i>删除</a>
+            </td>
+            </tr>
+                </tbody>
+              </volist >
+              <tr>
+                        <td colspan="13" ><div class="pages" >{$page}</div></td>
+                        </tr>
+         </table>
+    </div>
+  </div>
+</div>
+</block>
+<block name="css">
+<link rel="stylesheet" type="text/css"  href="/static/bootstrap/css/fileinput.min.css"/>
+<style type="text/css">
+        table
+        {
+            table-layout: fixed;
+            width: 100%;
+        }
+        
+        td
+        {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background-color: #ccc;
+        }
+
+.pages{
+  width:100.5%;
+  text-align: right;
+  padding: 10px 0;
+  clear: both;;
+}
+.pages a,.pages.current{
+  font-size: 12px;
+  font-family: Arial;
+  margin: 0 2px;
+}
+.pages a,.pages.current{
+  border: 1px solid #5FA623;
+  background: #fff;
+  padding: 2px 6px;
+  text-decoration: none;
+}
+.pages.current,.pages a:hover{
+  background: #7AB63F;
+  color: #fff;
+}
+
+    </style>
+</block>
+<block name="js">
+<script type="text/javascript" src="__ROOT__/My97DatePicker/WdatePicker.js"> </script> 
+<script type="text/javascript"  href="/static/js/fileinput.min.js"></script>
+
+</block>

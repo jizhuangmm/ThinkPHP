@@ -1,0 +1,175 @@
+ <extend name="Common:base" />
+    <block name="main">  
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">theme color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                     修改车型信息
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="#">home</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="#">form stuff</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li class="active">
+                           form layout
+                       </li>
+                       <li class="pull-right search-wrap">
+                           <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+                               <div class="input-append search-input-area">
+                                   <input class="" id="appendedinputbutton" type="text">
+                                   <button class="btn" type="button"><i class="icon-search"></i> </button>
+                               </div>
+                           </form>
+                       </li>
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>修改车型信息</h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+                            <form action="{:U('Brandcars/nav_update')}" class="form-horizontal" method="post">
+                                <div class="control-group">
+                                    <label class="control-label">车系名</label>
+                                    <div class="controls">
+                                        <input type="text" name="model_name" value="{$car.model_name}" readOnly="true"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">车型</label>
+                                    <div class="controls">
+                                        <input type="text" name="modelid_name" value="{$car.modelid_name}" readOnly="true"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">厂商指导价</label>
+                                    <div class="controls">
+                                        <input type="text" name="zhidaojia" value="{$car.zhidaojia}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">厂商</label>
+                                    <div class="controls">
+                                        <input type="text" name="vendor_name" value="{$car.vendor_name}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">发动机</label>
+                                    <div class="controls">
+                                        <input type="text" name="engine" value="{$car.engine}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">变速箱</label>
+                                    <div class="controls">
+                                        <input type="text" name="transmission" value="{$car.transmission}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">规格</label>
+                                    <div class="controls">
+                                        <input type="text" name="l_w_h" value="{$car.l_w_h}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">车身结构</label>
+                                    <div class="controls">
+                                        <input type="text" name="car_structure" value="{$car.car_structure}" 
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">车门数</label>
+                                    <div class="controls">
+                                        <input type="text" name="num_car_door" value="{$car.num_car_door}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">座位数</label>
+                                    <div class="controls">
+                                        <input type="text" name="num_car_seat" value="{$car.num_car_seat}" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">是否显示</label>
+                                    <div class="controls">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <if condition="$car[is_show] eq 1">
+                                        <label class="radio">
+                                            <input type="radio" name="is_show" value="1" checked="checked" />
+                                            显示
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="is_show" value="0"/>
+                                            不显示
+                                        </label>
+                                        <else />
+                                          <label class="radio">
+                                            <input type="radio" name="is_show" value="1"  />
+                                            显示
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="is_show" value="0" checked="checked"/>
+                                            不显示
+                                        </label>
+                                        </if>
+                                    </div>
+                                    <input type="hidden" name="modelid_id" value="{$car.id}">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn blue"><i class="icon-ok"></i>Update</button>
+                                    <button type="button" class="btn"><i class=" icon-remove"></i> cancel</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+      
+   </div>
+   <div id="footer">2016 &copy; FTMS.</div>
+</block>
+
+
+   
+   <script>
+       $(function () {
+           $(" input[type=radio], input[type=checkbox]").uniform();
+       });
+   </script>
+

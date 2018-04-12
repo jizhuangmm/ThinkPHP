@@ -1,0 +1,35 @@
+<?php
+namespace Home\Controller;
+
+use Think\Controller;
+
+class IndexController extends Controller
+{
+  
+  // 网站首页
+  public function index()
+  {
+    $this->display();
+  }
+  // 经销商招募
+  public function dealer()
+  {
+    $this->display();
+  }
+  // 网站政策
+  public function policy()
+  {
+    $this->display();
+  }
+  // 站点地图
+  public function sitemap()
+  {
+    $this->display();
+  }
+  // 网站地图
+  public function tender()
+  {
+    $this->display();
+  }
+
+}

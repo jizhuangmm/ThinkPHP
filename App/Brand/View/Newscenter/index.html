@@ -1,0 +1,305 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+    <!--广告-->
+    <div>
+        <img src="__ROOT__/static/img/banner.png" alt="" style="width: 100%;">
+    </div>
+    <!--详情列表-->
+        <!--最新动态-->
+        <div class='tabbed_content'>
+        <div class='tabs' style="">
+            <div class='moving_bg'> &nbsp; </div>
+            <span  class="tab_item" id="index"  index="0" >最新动态</span>
+            <span  class="tab_item" id="index1" index="1" >新闻资讯</span>
+            <span  class="tab_item" id="index2" index="2" >媒体中心</span>
+			<input type="hidden" id="home"> 
+            <!--日期-->
+           <div style="position:relative;top:65px;left:500px;">
+		   
+               <select  name="date_year" id="year" class="data_ym" onchange="Changeyear()">
+                   <option value="2010">2010年</option>
+                   <option value="2011">2011年</option>
+                   <option value="2012">2012年</option>
+                   <option value="2013">2013年</option>
+                   <option value="2014">2014年</option>
+                   <option value="2015">2015年</option>
+                   <option value="2016">2016年</option>
+               </select>
+               <select onchange="Change()" name="date_month" id="month" class="data_ym">
+                   <option value="01">1月</option>
+                   <option value="02">2月</option>
+                   <option value="03">3月</option>
+                   <option value="04">4月</option>
+                   <option value="05">5月</option>
+                   <option value="06">6月</option>
+                   <option value="07">7月</option>
+                   <option value="08">8月</option>
+                   <option value="09">9月</option>
+                   <option value="10">10月</option>
+                   <option value="11">11月</option>
+                   <option value="12">12月</option>
+               </select>
+			
+           </div>
+            <div class='slide_content'>
+                <div class='tabslider'>
+                    <div class="zx_img">
+					<ul id="show1" class="img_list img_top" style="margin-top: 0;" >
+					<foreach name="newsList" item="news">
+                        <li>
+                            <a href="zuixindongtai.html"><img src="__ROOT__/{$news['thumb_img']}" alt=""></a>
+                            <p>{$news['title']}</p>
+                            <span style="display: block">{$news['date']}</span>
+						</li>
+					</foreach>
+                    </ul>
+                        <p class="see" >
+                            <span id="new">查看更多</span>
+                            <img src="__ROOT__/static/img/bottom_img.png" alt="" >
+                        </p>
+                    </div>
+                   <div class="bg">
+						
+                       <ul id="show" class="new">
+						   <foreach name="infoList" item="list">
+							   <li>
+								   <ul class="detail_list text_top">
+									   <li class="font_style">{$list['title']}</li>
+									  <!--  <li class="font_style">-{$list['summary']}</li> -->
+									   <li class="date">{$list['date']}</li>
+									   <li><?php echo substr($list['text'],0,23)?>...</li>
+									  <!--  <li>4300万的传奇销量...</li> -->
+									   <li><a href="#"><button>查看详情</button></a></li>
+								   </ul>
+							   </li>
+							</foreach>
+                     
+						</ul>
+                       <p class="see" >
+                           <span id="ap">查看更多</span>
+                           <img src="__ROOT__/static/img/bottom_img.png" alt="">
+                       </p>
+                   </div>
+                    <!--<!-媒体中心&ndash;&gt;-->
+                    <div >
+                        <ul id="show2" class="img_list img_top" style="margin-top: 0;" >
+						<foreach name="mediaList" item="media">
+                            <li>
+                                <a href="{:U('detail?id='.$list['id'])}"><img src="__ROOT__/{$media['thumb_img']}" alt=""></a>
+                                <p>{$media['title']}</p>
+                                <span style="display: block">{$media['date']}</span>
+                            </li>
+						</foreach>	
+                        </ul>
+                        <p class="see" >
+                            <span id="media">查看更多</span>
+                            <img src="__ROOT__/static/img/bottom_img.png" alt="" >
+                        </p>
+                    </div>
+                </div>
+                <!--<br style='clear: both' />-->
+            </div>
+        </div>
+    </div>
+        <!--页尾-->
+	<script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+	<script type="text/javascript">
+		
+		
+		//选中年
+	function Changeyear(){
+        var year = $('#year').val();
+		var home = $('#home').val();
+        $.ajax({
+			type:"post",
+			url:"{:U('dates')}",
+			dataType:"json",
+			data:{'year':year,'home':home},
+			success:function(data){
+			
+				var ss='';
+				if(home=='新闻资讯'){
+					if(data){
+						for(var i=0; i<data.length; i++){
+								ss+='<li>';
+								ss+='<ul class="detail_list text_top">';
+								ss+='<li class="font_style">'+data[i]["title"]+'</li>';
+								ss+='<li class="date">'+data[i]["date"]+'</li>';
+								ss+='<li>'+data[i]["text"]+'</li>';
+								ss+='<li><a href="'+'{:U("detail?id=".'+data[i]["id"]+')}"><button>查看详情</button></a></li>';
+								ss+='</ul></li>';
+							}
+							$("#show").html(ss);
+					}else{
+				
+							$("#show").html('暂无新闻信息').css('color','red');
+					}
+				}
+				if(home=='最新动态'){
+					if(data){
+						for(var i=0; i<data.length; i++){
+								
+								ss+='<li>';
+								ss+='<a href="zuixindongtai.html"><img src="__ROOT__/'+data[i]["thumb_img"]+'" alt=""></a>';
+								ss+='<p>'+data[i]["title"]+'</p>';
+								ss+='<span style="display: block">'+data[i]["date"]+'</span>';
+								ss+='</li>';
+							}
+							$("#show1").html(ss);
+					}else{
+				
+							$("#show1").html('暂无最新动态').css('color','red');
+					}
+				
+				}
+				if(home=='媒体中心'){
+					if(data){
+						for(var i=0; i<data.length; i++){
+								ss+='<li>';
+								ss+='<a href="zuixindongtai.html"><img src="__ROOT__/'+data[i]["thumb_img"]+'" alt=""></a>';
+								ss+='<p>'+data[i]["title"]+'</p>';
+								ss+='<span style="display: block">'+data[i]["date"]+'</span>';
+								ss+='</li>';
+							}
+							$("#show2").html(ss);
+					}else{
+				
+							$("#show2").html('暂无媒体中心').css('color','red');
+					}
+				}
+			}
+        }); 
+    }
+		
+		
+	//选中年月
+	function Change(){
+        var year = $('#year').val();
+        var month = $('#month').val();
+		var home = $('#home').val();
+        $.ajax({
+			type:"post",
+			url:"{:U('dates')}",
+			dataType:"json",
+			data:{'year':year,'month':month,'home':home},
+			success:function(data){
+				var ss='';
+				if(home=='新闻资讯'){
+				
+					if(data){
+					
+						for(var i=0; i<data.length; i++){
+							
+								ss+='<li>';
+								ss+='<ul class="detail_list text_top">';
+								ss+='<li class="font_style">'+data[i]["title"]+'</li>';
+								ss+='<li class="date">'+data[i]["date"]+'</li>';
+								ss+='<li>'+data[i]["text"]+'</li>';
+								ss+='<li><a href="'+'{:U("detail?id=".'+data[i]["id"]+')}"><button>查看详情</button></a></li>';
+								ss+='</ul></li>';
+						}
+							$("#show").html(ss);
+							
+					}else{
+							$("#show").html('暂无新闻信息').css('color','red');
+					}
+				
+				}
+				
+				
+				if(home=='最新动态'){
+					if(data){
+						for(var i=0; i<data.length; i++){
+								
+								ss+='<li>';
+								ss+='<a href="zuixindongtai.html"><img src="__ROOT__/'+data[i]["thumb_img"]+'" alt=""></a>';
+								ss+='<p>'+data[i]["title"]+'</p>';
+								ss+='<span style="display: block">'+data[i]["date"]+'</span>';
+								ss+='</li>';
+							}
+							$("#show1").html(ss);
+							
+					}else{
+				
+							$("#show1").html('暂无最新动态').css('color','red');
+					}
+				
+				}
+				
+				if(home=='媒体中心'){
+				
+					if(data){
+						for(var i=0; i<data.length; i++){
+								ss+='<li>';
+								ss+='<a href="zuixindongtai.html"><img src="__ROOT__/'+data[i]["thumb_img"]+'" alt=""></a>';
+								ss+='<p>'+data[i]["title"]+'</p>';
+								ss+='<span style="display: block">'+data[i]["date"]+'</span>';
+								ss+='</li>';
+							}
+							$("#show2").html(ss);
+					}else{
+				
+							$("#show2").html('暂无媒体中心').css('color','red');
+					}
+				}
+				
+				
+				
+				
+			 }
+        }); 
+    }
+	
+			//获取当前的模块
+			$('.tabs span:eq(0)').bind('click',function(){
+					var id=$('#index').html();
+					$('input').attr('value',id);
+					
+			})
+			$('.tabs span:eq(1)').bind('click',function(){
+					$('input').attr('value','');
+					var id=$('#index1').html();
+					$('input').attr('value',id);
+					
+			})
+			$('.tabs span:eq(2)').bind('click',function(){
+					$('input').attr('value','');
+					var id=$('#index2').html();
+					$('input').attr('value',id);
+					
+			})
+	
+			//设置锚点
+			$(function(){
+				
+				var hrefVal=location.href;
+				var t = <?php echo $_GET['t'];?>;
+				
+				if(t>0){
+					$(".moving_bg").css("left","72.5%");
+					$(".tabslider").css("margin-left","-5396px");
+					$("html,body").scrollTop(500);
+					setTimeout(function(){	
+					if(t=='1'){
+						$(".tab_item[index='1']").click();
+					}else if(t=='2'){
+						$(".tab_item[index='2']").click();
+					}
+						
+					},100)
+				}
+			});
+		
+		
+		
+	
+	</script>
+</block>
+<block name="css">
+    <css href="__ROOT__/static/css/brand.css" />
+</block>
+<block name="js">
+	
+    <js href="__ROOT__/static/js/brand.js" />
+    <js href='__ROOT__/static/js/lanren.js' />
+</block>

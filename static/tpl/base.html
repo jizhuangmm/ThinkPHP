@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}__SITENAME__</title>
+    <css href="__BOOTSTRAP__/theme/united.css"/>
+		<css href="__CSS__/common.css" />
+    <js href="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js" />
+    <block name="css"></block>
+	</head>
+	<body>
+		<div class="container">
+	    <div id="header">
+	      <img id="top-logo" src="__IMG__/logo.png" />
+	      <div id="slogan">
+	        <h2>__SITENAME__</h2>
+	        <p>__SITEURL__</p>
+	      </div>
+	      <ul id="menunav">
+	        <li><a id="menu-home" href="/">首页</a></li>
+          <li><a id="menu-aboutus" href="/Home/Index/aboutus">关于我们</a></li>
+	        <li><a id="menu-service" href="/Home/Index/service">产品服务</a></li>
+	        <li><a id="menu-visualization" href="#">案例展示</a></li>
+	        <li><a id="menu-contact" href="/Home/Index/contact">联系我们</a></li>
+	        <li>
+				
+					<a id="menu-contact" href="/Brand/Information/news">新闻中心</a>
+			</li>
+			<li>	
+					<a id="menu-contact" href="/Brand/Information/activity">活动锦集</a>
+			</li>
+			<li>	
+					<a id="menu-contact" href="/Brand/Information/media">媒体中心</a>
+				
+				
+			</li>
+	      </ul>
+	    </div>
+	    <div id="mainbox">
+	      <block name="main"></block>
+	    </div>	
+	    <div id="footer">
+	      <block name="footer">　
+		      版权所有 © 2012-<?php echo date('Y');?> 王小滔
+	      </block>
+	    </div>
+	  </div>
+    <block name="js"></block>
+  </body>
+</html>

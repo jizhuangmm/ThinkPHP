@@ -1,0 +1,352 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+
+class BuycarserviceController extends CommonController
+{
+	public function index()
+	{
+		$url="http://hao123.com";
+
+		$rs=file_get_contents($url);
+
+		 $s = '<div class="g-ib hao123-logo">
+				<div id="indexLogo" class="hao123logo" monkey="hao123logo">
+				<a class="card link link-hook" href="http://www.hao123.com/sethome" hidefocus="true" title="上网从hao123开始" target="">
+				<img class="img-hook" width="168" height="60" src="https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/richanglogo168_24.png" alt="上网从hao123开始">
+				</a>
+				</div>
+				</div>';
+	$res=str_replace($s,"1111",$rs);
+
+		// preg_match_all($s,$rs,$t);
+
+		echo "<pre>";
+		print_r($res);
+	}
+
+	public function inde()
+	{
+		$url ='http://tech.firefox.huanqiu.com/16/0831/08/VWSRHATLBDU3EGXY.html';
+		//$url = "http://s.jb51.net";
+		$ch = curl_init();
+		curl_setopt ($ch, CURLOPT_URL, $url);
+		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT,10);
+		$dxycontent = curl_exec($ch);
+		//echo $dxycontent; 
+		libxml_disable_entity_loader(true);
+        $ass = json_decode(json_encode(simplexml_load_string($dxycontent, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        echo "<pre>";
+		print_r($ass);
+	}
+	public function FromXml($xml)
+	{	
+		if(!$xml){
+			echo "xml数据异常！";
+		}
+        //将XML转为array
+        //禁止引用外部xml实体
+        libxml_disable_entity_loader(true);
+        $this->values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+		return $this->values;
+	}
+	//金融服务
+    public function financial()
+    {
+    	$brand=M('financial');
+   
+       $count = $brand->count();
+      $Page = new \Think\Page($count,5);
+    
+       $show = $Page->show();
+      $data = $brand->order('id')->limit($Page->firstRow.','.$Page->listRows)->select(); 
+    $this->assign('data',$data);
+    $this->assign('page',$show);
+    $this->display(); 
+    }
+    //新建金融服务页面展示
+    public function financial_add(){
+
+    	$this->display();
+    }
+    //新建金融服务
+    public function financial_add_uplode(){
+    	if($_POST){
+         if($_FILES['img']){
+      if(!empty($_FILES['img']['name'])){
+       $upload=new \Think\Upload();      
+        $upload->maxSize=10145728;
+        $upload->savename='time';
+        $upload->exts=array('jpg','gif','png','jpeg');
+        $upload->rootpath='./Uploads/';
+        $uplode->savePath = '';
+        $info=$upload->upload();
+         if($info){
+             foreach ($info as $file) {
+           $file_path='./Uploads/'.$file['savepath'].$file['savename'];
+           $file_mini='./Uploads/'. $file['savepath'].'mini'.$file['savename'];
+           $image=new \Think\Image();
+          $image->open($file_path);
+          $image->thumb(50,50)->save($file_mini);
+          $_POST['img']=$file_mini;
+        }         
+        }
+        else{          
+            exit($this->uploader->getError()); 
+        }
+}
+      }
+       $vide= M('financial');
+        if($vide->add($_POST)){
+          $this->success('数据已写入','financial' ); 
+       }else{
+      $this->error('数据写入错误！','financial');
+    }
+    }
+}
+//编辑金融服务页面展示
+    public function financial_edit(){
+    	 $id = I('get.id');
+          $admin = M('financial');
+          $result = $admin->where(array('id'=>$id))->find();
+          $this->result = $result;
+          $this->display();
+    	
+    }
+    //编辑金融服务
+    public function financial_edit_uplode(){
+         
+         if($_FILES['img']){
+      if(!empty($_FILES['img']['name'])){
+       $upload=new \Think\Upload();     
+        $upload->maxSize=10145728;
+        $upload->savename='time';
+        $upload->exts=array('jpg','gif','png','jpeg');
+        $upload->rootpath='./Uploads/';
+        $uplode->savePath = '';
+        $info=$upload->upload();
+         if($info){
+             foreach ($info as $file) {
+           $file_path='./Uploads/'.$file['savepath'].$file['savename'];
+           $file_mini='./Uploads/'. $file['savepath'].'mini'.$file['savename'];
+           $image=new \Think\Image();
+          $image->open($file_path);
+          $image->thumb(50,50)->save($file_mini);
+          $_POST['img']=$file_mini;
+        }         
+        }
+        else{          
+            exit($this->uploader->getError()); 
+        }
+}
+      }
+     	$vide=M('financial');			
+           if($_POST){
+           	  $vide->data($_POST)->save();
+             
+                $this->success('修改成功','financial' ); 
+            }else{
+               $this->error('修改失败', 'financial');
+            }
+    }
+    //删除金融服务
+    public function financial_delete()
+    {
+            $id = I('get.id');
+            $admin = M('financial');
+            $result=$admin->where('id='.$id)->delete();
+            if($result){
+                $this->success('删除成功',U('Admin/Buycarservice/financial'));
+                
+            }else{
+                $this->error('删除失败',U('Admin/Buycarservice/financial'));
+            }
+    }
+    //客户信息一览表
+    public function financial_customer(){
+       $brand=M('financial_customer');
+       $count = $brand->count();
+      $Page = new \Think\Page($count,5);
+    
+       $show = $Page->show();
+      $data = $brand->order('id')->limit($Page->firstRow.','.$Page->listRows)->select();
+    $this->assign('data',$data);
+    $this->assign('page',$show);
+    $this->display();
+    }
+    //新建客户信息页面
+    public function financial_customer_add()
+    {
+    	$vide=M('financial');	
+    	$list = $vide->select();
+    	$this->assign('list',$list);
+        $this->display(); 
+    }
+    //新建客户信息
+    public function financial_customer_uplode()
+    {
+
+         $vide=M('financial_customer');
+        
+          if($_POST){
+            if( $vide->add($_POST)){
+               $this->success('数据写入成功！','financial_customer' ); 
+            }else{
+         $this->error('数据写入错误！','financial_customer');
+      }   
+      }  
+    }
+    //编辑客户信息页面
+    public function financial_customer_edit()
+    {
+       $id = I('get.id');
+        $vide=M('financial');
+          $admin = M('financial_customer');
+           $vide=M('financial');
+          $result = $admin->where(array('id'=>$id))->find();
+          $list = $vide->select();
+    	  $this->assign('list',$list);
+          $this->result = $result;
+          $this->display();
+    }
+    //编辑客户信息
+    public function customer_uplode()
+    {
+    	 $vide=M('financial_customer');
+       if($_POST){
+     $vide->data($_POST)->save();     
+               $this->success('数据写入成功！','financial_customer' ); 
+            }else{
+         $this->error('数据写入错误！','financial_customer');
+      }   
+    }
+    //删除客户信息
+    public function financial_customer_delete()
+    {
+            $id = I('get.id');
+            $admin = M('financial_customer');
+            $result=$admin->where('id='.$id)->delete();
+            if($result){
+                $this->success('删除成功',U('Admin/Buycarservice/financial_customer'));
+                
+            }else{
+                $this->error('删除失败',U('Admin/Buycarservice/financial_customer'));
+            }
+    }
+    //保险服务
+    public function insurance()
+    {
+    	$vide=M('insurance');
+    	$data=$vide->select();
+    	$this->assign('data',$data);
+        $this->display();
+    }
+    public function insurance_add()
+    {
+     $this->display();  
+    }
+     public function insurance_add_uplode()
+     {
+        if($_POST){
+         if($_FILES['img']){
+      if(!empty($_FILES['img']['name'])){
+       $upload=new \Think\Upload();     
+        $upload->maxSize=10145728;
+        $upload->savename='time';
+        $upload->exts=array('jpg','gif','png','jpeg');
+        $upload->rootpath='./Uploads/';
+        $uplode->savePath = '';
+        $info=$upload->upload();
+         if($info){
+             foreach ($info as $file) {
+           $file_path='./Uploads/'.$file['savepath'].$file['savename'];
+           $file_mini='./Uploads/'. $file['savepath'].'mini'.$file['savename'];
+           $image=new \Think\Image();
+          $image->open($file_path);
+          $image->thumb(50,50)->save($file_mini);
+          $_POST['img']=$file_mini;
+        }         
+        }
+        else{          
+            exit($this->uploader->getError()); 
+        }
+}
+      }
+       $vide= M('insurance');
+        if($vide->add($_POST)){
+          $this->success('数据已写入','insurance' ); 
+       }else{
+      $this->error('数据写入错误！','insurance');
+    }
+    }
+     }
+     //编辑保险服务页面
+      public function insurance_edit(){
+    	 $id = I('get.id');
+          $admin = M('insurance');
+          $result = $admin->where(array('id'=>$id))->find();
+          $this->result = $result;
+          $this->display();
+    	
+    }
+    //编辑保险服务
+    public function insurance_edit_uplode(){
+         
+         if($_FILES['img']){
+      if(!empty($_FILES['img']['name'])){
+       $upload=new \Think\Upload();     
+        $upload->maxSize=10145728;
+        $upload->savename='time';
+        $upload->exts=array('jpg','gif','png','jpeg');
+        $upload->rootpath='./Uploads/';
+        $uplode->savePath = '';
+        $info=$upload->upload();
+         if($info){
+             foreach ($info as $file) {
+           $file_path='./Uploads/'.$file['savepath'].$file['savename'];
+           $file_mini='./Uploads/'. $file['savepath'].'mini'.$file['savename'];
+           $image=new \Think\Image();
+          $image->open($file_path);
+          $image->thumb(50,50)->save($file_mini);
+          $_POST['img']=$file_mini;
+        }         
+        }
+        else{          
+            exit($this->uploader->getError());
+        }
+}
+      }
+     	$vide=M('insurance');			
+           if($_POST){
+           	  $vide->data($_POST)->save();
+                $this->success('修改成功','insurance' ); 
+            }else{
+               $this->error('修改失败', 'insurance');
+            }
+    }
+    //删除保险信息
+     public function insurance_delete()
+    {
+            $id = I('get.id');
+            $admin = M('insurance');
+            $result=$admin->where('id='.$id)->delete();
+            if($result){
+                $this->success('删除成功',U('Admin/Buycarservice/insurance'));
+                
+            }else{
+                $this->error('删除失败',U('Admin/Buycarservice/insurance'));
+            }
+    }
+    //安心二手车
+    public function used_car()
+    {
+    	$vide=M('used_car');
+    	$data=$vide->select();
+    	$this->assign('data',$data);
+        $this->display();
+    }
+
+}

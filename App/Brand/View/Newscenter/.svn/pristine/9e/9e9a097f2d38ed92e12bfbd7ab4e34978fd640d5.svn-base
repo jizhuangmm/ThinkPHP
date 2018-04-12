@@ -1,0 +1,54 @@
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+
+    <h3 class="page-title">保险服务</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Buycarservice/insurance')}">保险服务</a> <span class="divider">/</span></li>
+      <li class="active">编辑</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+     
+        </form>
+      </li>
+    </ul>
+    <div>
+     <form method="post" action="{:U('Admin/Buycarservice/insurance_edit_uplode')}" enctype="multipart/form-data" >
+
+             保险名称：<input type="text" name="insurance_name" value="{$result.insurance_name}"><br/>
+             内容：<textarea  name="text" >{$result.text}</textarea>
+             <br/>
+             图片：<input id="input-3a" type="file" class="file" readonly="true" name="img" value="{$result.img}" ><br>
+             链接：<input type="text" name="link"  value="{$result.link}" ><br/>
+                      <input type="hidden" name="id" value="{$result.id}">
+                      <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Buycarservice/insurance')}'">  &nbsp;&nbsp;&nbsp;
+          <button type="submit">保存</button>
+
+</form>
+    </div>
+  </div>
+</div>
+</block>
+<block name="js">
+<script type="text/javascript" src="__ROOT__/My97DatePicker/WdatePicker.js"> 
+   </script> 
+     <js href="/static/bootstrap-fileinput/js/fileinput.min.js" />
+</block>
+<block name="css">
+<css href="/static/bootstrap-fileinput/css/fileinput.min.css"/>
+</block>

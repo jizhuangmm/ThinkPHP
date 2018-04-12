@@ -1,0 +1,80 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+    <div>
+        <img src="/static/img/img_xq/cpyc_banner.png" style="width:100%;" >
+    </div>
+    <div style="width: 100%;">
+        <div style="background: url('/static/img/img_xq/cpyc_title.png') no-repeat;height:80px;margin-top:35px;margin-left:11%;">
+            <span id="title" style=" color:#fff;display:block;text-align:center;padding-top:22px; width:194px;margin-left:1%;">{$result.job}</span>
+        </div>
+        <!--<img src="" style="margin-top: 55px;margin-left: 11%;display: inline;">
+        <span id="title" style=" position: absolute;top:80px;;left:14.5%;color:#fff;">商品企划主管/专员</span>-->
+    </div>
+    <div>
+       <table class="tabs" style="padding-left:11.5%;margin-top:3%; color: #161616;">
+           <tr>
+               <td  colspan="4">所属部门：{$result.department}</td>
+           </tr>
+           <tr>
+               <td>工作类型：{$result.type}</td>
+               <td>工作地点：{$result.place}</td>
+               <td>学　历：{$result.education}</td>
+               <td>专　业：{$result.major}</td>
+           </tr>
+           <tr>
+               <td>发布时间：{$result.time}</td>
+               <td>招聘人数：{$result.number}</td>
+               <td colspan="2">工作年限:{$result.years}</td>
+           </tr>
+       </table>
+    </div>
+    <div class="tabs_list">
+        <ul style="margin-top:3.5%;padding-left:11.5%">
+            <li  style="padding-bottom: 1.5%;color:#161616 !important;">工作内容：</li>
+            <li>{$result.content};</li>
+           
+        </ul>
+    </div>
+    <div class="tabs_list">
+        <ul  style="margin-top:4%;padding-left:11.5%;padding-bottom: 3.5%">
+            <li style="padding-bottom: 1.5%;color:#161616 !important;">任职资格：</li>
+            <li>{$result.eligible};  </li>
+            
+        </ul>
+    </div>
+    <div style="width: 100%;height: 105px;padding-left:12%;">
+        <!--<img src="../../../../static/img/img_xq/cpyc_logo.png" style="float:left;">-->
+        <p style="float:left; color: #161616;">请将您的简历投递至<a href="#" style=" border-bottom:1px solid #297fb8;color:#297fb8;">FTMS@yiqi.com</a>此邮箱</p>
+    </div>
+    <div style="height:160px;width: 100%;line-height: 160px;margin-left:35.7%;">
+        <a href="#" style="display: block;float:left;width: 14%;height:52px;background: #F3C500;color:#fff;line-height:52px;text-align:center;">推荐给朋友</a>
+        <a  href="{:U('Brand/Ftms/recruit')}" style="margin-left:1.5%;display: block;float:left;width: 14%;height:52px;line-height:52px;text-align:center;background: #297FB8;color: #fff;">返回职位列表</a>
+    </div>
+
+
+</block>
+<block name="css">
+      <css href="/static/css/recruit.css" />
+    <style>
+        .tabs tr td{
+            width:19%;
+            padding-top:1%;
+        }
+        .tabs_list ul li{
+            padding-top:0.5%;
+            color:#333333;
+        }
+    </style>
+</block>
+<block name="js">
+      <js href="/static/js/recruit.js" />
+    <script>
+        $(function () {
+            if (window.location.href.split("?")[1])
+            {
+                $("#title").html(window.decodeURI(window.location.href.split("?")[1]));
+            }
+
+        })
+    </script>
+</block>

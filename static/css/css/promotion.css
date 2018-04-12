@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '微软雅黑';
+}
+ul, li, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+
+}
+img {
+    display: block;
+}
+body {
+    width: 100%;
+    height: auto;
+    position: relative;
+    font-family:"苹方细体";
+    font-size: 0.186rem
+}
+#main .img_text{
+   position: relative;
+   top:50px;
+   left:44%;
+}
+.img_list li {
+    float: left;
+    width:33%;
+    box-sizing: border-box;
+    padding: 2% 2%;
+    overflow: hidden;
+}
+.img_list li img{
+    width: 100%;
+    height: 16.8%;
+}
+.see{
+    text-align: center;
+    clear:both;
+    width: 100%;
+    padding-top:3PX;
+    padding-bottom:26px;
+}
+.see span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.see img{
+    display:inline;
+}

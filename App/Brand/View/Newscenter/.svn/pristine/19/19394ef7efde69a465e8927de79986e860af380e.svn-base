@@ -1,0 +1,56 @@
+   <extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+    <h3 class="page-title">社会招聘</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Basicinf/recruit')}">社会招聘</a> <span class="divider">/</span></li>
+      <li class="active">编辑</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+          <!-- <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div> -->
+        </form>
+      </li>
+    </ul>
+    <div>
+      <form method="post" action="{:U('Admin/Basicinf/recruit_edit_uplode')}" enctype="multipart/form-data" >  
+       <input type="hidden" name="id" value="{$result.id}">
+              职位名称：<input type="text" name="job" value="{$result.job}"><br/>
+              所属部门：<input type="text" name="department" value="{$result.department}"><br/>
+              工作类型：<input type="text" name="type" value="{$result.type}"> <br>  
+              工作地点： <input type="text" name="place" value="{$result.place}" > <br/>
+              学历：<input type="text" name="education" value="{$result.education}"><br/>
+              专业：<input type="text"  name="major" value="{$result.major}"><br/>
+              招聘人数：<input type="text" name="number" value="{$result.number}" > <br/> 
+              工作年限：<input type="text" name="years" value="{$result.years}"> 年<br/> 
+              工作内容:<textarea name="content">{$result.content}</textarea> <br/>
+              任职资格:<textarea name="eligible">{$result.eligible}</textarea> <br/>
+              状态：<input type="radio"  value="1" <php>  if($result['state']== 1){ echo "checked required"; } </php> id="male" name="state" > 已发布
+              <input type="radio"  value="2" <php>  if($result['state']== 2){ echo "checked required"; } </php> id="male" name="state" > 暂停发布
+              <input type="radio" value="3"  <php> if($result['state'] == 3){ echo "checked required" ;}</php> id="female" name="state">已删除 <br/>
+               
+              <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Basicinf/recruit')}'">  &nbsp;&nbsp;&nbsp;
+              <button type="submit">保存</button> 
+           </form>
+    </div>
+  </div>
+</div>
+</block> 

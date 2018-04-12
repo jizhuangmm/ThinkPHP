@@ -1,0 +1,116 @@
+ <extend name="Common:base" />
+    <block name="main">      
+      
+      <div id="main-content">
+         
+         <div class="container-fluid">
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">theme color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                     修改用户信息
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="#">home</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="#">form stuff</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li class="active">
+                           form layout
+                       </li>
+                       <li class="pull-right search-wrap">
+                           <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+                               <div class="input-append search-input-area">
+                                   <input class="" id="appendedinputbutton" type="text">
+                                   <button class="btn" type="button"><i class="icon-search"></i> </button>
+                               </div>
+                           </form>
+                       </li>
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 修改用户信息</h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+                            <form action="{:U('System/update_user')}" class="form-horizontal" method="post">
+                                <div class="control-group">
+                                    <label class="control-label">用户名</label>
+                                    <div class="controls">
+                                        <input type="text" name="username" value="{$user.username}"/>
+                                        <span class="help-inline"></span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">用户角色</label>
+                                    <div class="controls">
+                                    <foreach name="role" item="vo" >
+                                        <label class="radio line">
+                                        <if condition="$user[role_id] eq $vo[id]"><input type="radio" name="role_id" value="{$vo.id}" checked="checked" />{$vo.name}<else /><input type="radio" name="role_id" value="{$vo.id}"/>{$vo.name}</if>
+                                            
+                                        </label>
+                                    </foreach>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                <input type="hidden" name="uid" value="{$uid}">
+                                    <input type="submit" value="Add">
+                                    
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+         </div>
+         
+      </div>
+      
+   </div>
+   <div id="footer">2016 &copy; FTMS.</div>
+</block>
+
+
+   
+   <script>
+       $(function () {
+           $(" input[type=radio], input[type=checkbox]").uniform();
+       });
+   </script>
+

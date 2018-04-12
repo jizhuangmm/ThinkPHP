@@ -1,0 +1,1879 @@
+[ 2016-09-18T08:46:35+08:00 ] 127.0.0.1 /ftms/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000230s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013932s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002418s ]
+
+[ 2016-09-18T08:46:38+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000445s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015870s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001620s ]
+
+[ 2016-09-18T08:46:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/validation_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `adminmanage` [ RunTime:0.0176s ]
+SQL: SELECT `aid`,`username` FROM `adminmanage` WHERE ( username='admin' and passwd='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017858s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001089s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000877s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001058s ]
+
+[ 2016-09-18T08:46:49+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001398s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000768s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000955s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002992s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003233s ]
+
+[ 2016-09-18T08:46:53+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033761s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033934s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001867s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001033s ]
+
+[ 2016-09-18T08:46:58+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/2/display_status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001131s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.2140s ]
+SQL: UPDATE `dealer_manage` SET `display_status`='0' WHERE (  dealer_id= 2 ) [ RunTime:0.1942s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000281s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000675s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001504s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001568s ]
+
+[ 2016-09-18T08:47:00+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000915s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.2717s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.1773s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000174s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000374s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017605s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001482s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001585s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002229s ]
+
+[ 2016-09-18T08:47:01+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062766s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062882s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000850s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001996s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000829s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000966s ]
+
+[ 2016-09-18T08:47:03+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/1/display_status/0.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001668s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0089s ]
+SQL: UPDATE `dealer_manage` SET `display_status`='1' WHERE (  dealer_id= 1 ) [ RunTime:0.0747s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000474s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001055s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031513s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031797s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001471s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001968s ]
+
+[ 2016-09-18T08:47:05+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001296s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0479s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014030s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000966s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000868s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000995s ]
+
+[ 2016-09-18T08:47:08+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001463s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001741s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003684s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001965s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002232s ]
+
+[ 2016-09-18T08:47:10+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001895s ]
+
+[ 2016-09-18T08:47:12+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/2/display_status/0.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001514s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0438s ]
+SQL: UPDATE `dealer_manage` SET `display_status`='1' WHERE (  dealer_id= 2 ) [ RunTime:0.0881s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000605s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005127s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.003226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009185s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004306s ]
+
+[ 2016-09-18T08:47:13+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000206s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000491s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021286s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001577s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001103s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001304s ]
+
+[ 2016-09-18T08:47:16+08:00 ] 127.0.0.1 /ftms/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002244s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001354s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055275s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001534s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.006004s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001932s ]
+
+[ 2016-09-18T08:47:21+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Information/info_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001135s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `info_list` WHERE ( check_status and display_status=1 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000457s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.159641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.159985s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002098s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002715s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003125s ]
+
+[ 2016-09-18T08:47:23+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/info_recommend/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0100s ]
+SQL: SELECT `recommend` FROM `info_list` WHERE (  info_id=2 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011413s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001308s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000949s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002490s ]
+
+[ 2016-09-18T08:47:30+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/check_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001441s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0789s ]
+SQL: SELECT * FROM `info_list` WHERE ( check_status=0 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045390s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045662s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001203s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001499s ]
+
+[ 2016-09-18T08:47:32+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Information/info_save/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001683s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `info_list` WHERE (  info_id = 2 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032203s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001068s ]
+
+[ 2016-09-18T08:47:37+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/info_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001430s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0179s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038382s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000720s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001694s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000883s ]
+
+[ 2016-09-18T08:47:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/info_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.1467s ]
+SQL: INSERT INTO `info_list` (`dealer_name`,`info_title`,`author`,`summary`,`area`,`info_type`,`time`,`display_status`) VALUES ('qeq','sgsg','sgsg','sdgsg','sd','bsb','2016-09-18 08:47:46','1') [ RunTime:0.0594s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000287s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000674s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027748s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002408s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005713s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003127s ]
+
+[ 2016-09-18T08:47:47+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/info_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001673s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `info_list` WHERE ( check_status and display_status=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019323s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000877s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001607s ]
+
+[ 2016-09-18T08:47:48+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/check_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `info_list` WHERE ( check_status=0 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000408s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016452s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000835s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001953s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001900s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002091s ]
+
+[ 2016-09-18T08:47:49+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/check/info_id/12.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001216s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0096s ]
+SQL: UPDATE `info_list` SET `info_id`='12',`check_status`='1' WHERE (  info_id = 12 ) [ RunTime:0.0644s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012193s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001180s ]
+
+[ 2016-09-18T08:47:50+08:00 ] 127.0.0.1 /ftms/index.php/Admin/information/info_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000971s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001302s ]
+SQL: SHOW COLUMNS FROM `info_list` [ RunTime:0.0715s ]
+SQL: SELECT * FROM `info_list` WHERE ( check_status and display_status=1 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017736s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017933s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000908s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000991s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001124s ]
+
+[ 2016-09-18T15:42:04+08:00 ] 127.0.0.1 /ftms/index.php/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001222s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040192s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001882s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001761s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003850s ]
+
+[ 2016-09-18T15:42:07+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001966s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000258s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000479s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036616s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001521s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001539s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003563s ]
+
+[ 2016-09-18T15:42:10+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/validation_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001285s ]
+SQL: SHOW COLUMNS FROM `adminmanage` [ RunTime:0.0210s ]
+SQL: SELECT `aid`,`username` FROM `adminmanage` WHERE ( username='admin' and passwd='d41d8cd98f00b204e9800998ecf8427e' ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000277s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000622s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014640s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000816s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001880s ]
+
+[ 2016-09-18T15:42:13+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001852s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011426s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011592s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000870s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001917s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001037s ]
+
+[ 2016-09-18T15:42:19+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/validation_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001115s ]
+SQL: SHOW COLUMNS FROM `adminmanage` [ RunTime:0.0680s ]
+SQL: SELECT `aid`,`username` FROM `adminmanage` WHERE ( username='admin' and passwd='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012714s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012923s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000800s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001891s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000903s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001028s ]
+
+[ 2016-09-18T15:42:22+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001697s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063320s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.003458s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004878s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003119s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003359s ]
+
+[ 2016-09-18T15:43:47+08:00 ] 127.0.0.1 /ftms/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001296s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001547s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044886s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045057s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001319s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.003303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004903s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001811s ]
+
+[ 2016-09-18T15:54:15+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001952s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021755s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002238s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001998s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001423s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001606s ]
+
+[ 2016-09-18T15:54:18+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/1/display_status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001189s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001341s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0099s ]
+SQL: UPDATE `dealer_manage` SET `display_status`='0' WHERE (  dealer_id= 1 ) [ RunTime:0.0574s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011381s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011544s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000897s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2016-09-18T15:54:19+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002019s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000289s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000901s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025353s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000864s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001081s ]
+
+[ 2016-09-18T15:54:20+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000522s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000822s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001348s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001499s ]
+
+[ 2016-09-18T15:54:22+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/1/display_status/0.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001512s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0091s ]
+SQL: UPDATE `dealer_manage` SET `display_status`='1' WHERE (  dealer_id= 1 ) [ RunTime:0.7415s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008785s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000929s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002059s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001866s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002113s ]
+
+[ 2016-09-18T15:54:23+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000889s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001147s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.1423s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0768s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000345s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000748s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045594s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045997s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003795s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001489s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001690s ]
+
+[ 2016-09-18T18:43:44+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001579s ]
+SQL: SHOW COLUMNS FROM `dealer_manage` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000429s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001647s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001287s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003258s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001389s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001575s ]
+
+[ 2016-09-18T18:43:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013753s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001248s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002695s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001152s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001282s ]
+
+[ 2016-09-18T18:43:50+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+SQL: SELECT * FROM `dealer_manage` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant dealer_id - assumed 'dealer_id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant dealer_url - assumed 'dealer_url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015049s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000937s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000847s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001967s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-09-18T18:54:35+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002136s ]
+SQL: SHOW COLUMNS FROM `ftms_dealers` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001510s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003546s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001887s ]
+
+[ 2016-09-18T18:54:36+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000973s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000979s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001047s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001216s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001351s ]
+
+[ 2016-09-18T18:54:36+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001448s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001232s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001585s ]
+
+[ 2016-09-18T18:54:36+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000304s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000549s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014618s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014758s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000997s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002353s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001614s ]
+
+[ 2016-09-18T18:54:41+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/1/display_status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001401s ]
+SQL: UPDATE `ftms_dealers` SET `id`='1',`display_status`='0' WHERE (  id= 1 ) [ RunTime:0.0696s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000656s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031584s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004737s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001713s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001557s ]
+
+[ 2016-09-18T18:54:43+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001167s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013438s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000943s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001077s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001267s ]
+
+[ 2016-09-18T18:54:44+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000974s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000427s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002208s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001475s ]
+
+[ 2016-09-18T18:54:45+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001713s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000994s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000809s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2016-09-18T18:54:45+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001422s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001303s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001493s ]
+
+[ 2016-09-18T18:54:45+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012792s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012951s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000870s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001989s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001011s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2016-09-18T18:54:45+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001203s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001134s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001004s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002353s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000961s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001075s ]
+
+[ 2016-09-18T18:54:45+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000830s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001164s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013439s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013581s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000808s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001938s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001066s ]
+
+[ 2016-09-18T18:54:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000856s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012659s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012839s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001691s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001470s ]
+
+[ 2016-09-18T18:54:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000974s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001172s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001052s ]
+
+[ 2016-09-18T18:54:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000372s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017352s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002927s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001176s ]
+
+[ 2016-09-18T18:54:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000728s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001790s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001140s ]
+
+[ 2016-09-18T18:54:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013159s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013284s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001006s ]
+
+[ 2016-09-18T18:54:46+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001486s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000492s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014916s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000740s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001786s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000993s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001145s ]
+
+[ 2016-09-18T19:01:42+08:00 ] 127.0.0.1 /ftms/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012416s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012589s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000985s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002057s ]
+
+[ 2016-09-18T19:01:45+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001537s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000873s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000935s ]
+
+[ 2016-09-18T19:01:52+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Login/validation_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002220s ]
+SQL: SHOW COLUMNS FROM `ftms_adminmanage` [ RunTime:0.0102s ]
+SQL: SELECT `aid`,`username` FROM `ftms_adminmanage` WHERE ( username='admin' and passwd='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000468s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013420s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000988s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001048s ]
+
+[ 2016-09-18T19:01:55+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001707s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000676s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000830s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038310s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038470s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001070s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002958s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004820s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005151s ]
+
+[ 2016-09-18T19:01:59+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001238s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 25 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 26 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 27 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 28 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 29 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 31 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 32 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\01240b37f3d9f7e13229e4f53dc7a7f8.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014748s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014879s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000815s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001290s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001455s ]
+
+[ 2016-09-18T19:02:01+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/display_status/id/2/display_status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001341s ]
+SQL: UPDATE `ftms_dealers` SET `id`='2',`display_status`='0' WHERE (  id= 2 ) [ RunTime:0.0421s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010029s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001803s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001036s ]
+
+[ 2016-09-18T19:02:02+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001296s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=1 and is_delete=1 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000414s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015896s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001904s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000923s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001039s ]
+
+[ 2016-09-18T19:02:03+08:00 ] 127.0.0.1 /ftms/index.php/Admin/Dealers/undisplay.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+SQL: SELECT * FROM `ftms_dealers` WHERE ( display_status=0 and is_delete=1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 26 行.
+NOTIC: [8] Use of undefined constant dealer_name - assumed 'dealer_name' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 27 行.
+NOTIC: [8] Use of undefined constant province - assumed 'province' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 28 行.
+NOTIC: [8] Use of undefined constant city - assumed 'city' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 29 行.
+NOTIC: [8] Use of undefined constant address - assumed 'address' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 30 行.
+NOTIC: [8] Use of undefined constant mobile - assumed 'mobile' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 31 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 32 行.
+NOTIC: [8] Use of undefined constant certificate - assumed 'certificate' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 33 行.
+NOTIC: [8] Use of undefined constant details - assumed 'details' E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 34 行.
+NOTIC: [8] Undefined index: status E:\lamp\ftms\Runtime\Cache\Admin\66f668029731cd0696675d515afc3e34.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015659s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001062s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000847s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002099s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001217s ]
+
+[ 2016-09-18T19:03:38+08:00 ] 127.0.0.1 /ftms/index.php/Admin/dealers/dealers.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000995s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001431s ]
+ERR: 非法操作:dealers
+

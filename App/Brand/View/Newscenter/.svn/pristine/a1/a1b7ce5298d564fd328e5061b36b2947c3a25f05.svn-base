@@ -1,0 +1,75 @@
+
+<extend name="Common:base" />
+<block name="main">
+<script type="text/javascript" src="__ROOT__/My97DatePicker/WdatePicker.js"> 
+   
+   </script> 
+<div class="row-fluid">
+  <div class="span12">
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+    <h3 class="page-title">企业风采</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Basicinf/enterprise_style')}">企业风采</a> <span class="divider">/</span></li>
+      <li class="active">编辑</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+          <!-- <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div> -->
+        </form>
+      </li>
+    </ul>
+    <div>
+         <form method="post" action="{:U('Admin/Basicinf/enterprise_edit_uplode')}" enctype="multipart/form-data" >  
+                    <input type="hidden" name="id" value="{$result.id}">
+                    企业简介：<input type="text" name="introduce" value="{$result.introduce}"><br/>
+                    具体内容：<input type="text" name="centent" value="{$result.centent}" ><br/>
+                    图片：<img src="__ROOT__/{$result.image}" height="50px" width="50px"/>
+                    <input id="input-3a" name="image"  type="file" class="file" readonly="true" value="{$result.image}"  > 
+                    <!-- <input type="file" name="image" value="{$result.image}"><img src="__ROOT__/{$result.image}" height="50px" width="50px"/> --><br>
+                    文本：<input type="text" name="file" value="{$result.file}"><br/>
+                    视频：<img src="__ROOT__/{$result.video_img}" height="50px" width="50px"/> 
+                    <input id="input-3a" name="image"  type="file" class="file" readonly="true" value="{$result.image}"  >
+                    <!-- <input type="file" name="video_img"  value="{$result.video_img}">
+                    --><br/>
+                    链接：<input type="text" name="url" value="{$result.url}"><br/>
+                    音频：<input id="input-3a" name="music"  type="file" class="file" readonly="true" value="{$result.image}" >
+                   <!--  <input type="file" name="music">  -->
+                    <audio controls="controls">  
+                    <source src="__ROOT__/{$result.music}" /> 
+                    </audio> <br/> 
+
+                    时间：<input type="text" name="time" value="{$result.time}" class="Wdate" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd HH:mm:ss'})"><br/>
+                    显示：<input type="radio"  value="1" <php> if($result['is_show']== 1){ echo "checked required"; } </php> id="male" name="is_show" > 是
+                    <input type="radio" value="2"  <php> if($result['is_show'] == 2){ echo "checked required" ;}</php> id="female" name="is_show">否 <br/>
+                    <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Basicinf/enterprise_style')}'">  &nbsp;&nbsp;&nbsp;
+                    <button type="submit">保存</button> 
+           </form>
+    </div>
+
+  </div>
+</div>
+</block>
+<block name="js">
+<script type="text/javascript" src="__ROOT__/My97DatePicker/WdatePicker.js"> 
+   </script> 
+     <js href="/static/bootstrap-fileinput/js/fileinput.min.js" />
+</block>
+<block name="css">
+<css href="/static/bootstrap-fileinput/css/fileinput.min.css"/>
+</block>

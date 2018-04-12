@@ -1,0 +1,33 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+    <div>
+        <img src="__ROOT__/static/img/img_xq/cx_banner.png" style="width:100%;">
+    </div>
+    <div class="main" style="font-size: 0.225rem;">
+        <img src="__ROOT__/static/img/img_xq/cxxqtop_text.png" style="width:100%;">
+        <div class="text_tab"  style="margin:auto;">
+            <ul style="padding-left:31%;color:#161616;">
+                <li style="float: left;">发布时间：</li>
+                <li style="float: left;">{$detail['time']}</li>
+                <li style="margin-left:4%;float:left;">浏览量：</li>	
+                <li style="float: left;">{$detail['click_rate']} </li>
+                <li  style="margin:0 4%;float: left;">分享</li>
+                <li style="float: left;"><a href="#"><img src="__ROOT__/static/img/img_xq/cxxq_logo.png"></a></li>
+            </ul>
+        </div>
+        <img src="__ROOT__/{$detail['image']}" style="width:100%;">
+        <p style="font-size: 0.186rem;height:65px;width:230px;background: #297FB8;line-height: 65px;margin:auto;text-align: center;margin-bottom: 92px;">
+            <a href="{:U('index')}?t=2" style="color:#fff;">返回最新动态&gt;</a>
+        </p>
+    </div>
+    <div class="footer"></div>
+    <script src="../../../../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../../static/js/header.js"></script>
+</block>
+<block name="css">
+    <css href="__ROOT__/static/css/brand.css" />
+</block>
+<block name="js">
+    <js href="__ROOT__/static/js/brand.js" />
+    <js href='__ROOT__/static/js/lanren.js' />
+</block>

@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>资讯信息</title>
+        
+    </head>
+    <body>
+	<form action="{:U('info_list')}" method="post">
+        <table border="1" width="800px" align="center">
+			<tr>
+				<td>资讯管理</td>
+			</tr>
+			<!-- <tr>
+				<td colspan="9">所在类型
+					<select name="new_type">
+						<option value="0">请选择</option>
+						<option value="1">企业新闻</option>
+						<option	value="2">产品新闻</option>
+						<option value="3">车主生活</option>
+						<option value="4">走进经销店</option>
+						<option value="5">产品测评</option>
+						<option value="6">消费者口碑</option>
+					</select>
+					所在年份
+					<select name="year">
+						<option value="0">请选择</option>
+						<option value="1">2013</option>
+						<option	value="3">2014</option>
+						<option value="4">2015</option>
+						<option value="5">2016</option>
+					</select>
+					所在年份
+					<select name="month">
+						<option value="0">请选择</option>
+						<option value="1">1</option>
+						<option	value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select> -->
+					<!-- //标题<input type="text" name="search" value="{$Think.get.search|default=''}"><button>搜索</button> -->
+				<!-- </td>
+			</tr> -->
+            <tr>
+                <th><input type="checkbox" id="othercheck">选择</th>
+                <th>标题</th>
+                <th>更新时间</th>
+                <th>区域</th>
+                <th>经销商</th>
+                <th>作者</th>
+                <th colspan="4">功能</th>
+               <th><a href="{:U('information/info_finish_add')}">添加</a></th>
+                <!-- <th><a href="{:U('information/check_list')}">审核</a></th>
+				
+				<th><a href="{:U('information/draft_box')}">草稿箱</a></th> -->
+				
+				
+            </tr>
+			<foreach name="infoList" item="list">
+            <tr align="center">
+                <td><input type="checkbox" name="id[]" value="{$list['id']}">{$list['id']}</td>
+                <td>{$list['title']}</td>
+                <td>{$list['area']}</td>
+                <td>{$list['time']}</td>
+                <td>{$list['type']}</td>
+				<td>{$list['author']}</td>
+                <td colspan="4"><a href="{:U('info_save?id='.$list['id'])}">编辑</a>|<a href="{:U('info_del?id='.$list['id'])}">删除</a>|<a href="{:U('information/info_recommend?id='.$list['id'])}">推荐</a>|<a href="{:U('information/check?id='.$list['id'].'&check_status='.$list['check_status'])}">屏蔽</a></td>
+				
+				
+            
+            </tr>
+			
+			</foreach>
+			 <tr>
+               
+                <td colspan="9"><input type="button" value="删除"></td>
+            </tr>
+        </table>
+		</form>
+    </body>
+	 <script src="__ROOT__/jQuery/jQuery-1.12.3.js"> </script>
+   <script type="text/javascript" charset="utf-8">
+	$(function(){
+        //$('#all').click(function(){
+          //      $('input[name="id[]"]').prop('checked',true);
+            //});
+        //$('#uncheck').click(function(){
+          //      $('input[name="id[]"]').prop('checked',false);
+            //});
+        $('#othercheck').click(function(){
+                $('input[name="id[]"]').each(function(){
+                        $(this).prop('checked',!$(this).prop('checked'));
+                    });
+            });
+			
+			
+		$('input:button').click(function(){
+            var data = $(':checkbox[name="id[]"]').serialize();
+			console.log(data);
+            if(!confirm('确认删除？')){
+                return;
+            }
+            if(data.length==0){
+                alert('至少选择一个');
+                return;
+            }
+            location.href='{:U("info_del")}?'+data;
+			});
+			
+        });
+		
+
+   </script>
+</html>

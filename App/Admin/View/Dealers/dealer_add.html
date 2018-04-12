@@ -1,0 +1,181 @@
+
+<extend name="Common:base" />
+      
+       <block name="main">
+      
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                    经销商添加
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="{:U('dealers_list')}">经销商列表</a>
+                          
+                       </li>
+                       
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 经销商信息 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+                            <form action="{:U('dealer_add')}" method="post" class="form-horizontal" enctype="multipart/form-data">
+                            <div class="control-group">
+                                <label class="control-label">经销商代码</label>
+                                <div class="controls">
+                                    <input type="text" class="span6 " name="code"/>
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">网点简称</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="abb_web" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">公司名称</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="company" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">经销商名称</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="dealer_name" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">车牌类型</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="licence_plate" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">分店</label>
+                                <div class="controls">
+                                    <input type="radio" name="subbranch[]" value="0">否
+									<input type="radio" name="subbranch[]" value="1">是
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							
+                            <div class="control-group">
+                                <label class="control-label">省份</label>
+                                <div class="controls">
+                                    <input type="text" class="span6  tooltips" data-trigger="hover" name="province" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">城市</label>
+                                <div class="controls">
+                                    <input type="text" class="span6  popovers" data-trigger="hover" name="city"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">地区</label>
+                                <div class="controls">
+                                    <input type="text" class="span6 " style="margin: 0 auto;" name="district"/>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">详细地址</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="address" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">邮编</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="postcode" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">销售电话</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="sell_mobile" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label class="control-label">经度</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="longitude" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">纬度</label>
+                                <div class="controls">
+                                    <input class="span6 " type="text" name="latitude" />
+                                    <span class="help-inline"></span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <input type="submit" class="btn btn-success" value="添加">
+                                <button type="button" class="btn" ><a href="{:U('dealers_list')}">取消</a></button>
+                            </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+      
+      
+ </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+    <h3 class="page-title">联系我们</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Basicinf/contact_us')}">联系我们</a> <span class="divider">/</span></li>
+      <li class="active">编辑</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+          <!-- <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div> -->
+        </form>
+      </li>
+    </ul>
+    <div>
+        <form action="{:U('Admin/Basicinf/contact_us_edit')}" method="post" >
+                 <input type="hidden" name="id" value="{$result.id}">
+                 
+                  联系方式：<input type="text" name="title" value="{$result.title}"><br/>
+                  内容：<input type="text" name="phone" value="{$result.phone}"><br/>
+                   <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Basicinf/contact_us')}'">  &nbsp;&nbsp;&nbsp;
+                    <button type="submit">保存</button> 
+      </form>
+    </div>
+  </div>
+</div>
+</block>

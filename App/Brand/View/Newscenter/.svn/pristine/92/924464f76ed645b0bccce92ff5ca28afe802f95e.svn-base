@@ -1,0 +1,77 @@
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+
+    <h3 class="page-title">添加素材</h3>
+    <ul class="breadcrumb">
+      <li><a href="#">首页</a> <span class="divider">/</span></li>
+      <li class="active">素材库<span class="divider">/</span></li>
+      <li class="active">添加素材</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+          <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+    </ul>
+
+
+ <div class="space15"></div>
+ <form action="__URL__/material_add" class="form-horizontal" method="post">
+    <div class="control-group">
+        <p><label class="control-label">素材标题</label>
+        <input type="text" name="title" /></p>
+        <p><label class="control-label">素材名称</label>
+        <input type="text" name="name" /></p>
+        <p>
+          <label class="control-label">素材应用</label>
+          <volist name="application" id="application">
+          <input name="application_id[]" type="checkbox" value="{$application.id}" />{$application.name}&nbsp;&nbsp;
+          </volist>
+        </p>
+        <p>
+          <label class="control-label">素材分类</label>
+          <select name='classify_id'>
+          <option>请选择分类</option>
+          <volist name="classify" id="classify">
+            <option value='{$classify.id}'>{$classify.name}</option>
+          </volist>
+          </select>
+        </p>
+        <p>
+          <label class="control-label">素材附件</label>
+          <input name="url" type="file" />
+        </p>
+        <p>
+          <label class="control-label">素材文本内容</label>
+          <textarea name="content" cols="20" rows="5"></textarea>
+        </p>
+    </div>
+    <div class="form-actions">
+        <input type="submit" value="添加">
+        
+    </div>
+</form>
+
+  </div>
+</div>
+</block>

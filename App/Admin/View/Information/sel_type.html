@@ -1,0 +1,73 @@
+ 
+<extend name="Common:base" />
+      
+       <block name="main">
+      
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                    资讯类型
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="{:U('info_list')}">资讯列表</a>
+                          
+                       </li>
+                       
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 资讯类型 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+                            
+                            <div class="control-group">
+						
+                                <a href="{:U('info_add?type=favorable')}" style="display:block"> 优惠信息</a>
+                            </div>
+                            <div class="control-group">
+                               
+                                <div class="controls">
+                                    <a href="{:U('info_add?type=new_car')}">新车资讯</a>
+                                </div>
+                            </div>
+						
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+         
+
+   
+  </block>

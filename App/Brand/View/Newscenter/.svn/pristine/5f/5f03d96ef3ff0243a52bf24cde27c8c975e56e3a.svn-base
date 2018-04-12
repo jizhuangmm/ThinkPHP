@@ -1,0 +1,68 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+<div style="position: relative">
+  <img src="/static/img/img_xq/cp_banner.png" style="width: 100%;">
+</div>
+<div style="height: 143px;">
+  <img src="/static/img/img_xq/cp_text.png" style="position: relative; left: 45%; top: 50px;">
+</div>
+<div id="main">
+  <table class="main_tabs">
+    <thead>
+      <tr>
+        <td>职位名称</td>
+        <td>部门</td>
+        <td>招聘人数</td>
+        <td>地点</td>
+        <td>发布时间</td>
+      </tr>
+    </thead>
+    <volist name="data" id="vo">
+    <tbody>
+      <tr>
+
+        <td><a href="/Brand/Ftms/recruit_details/id/{$vo.id}.html">{$vo.job}</a></td>
+        <td>{$vo.department}</td>
+        <td>{$vo.number}</td>
+        <td>{$vo.place}</td>
+        <td>{$vo.time}</td>
+      </tr>
+    </volist>
+    <tr>
+      <td colspan="5"><p style="width: 100%;  text-align: center">共{$count}条记录<div class="pages" style="text-align: center"">{$page}</div></p></td>
+    </tr>
+    </tbody>
+
+  </table>
+  
+
+</div>
+</block>
+<block name="css">  
+ <css href="/static/css/recruit.css" />
+<style type="text/css">
+
+.pages{
+  width:100.5%;
+  text-align: right;
+  padding: 10px 0;
+  clear: both;;
+}
+.pages a,.pages.current{
+  font-size: 12px;
+  font-family: Arial;
+  margin: 0 2px;
+}
+.pages a,.pages.current{
+  border: 1px solid #5FA623;
+  background: #fff;
+  padding: 2px 6px;
+  text-decoration: none;
+}
+.pages.current,.pages a:hover{
+  background: #7AB63F;
+  color: #fff;
+}
+
+    </style>
+</block>

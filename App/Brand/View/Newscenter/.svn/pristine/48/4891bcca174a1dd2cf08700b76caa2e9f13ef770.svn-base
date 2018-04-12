@@ -1,0 +1,61 @@
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+    <h3 class="page-title">企业风采</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Basicinf/enterprise_style')}">企业风采</a> <span class="divider">/</span></li>
+      <li class="active">新建</li>
+    </ul>
+    <div>
+      <form role="form" method="post" action="{:U('Admin/Basicinf/enterprise_add_uplode')}" enctype="multipart/form-data" >
+        <div class="form-group">
+          <label for="introduce">企业简介：</label>
+          <textarea class="form-control" rows="3" id="introduce" name="introduce" ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="centent">具体内容：</label>
+          <textarea class="form-control" rows="3" id="centent" name="centent" ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="centent">图片：</label>
+          <input id="input-3a" type="file" class="file" readonly="true" name="image" >
+        </div>
+        <div class="form-group">
+          <label for="centent">视频：</label>
+          <input id="input-3a" type="file" class="file" readonly="true" name="video_img" >
+        </div>
+        <div class="form-group">
+          <label for="centent">链接：</label>
+          <input type="text" name="url">
+        </div>
+        <div class="form-group">
+          <label for="centent">音频：</label>
+          <input id="input-3a" type="file" class="file" readonly="true" name="music">
+        </div>
+        <div class="form-group">
+          <label for="centent">时间：</label>
+          <input type="text" name="time" class="Wdate" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+        </div>
+        <div class="form-group">
+          <label for="centent">显示：</label>
+          <input type="radio"  value="1" id="male" name="is_show" checked required> 是
+          <input type="radio" value="2" id="female" name="is_show" > 否 
+        </div>
+        <div class="form-group">
+          <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Basicinf/enterprise_style')}'">  &nbsp;&nbsp;&nbsp;
+          <button type="submit">保存</button> 
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</block> 
+<block name="js">
+<script type="text/javascript" src="__ROOT__/My97DatePicker/WdatePicker.js"> 
+   </script> 
+     <js href="/static/bootstrap-fileinput/js/fileinput.min.js" />
+</block>
+<block name="css">
+<css href="/static/bootstrap-fileinput/css/fileinput.min.css"/>
+</block>

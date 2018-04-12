@@ -1,0 +1,114 @@
+
+<include file="Common:base"/>
+
+       <block name="main">
+    
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                   经销商信息
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="{:U('cartool/check_dealers')}">返回</a>
+                       </li>
+                      
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>经销商信息</h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            <?php 
+								if(empty($dealers)){
+								
+							?>
+								<font style="color:red">此经销商不存在</font>
+							<?php
+								}else{
+							?>
+                           <table border="2" width="100%" align="center">
+        
+                            <tr class="control-group">
+									
+									<th>经销商代码</th>
+									<th>网点简称</th>
+									<th>公司名称</th>
+									<th>经销商名称</th>
+									<th>车牌类型</th>
+									<th>省份</th>
+									<th>城市</th>
+									<th>地区</th>
+									<th>详细地址</th>
+									<th>邮编</th>
+									<th>销售电话</th>
+									
+									
+                            </tr>
+							<foreach name="dealers" item="list">
+								<tr align="center">
+									<td>{$list['code']}</td>
+									<td>{$list['abb_web']}</td>
+									<td>{$list['company']}</td>
+									<td>{$list['dealer_name']}</td>
+									<td>{$list['licence_plate']}</td>
+									<td>{$list['province']}</td>
+									<td>{$list['city']}</td>
+									<td>{$list['district']}</td>
+									<td>{$list['address']}</td>
+									<td>{$list['postcode']}</td>
+									<td>{$list['sell_mobile']}</td>
+									
+									
+								
+								</tr>
+							
+							</foreach>
+							
+						</table>
+						<?php
+							}
+						?>
+                        </div>
+				</div>
+      
+			</div>
+   
+	</div>
+		
+   
+ </block>
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+	
+<div id="banner">
+</div>
+<div id="icon">
+    <div class="icon-top">
+        <img class="icon-top-top-h" src="__ROOT__/static/img/offer_text.png">
+    </div>
+    <form  id="form" action="" method="post">
+        <div class="icon-top-img1">
+            <ul class=" clearfix ">
+			<foreach name="car" item="img">
+                <li class="cl">
+                    <img src="__ROOT__/{$img['model_img']}">
+                    <p>{$img['model_name']}</p>
+                    <label><input type="radio" name="car-active" value="{$img['model_name']}"></label>
+                </li>
+			</foreach>
+               
+            </ul>
+        </div>
+        <div class="div_btn">
+         请选择车型
+        </div>
+        <div class="icon-bottom_text">
+            <ul class="clearfix no">
+			<foreach name="carList" item="list">
+                <li class="a">
+                    <p>{$list['modelid_name']}</p>
+                    <p>{$list['n_name']}</p>
+                    <p>￥{$list['zhidaojia']}</p>
+                    <label><input type="radio" name="car-active" value="{$list['modelid_name']}"></label>
+                </li>
+			</foreach>
+            </ul>
+        </div>
+        <div class="icon-center">
+            <div class="user-info clearfix">
+                <div class="user-name fl">
+                    <label>您的姓名</label>
+                    <div class="name-input">
+                        <input type="text" class="input" id="name" name="buy_name" placeholder="请输入您的姓名" value=""  onblur="upperCase()">
+                <span class="gender">
+                    <label class="nan nan1"><input type="radio" checked name="gender" value="男">男</label>
+                    <label class="nan"><input type="radio" name="gender" value="女">女</label>
+                </span>
+                    </div>
+                </div>
+                <div class="user-tel fr">
+                    <label>电话号码</label><br>
+                    <input type="text" class="input1" id="phone" name="contact_way" placeholder="请输入手机号" value="" onblur="mobile1()">
+                </div>
+            </div>
+            <div class="dealer">
+                <label class="label">选择离您最近的经销商</label><br>
+                <select  name="province" class="dealer-province" id='province' onchange="provinces()" onblur="province1()">
+                    <option value="0">请选择省/市</option>
+					<volist name="province_id" id="province_id">
+					<option value="{$province_id.provincecode}">{$province_id.province_name}</option>
+					</volist>
+                </select>
+                <select  name="city" id='cityid'  onchange="citys()" class="dealer-city" >
+                    <option value="0">请选择市/区</option>
+                </select>
+                <select id="dels" class="dealer-store fr" style="padding-left: 15%;">
+                    <option>请选择经营店</option>
+                </select>
+            </div>
+            <div class="plan">
+                <label class="none">计划购车时间</label>
+                <label class="label_radio label1"><input type="radio" name="buy_time" value="一周内" checked>一周内</label>
+                <label class="label_radio"><input type="radio" name="buy_time" value="一个月以内">一个月以内</label>
+                <label class="label_radio"><input type="radio" name="buy_time" value="3-6个月">3--6个月</label>
+                <label class="label_radio"><input type="radio" name="buy_time" value="5个月以上">5个月以上</label>
+                <div class="btn_text"><button onclick="send()">马上预约</button></div>
+            </div>
+        </div>
+    </form>
+</div>
+    <div style="width:1rem;"></div>
+
+   <script type="text/javascript">
+	function send(){
+		var name = $('#name').val();
+		var phone = $('#phone').val();
+		var province22 = $('#province').val();
+		if(name=='' || phone=='' || province22==''){
+			alert('请填写信息！');
+			$('#form').attr('action','');
+			return false;
+		}
+	
+	} 
+	
+	//省市选择
+	 function provinces(){
+        var province = $('#province').val();
+        $.ajax({
+			type:"POST",
+			url:"{:U('province')}",
+			dataType:"json",
+			data:{'province':province},
+			success:function(data){
+				var ss='';
+				for(var i=0; i<data.length; i++){
+					ss+= "<option value='"+data[i]['city_name']+"'>"+data[i]['city_name']+"</option>";
+				}
+				$("#cityid").html(ss);
+			 }
+        }); 
+    }
+	
+	//获取城市
+	function citys(){
+        var city = $('#cityid').val();
+        $.ajax({
+			type:"POST",
+			url:"{:U('dealersel')}",
+			dataType:"json",
+			data:{'city':city},
+			success:function(data){
+				var ss='';
+				if(data){
+					for(var i=0; i<data.length; i++){
+						ss+= "<option value='"+data[i]['dealer_name']+"'>"+data[i]['dealer_name']+"</option>";
+					}
+					$("#dels").html(ss);
+				}else{
+					ss+= "<option value='0'>暂无经销商</option>";
+					$("#dels").html(ss).css('color','red');
+				}
+				
+			 }
+        }); 
+    }
+	
+	
+	//判断输入姓名是否正确
+	function upperCase(){
+		var name = $('#name').val();
+		if(name==''){
+			alert('请输入您的姓名');
+		}
+
+	} 
+	
+	//判断手机号是否正确
+	function mobile1(){
+		var phone = $('#phone').val();
+		var myreg = '/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/'; 
+		if(!myreg.test(phone)){ 
+			alert('请输入有效的手机号码！'); 
+			return false; 
+		} 
+	
+	}
+	
+	//判断省市
+	function province1(){
+		var province22 = $('#province').val();
+		if(province22=='0'){
+			alert('请选择省/市');
+			return 1;
+		}
+	} 
+	
+   </script>
+</block>
+<block name="css">
+  <link href="__ROOT__/static/css/ask_pkice.css" rel="stylesheet" type="text/css"/>
+</block>
+<block name="js">
+	<script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+    <script src="__ROOT__/static/js/ask_pkice.js"></script>
+</block>

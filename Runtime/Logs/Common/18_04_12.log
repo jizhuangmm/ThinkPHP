@@ -1,0 +1,30 @@
+[ 2018-04-12T23:34:57+08:00 ] 127.0.0.1 /static/bootstrap/cssbootstrap-responsive.min.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+ERR: 无法加载模块:Static
+
+[ 2018-04-12T23:34:57+08:00 ] 127.0.0.1 /static/font/fontawesome-webfontf77b.html?v=3.2.1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+ERR: 无法加载模块:Static
+
+[ 2018-04-12T23:34:57+08:00 ] 127.0.0.1 /static/css/myriadprolight.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000132s ]
+ERR: 无法加载模块:Static
+
+[ 2018-04-12T23:34:57+08:00 ] 127.0.0.1 /static/css/myriadprolight.ttf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+ERR: 无法加载模块:Static
+
+[ 2018-04-12T23:35:17+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000127s ]
+ERR: 无法加载模块:PATH_INFO
+

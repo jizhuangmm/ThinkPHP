@@ -1,0 +1,180 @@
+
+body {
+    font-size: 0.22rem;
+    padding: 0;
+    margin: 0;
+    width:100%;
+    font-family:"Microsoft YaHei";
+   text-decoration:none;
+}
+h1 {
+    color:#221A69;
+    font-weight:normal;
+    text-decoration:none;
+}
+/*最新动态*/
+.tabbed_content {
+    width: 100%;
+}
+.tabs {
+    width:100%;
+    position: relative;
+}
+.tabs .moving_bg {
+    background-image:url(/static/img/arrow_down_green.gif);
+    position: absolute;
+    left:33.7%;
+    top:80px;
+    width: 100px;
+    z-index: 190;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+.tabs .tab_item {
+    display: block;
+    float: left;
+    width: 100px;
+    text-align: center;
+    z-index: 200;
+    position: relative;
+    cursor: pointer;
+    left:33.8%;
+    top:72px;
+    margin-bottom: 55px;
+    margin-right:5.5%;
+    font-size: 0.25rem;
+}
+.tabbed_content .slide_content {
+    overflow: hidden;
+    padding-top: 20px;
+    position: relative;
+    width:100%;
+}
+.tabslider {
+    width:300%;
+    padding-top: 60px;
+    overflow: hidden;
+    margin:0;
+}
+.tabslider div{
+    float:left;
+    width:33.33%;
+}
+.tabslider div ul{
+    width:87%;
+    margin:0 auto;
+    overflow: hidden;
+}
+.tabslider div ul li{
+    margin-top:10px;
+}
+.tabslider div ul li img{
+    margin-top:15px;
+    margin-bottom:15px ;
+}
+.tabslider div ul li.last{
+    margin-right: 0;
+}
+.tabslider .img_list li {
+    float: left;
+    width: 32%;
+    margin-right:2%;
+}
+
+.tabslider div ul li.last{
+    margin-right: 0;
+}
+.tabslider .img_list li img{
+    width:100%;
+
+}
+/*文字*/
+.img_list li p{
+    font-size: 0.25rem;
+  padding-bottom:18px;
+}
+.img_list li span{
+    font-size: 0.225rem;
+    color:#999999;
+}
+
+/*加载更多*/
+.see{
+    text-align:center;
+    width:87%;
+    height:60px;
+    border:1px solid #CCCCCC;
+    margin:auto;
+    padding:15px 0;
+    margin-top:60px;
+    margin-bottom:60px;
+    cursor: pointer;
+}
+.see span{
+    color:#666666;
+}
+.see img{
+    display: inline;!important
+    margin:0 auto;
+  }
+/*新闻加载*/
+.bg {
+    background: #FBFBFB;
+}
+
+.new>li{
+    float:left;
+    width:33.33%;
+    font-size: 0.19rem;
+}
+.new .detail_list {
+    margin-top:80px;
+    margin-bottom:50px;
+    color:#161616;
+    margin-left:0;
+    margin-right:0;
+}
+.new .text_top{
+    margin-top:70px;
+    margin-bottom:0;
+}
+.new .detail_list .date{
+    padding-top:20px;
+    padding-bottom:10px;
+    color:#999999;
+    font-size:0.225rem;
+}
+.new .detail_list .date_h{
+    padding-top:39px;
+    padding-bottom: 25px;
+    color:#999999;
+    font-size:0.2rem;
+}
+.new .detail_list .font_style{
+    font-size:0.23rem;
+}
+.new .detail_list li a button{
+    background: none;
+    border:1px solid #EA4B35;
+    color:#EA4B35;
+    width:35%;
+    height:40px;
+    font-size: 0.2rem;
+}
+.new .detail_list li:last-child{
+    padding-top:1.3%;
+}
+.new .detail_list li a button:hover{
+    background: #EA4B35;
+    color: #fff;
+}
+/*日期*/
+.data_ym{
+    width:6%;
+    height:35px;
+    line-height: 35px;
+    color: #666666;
+    border:1px solid #DFDCDC;
+    text-align: center;
+    margin-right:1%;
+}

@@ -1,0 +1,208 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+ <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RhXyFo0zdsGiiXSrD3VRYd2UjBGza1QE&coor=bd09ll"></script>
+<div id="banner">
+</div>
+<div id="icon">
+    <div class="icon-top">
+        <img class="icon-top-top-h" src="__ROOT__/static/img/img_xr/yysj_05.png">
+        <img class="icon-top-top-p" src="__ROOT__/static/img/img_xr/qxzsclx_09.png">
+    </div>
+    <form id="form" action="{:U('appointment')}" method="post" >
+        <div class="icon-top-img1">
+            <ul class=" clearfix">
+			<foreach  name="car" item="img">
+                <li>
+                    <img src="__ROOT__/{$img['model_img']}">
+                    <p>{$img['model_name']}</p>
+                    <label><input type="radio" name="car-active" value="{$img['model_name']}"></label>
+                </li>
+			</foreach>
+            </ul>
+        </div>
+        <div class="icon-center">
+            <div class="user-info clearfix">
+                <div class="user-name fl">
+                    <label>您的姓名</label>
+                    <div class="name-input">
+                        <input type="text" class="input" id="name" name="test_person" placeholder="请输入用户名" onblur="upperCase()">
+                <span class="gender">
+                    <label class="nan nan1"><input type="radio" checked name="gender" value="男">男</label>
+                    <label class="nan"><input type="radio" name="gender" value="女">女</label>
+                </span>
+                    </div>
+                </div>
+                <div class="user-tel fr">
+                    <label>电话号码</label><br>
+                    <input type="text" name="mobile" class="input1" id="phone" placeholder="请输入手机号" onblur="mobile1()">
+                </div>
+            </div>
+            <div class="dealer">
+                <label class="label">选择离您最近的经销商</label><br>
+                <select  name="province" class="dealer-province" id='province' onchange="provinces()" onblur="province1()" >
+                    <option value="0">请选择省/市</option>
+					<volist name="province_id" id="province_id">
+					<option value="{$province_id.provincecode}">{$province_id.province_name}</option>
+					</volist>
+                </select>
+                <select name="city" id='cityid' onclick="theLocation()" onchange="citys()" class="dealer-city" >
+                    <option>请选择市/区</option>
+                </select>
+                <select id="dels" class="dealer-store fr" style="padding-left: 15%;">
+                    <option>请选择经营店</option>
+                </select>
+				
+            </div>
+            <div class="plan">
+                <label class="none">计划购车时间</label>
+                <label class="label-radio label1"><input type="radio" name="name" value="一周内" >一周内</label>
+                <label class="label-radio"><input type="radio" name="name" value="一个月以内">一个月以内</label>
+                <label class="label-radio"><input type="radio" name="name" value="3-6个月">3--6个月</label>
+                <label class="label-radio"><input type="radio" name="name" value="5个月以上">5个月以上</label>
+            </div>
+        </div>
+        <div class="icon-bottom">
+            <div id="ip" style="width: 47.7%;height: 423px; margin-left:350px; margin-top:10px"></div>
+            <div class="icon-bottom_footer">           	
+            <div class="block">
+                <input type="checkbox" style="vertical-align: top;margin-top: 4px;" checked>
+                <span class="span1">我已阅读并同意隐私政策</span>
+                
+            </div>
+            <button id="but" onclick="send()">马上预约</button>
+        </div>
+        </div>
+        
+    </form>
+</div>
+<script type="text/javascript">
+	function send(){
+		var name = $('#name').val();
+		var phone = $('#phone').val();
+		var province22 = $('#province').val();
+		
+		if(name=='' || phone=='' || province22==''){
+			alert('请填写信息！');
+			$('#form').attr('action','');
+			return false;
+		}
+	
+	} 
+	
+	
+	//省市选择
+	function provinces(){
+        var province = $('#province').val();
+        $.ajax({
+			type:"POST",
+			url:"{:U('province')}",
+			dataType:"json",
+			data:{'province':province},
+			success:function(data){
+				var ss='';
+				for(var i=0; i<data.length; i++){
+					ss+= "<option value='"+data[i]['city_name']+"'>"+data[i]['city_name']+"</option>";
+				}
+				$("#cityid").html(ss);
+			 }
+        }); 
+    }
+	
+	//获取城市
+	function citys(){
+        var city = $('#cityid').val();
+        $.ajax({
+			type:"POST",
+			url:"{:U('dealersel')}",
+			dataType:"json",
+			data:{'city':city},
+			success:function(data){
+				var ss='';
+				if(data){
+					for(var i=0; i<data.length; i++){
+						ss+= "<option value='"+data[i]['dealer_name']+"'>"+data[i]['dealer_name']+"</option>";
+					}
+					$("#dels").html(ss);
+				}else{
+					ss+= "<option value='0'>暂无经销商</option>";
+					$("#dels").html(ss).css('color','red');
+				}
+				
+			 }
+        }); 
+    }
+	
+	
+	//判断输入姓名是否正确
+	function upperCase(){
+		
+		var name = $('#name').val();
+		if(name==''){
+			alert('请输入您的姓名');
+			
+			return false;
+		}
+	} 
+	//判断省市
+	function province1(){
+		var province22 = $('#province').val();
+		if(province22=='0'){
+			alert('请选择省/市');
+			return false;
+		}
+	} 
+	
+	
+	
+	//判断手机号是否正确
+	function mobile1(){
+		var phone = $('#phone').val();
+		var myreg = '/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/'; 
+		if(!myreg.test(phone)){ 
+			alert('请输入有效的手机号码！'); 
+			return false; 
+		} 
+	
+	}
+	
+	</script>
+	
+	<script type="text/javascript">
+	var map = new BMap.Map("ip");            // 创建Map实例
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+	var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map, autoViewport:true}
+	});
+	// 百度地图API功能
+	
+	function theLocation(){
+		var city = document.getElementById("cityid").value;
+		local.searchNearby("一汽丰田", city);
+	}
+	
+	
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+	
+	function myFun(result){
+		var cityName = result.name;
+		map.setCenter(cityName);
+		
+		local.searchNearby("一汽丰田", cityName);
+	}
+	
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+	</script>
+
+	
+	
+</block>
+<block name="css">
+      	<css href="__ROOT__/static/css/appointment.css" />
+</block>
+<block name="js">
+		<js href="__ROOT__/static/js/appointment.js" />
+		<script src="__ROOT__/static/js/jQuery-1.12.3.js"></script>
+		
+</block> 

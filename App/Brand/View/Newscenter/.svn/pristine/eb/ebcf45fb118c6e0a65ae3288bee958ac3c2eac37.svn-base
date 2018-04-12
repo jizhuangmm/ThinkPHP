@@ -1,0 +1,31 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Think\Cache\Driver\Memcache;
+use Common\Common\WechatApi;
+
+class CartoolController extends Controller
+{
+
+	//预约试驾
+	public function first_drive()
+	{
+		$this->display();
+	}
+	//经销商查询
+	public function check_dealers()
+	{
+		$this->display();
+	}
+	//显示报价咨询
+	public function offer_consulting()
+	{
+		$this->display();
+	}
+	//购车计算器
+	public function calculator()
+	{
+		$this->display();
+	}
+}

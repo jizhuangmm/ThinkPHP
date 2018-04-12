@@ -1,0 +1,54 @@
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+
+    <h3 class="page-title">金融服务</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Buycarservice/financial')}">金融服务</a> <span class="divider">/</span></li>
+      <li class="active">新建</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+        
+        </form>
+      </li>
+    </ul>
+
+    <div>
+<form method="post" action="{:U('Admin/Buycarservice/financial_add_uplode')}" enctype="multipart/form-data" >
+                  金融名称：<input type="text" name="financial_name" ><br/>
+                  内容    ：<textarea name="centent" ></textarea><br/>
+                  图片    ：<input id="input-3a" type="file" class="file" readonly="true" name="img"   >
+                  <br>
+                  链接    ：<input type="text" name="link" /><br/>
+                  <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Buycarservice/financial')}'">  &nbsp;&nbsp;&nbsp;
+
+                  <button type="submit">保存</button>
+         </form>
+
+
+    </div>
+
+  </div>
+</div>
+</block>
+<block name="js">
+
+     <js href="/static/bootstrap-fileinput/js/fileinput.min.js" />
+</block>
+<block name="css">
+<css href="/static/bootstrap-fileinput/css/fileinput.min.css"/>
+</block>

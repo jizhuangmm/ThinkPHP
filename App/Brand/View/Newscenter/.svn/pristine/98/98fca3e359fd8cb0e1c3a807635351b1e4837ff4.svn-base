@@ -1,0 +1,45 @@
+<?php
+namespace Admin\Controller;
+use Admin\Controller\CommonController;
+use Think\Controller;
+use Org\Util\Rbac;
+
+class LoginController extends CommonController
+{
+	/**
+	 * 显示登陆页
+	 * @return [type] [description]
+	 */
+    public function login()
+    {
+        session('[destroy]');
+        $this->display();
+    }
+
+    /**
+     * 验证登陆
+     * validation_login
+     */
+    public function validation_login()
+    {
+        $username=I("post.username");
+        $password=md5(I("post.password"));
+        $user=M("user_info")->where(array('username' =>$username ))->find();
+        if(!$user) $this->error("用户名不存在",U('Login/login'),5);
+        if($user['password']!=$password) $this->error("密码错误",U('Login/login'),5);
+        $data=array(
+                'last_login_time' =>date("Y-m-d H:i:s"),
+                'login_ip'=>get_client_ip() 
+                );
+        M("user_info")->where(array('uid' =>$user['uid']))->save($data);
+        $this->success("登陆成功",U("Index/index"),3);
+        if($username=="admin")
+        {
+            session(C('ADMIN_AUTH_KEY'),1);
+        }
+        session("uid",$user['uid']);
+        session("name",$username);
+        Rbac::saveAccessList();
+    }
+
+}

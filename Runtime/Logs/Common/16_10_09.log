@@ -1,0 +1,44 @@
+[ 2016-10-09T14:43:29+08:00 ] 127.0.0.1 /ftms/index.php/static/css/bywx.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002538s ]
+ERR: 无法加载模块:Static
+
+[ 2016-10-09T14:43:29+08:00 ] 127.0.0.1 /ftms/index.php/static/css/pikaday.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001861s ]
+ERR: 无法加载模块:Static
+
+[ 2016-10-09T14:43:30+08:00 ] 127.0.0.1 /ftms/index.php/static/css/bywx.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002900s ]
+ERR: 无法加载模块:Static
+
+
+
+[ 2016-10-09T14:43:30+08:00 ] 127.0.0.1 /ftms/index.php/static/css/pikaday.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004614s ]
+ERR: 无法加载模块:Static
+
+[ 2016-10-09T14:43:30+08:00 ] 127.0.0.1 /ftms/index.php/static/css/bywx.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002275s ]
+ERR: 无法加载模块:Static
+
+[ 2016-10-09T16:54:43+08:00 ] 127.0.0.1 /ftms/index.php/satic/tpl/common.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000909s ]
+ERR: 无法加载模块:Satic
+
+[ 2016-10-09T16:54:50+08:00 ] 127.0.0.1 /ftms/index.php/static/tpl/common.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001040s ]
+ERR: 无法加载模块:Static
+

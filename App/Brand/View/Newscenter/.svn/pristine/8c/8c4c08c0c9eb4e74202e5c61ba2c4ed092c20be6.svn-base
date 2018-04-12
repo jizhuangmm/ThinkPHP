@@ -1,0 +1,678 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+/**
+ * 品牌车系
+ */
+class BrandcarsController extends CommonController
+{
+	//数据导入
+	public function data_import()
+	{
+		$list=D("Car")->select();
+		$this->assign('car', $list);// 赋值数据集
+		$this->display();
+	}
+	//显示车型分类
+	public function vehicle_class()
+	{
+		$p=isset($_REQUEST['p']) ? $_REQUEST['p'] : 1;    //当前页码
+		$auto_model=M("auto_model");  // 实例化auto_model对象
+		$list=$auto_model
+		->join("ftms_auto_modelid on modelid=ftms_auto_model.id")
+		->Field("ftms_auto_modelid.id,model_name,ftms_auto_modelid.is_show,modelid_name,createdate,show_type,form_type")
+		->page($p,7)
+		->select();
+		$arr=[];
+		foreach ($list as $val) {
+			$val['show_type']=M("modelid_type")->where("id=".$val['show_type'])->getField("type_name");
+			$val['form_type']=M("modelid_type")->where("id=".$val['form_type'])->getField("type_name");
+			$arr[]=$val;
+		}
+		$this->assign('list',$arr);
+		$count      = $auto_model->join("ftms_auto_modelid on modelid=ftms_auto_model.id")->count();// 查询满足要求的总记录数
+		$Page       = new \Think\Page($count,7);
+		$Page->setConfig('prev','上一页^O^ ');
+		$Page->setConfig('next','下一页^O^ ');
+		$show       = $Page->show();
+		$this->assign('page',$show);
+		// echo "<pre>";
+		// print_r($count);
+		// print_r($show);die;
+		$this->display();
+	}
+
+
+	public function show_type()
+	{
+		$type=M("modelid_type")->Field("id,type_name")->select();
+		$this->assign('type',$type);
+		$this->display();
+	}
+
+	/**
+	 * 修改车型分类名
+	 */
+	public function changetype_name()
+	{
+		$data['type_name']=I("get.type_name");
+		$id=I("get.id");
+		if(M("modelid_type")->where("id='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+
+	/**
+	 * 添加分类页面
+	 */
+	public function add_type()
+	{
+		$this->display();
+	}
+
+	/**
+	 * 添加分类名
+	 */
+	public function type_add()
+	{
+		$data['type_name']=I("post.type_name");
+		M("modelid_type")->add($data);
+		$this->success("添加成功","show_type",2);
+	}
+
+	/**
+	 * 编辑车系分类信息
+	 */
+	public function editcar_type()
+	{
+		$id=I("get.id");
+	}
+	//显示车系导航
+	public function paul_nav()
+	{
+		$model=M("auto_model")->Field("id,model_name")->select();
+		$this->assign("model",$model);
+		$this->display();
+	}
+
+
+	/**
+	 *搜索对应车系下的车型列表
+	 *三维搜索
+	 */
+	public function show_model_info()
+	{
+		$search=I("post.search");
+		$pid=I("post.id");
+		$gid=I("get.id");
+		if($gid && !$search)
+		{
+			$car=M("auto_model")
+			->join("ftms_auto_modelid on ftms_auto_modelid.modelid=ftms_auto_model.id")
+			->join("ftms_auto_modelid_info on ftms_auto_modelid_info.modelid=ftms_auto_modelid.id")
+			->where("ftms_auto_model.id='$gid' and ftms_auto_modelid.is_del=0")
+			->Field("ftms_auto_model.model_name,ftms_auto_modelid.id,modelid_name,ftms_auto_modelid.zhidaojia,modelid_img,show_type,form_type,best_behalf,ftms_auto_modelid.is_show,vendor_name,engine,transmission,l_w_h,car_structure,num_car_door,num_car_seat,createdate")
+			->select();
+			$this->assign("id",$gid);
+		}
+		else if(!$gid && !$pid && $search)
+		{
+			$car=M("auto_model")
+			->join("ftms_auto_modelid on ftms_auto_modelid.modelid=ftms_auto_model.id")
+			->join("ftms_auto_modelid_info on ftms_auto_modelid_info.modelid=ftms_auto_modelid.id")
+			->where("ftms_auto_model.model_name like '%".$search."%' or ftms_auto_modelid.modelid_name like '%".$search."%'")
+			->Field("ftms_auto_model.model_name,ftms_auto_modelid.id,modelid_name,ftms_auto_modelid.zhidaojia,modelid_img,show_type,form_type,best_behalf,ftms_auto_modelid.is_show,vendor_name,engine,transmission,l_w_h,car_structure,num_car_door,num_car_seat,createdate")
+			->select();
+			$this->assign("search",$search);
+		}
+		else if(!$gid && $pid && $search)
+		{
+			$car=M("auto_model")
+			->join("ftms_auto_modelid on ftms_auto_modelid.modelid=ftms_auto_model.id")
+			->join("ftms_auto_modelid_info on ftms_auto_modelid_info.modelid=ftms_auto_modelid.id")
+			->where("ftms_auto_model.model_name like '%".$search."%' or ftms_auto_modelid.modelid_name like '%".$search."%' and ftms_auto_model.id='$pid' and ftms_auto_modelid.is_del=0")
+			->Field("ftms_auto_model.model_name,ftms_auto_modelid.id,modelid_name,ftms_auto_modelid.zhidaojia,modelid_img,show_type,form_type,best_behalf,ftms_auto_modelid.is_show,vendor_name,engine,transmission,l_w_h,car_structure,num_car_door,num_car_seat,createdate")
+			->select();
+			$this->assign("search",$search);
+			$this->assign("id",$pid);
+		}
+		foreach ($car as &$val) {
+				$val['best_behalf']=explode(",",$val['best_behalf']);
+				for ($i=0; $i <count($val['best_behalf']) ; $i++) { 
+					$val['best_behalf'][$i]=M("best_terms_car")->where("id=".$val['best_behalf'][$i])->getField("behalf_name");
+				}
+				$val['best_behalf']=implode(',',$val['best_behalf']);
+				$val['show_type']=M("modelid_type")->where("id=".$val['show_type'])->getField("type_name");
+				$val['form_type']=M("modelid_type")->where("id=".$val['form_type'])->getField("type_name");
+			}
+			$model=M("auto_model")->Field("id,model_name")->select();
+			$this->assign("model",$model);
+			$this->assign('car',$car);
+			$this->display("paul_nav");
+		
+	}
+
+	/**
+	 * ajax修改厂商指导价
+	 */
+	public function changename()
+	{
+		$data['zhidaojia']=I("get.zhidaojia");
+		$id=I("get.id");
+		if(M("auto_modelid")->where("id='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改厂商
+	 */
+	public function changevendor_namee()
+	{
+		$data['vendor_name']=I("get.vendor_name");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改发动机
+	 */
+	public function changeengine()
+	{
+		$data['engine']=I("get.engine");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改变速箱
+	 */
+	public function changetransmission()
+	{
+		$data['transmission']=I("get.transmission");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改规格
+	 */
+	public function changel_w_h()
+	{
+		$data['l_w_h']=I("get.l_w_h");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改车身结构
+	 */
+	public function changecar_structure()
+	{
+		$data['car_structure']=I("get.car_structure");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改车门数量
+	 */
+	public function changenum_car_door()
+	{
+		$data['num_car_door']=I("get.num_car_door");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+	/**
+	 * ajax修改座位数
+	 */
+	public function changenum_car_seat()
+	{
+		$data['num_car_seat']=I("get.num_car_seat");
+		$id=I("get.id");
+		if(M("auto_modelid_info")->where("modelid='$id'")->save($data))
+		{
+			$res=array("error"=>1);
+		}
+		else
+		{
+			$res=array("error"=>0);
+		}
+		echo json_encode($res);
+	}
+
+
+	/**
+	 * 车系导航车型编辑页面显示
+	 */
+	public function update_nav()
+	{
+		$id=I("get.id");
+		$car=M("auto_model")
+		->join("ftms_auto_modelid on ftms_auto_modelid.modelid=ftms_auto_model.id")
+		->join("ftms_auto_modelid_info on ftms_auto_modelid_info.modelid=ftms_auto_modelid.id")
+		->where("ftms_auto_modelid.id='$id'")
+		->Field("ftms_auto_model.model_name,ftms_auto_modelid.id,modelid_name,ftms_auto_modelid.zhidaojia,ftms_auto_modelid.is_show,vendor_name,engine,transmission,l_w_h,car_structure,num_car_door,num_car_seat")
+		->find();
+		$this->assign("car",$car);
+		$this->display();
+	}
+
+	/**
+	 * 编辑导航车型
+	 */
+	public function nav_update()
+	{
+		$id=I('post.modelid_id');
+		$data['zhidaojia']=I("post.zhidaojia");
+		$data['is_show']=I("post.is_show");
+		$dat['vendor_name']=I("post.vendor_name");
+		$dat['engine']=I("post.engine");
+		$dat['transmission']=I("post.transmission");
+		$dat['l_w_h']=I("post.l_w_h");
+		$dat['car_structure']=I("post.car_structure");
+		$dat['num_car_door']=I("post.num_car_door");
+		$dat['num_car_seat']=I("post.num_car_seat");
+		M("auto_modelid")->where("id=".$id)->save($data);
+		M("auto_modelid_info")->where("modelid=".$id)->save($dat);
+		$m_id=M("auto_modelid")->where("id=".$id)->getField("modelid");
+		$this->success("修改信息成功,页面跳转中...","show_model_info?id=$m_id",3);
+	}
+
+	/**
+	 * 删除废弃车型(入回收站)
+	 */
+	public function del_modelid()
+	{
+		$id=I('post.id');
+		$data['is_del']=1; 
+		M("auto_modelid")->where("id=".$id)->save($data);
+		echo 1;
+	}
+
+	/**
+	 * nav导航栏是否显示
+	 */
+	public function nav_is_show()
+	{
+		$id=I("post.id");
+		$is_show=I("post.is_show");
+		if($is_show==0)
+		{
+			$data['is_show']=1;
+		}
+		else
+		{
+			$data['is_show']=0;
+		}
+		M("auto_modelid")->where("id=".$id)->save($data);
+		echo 1;
+	}
+	
+
+
+
+	//显示精品管理
+	public function best_manage()
+	{
+		$auto_model=M("auto_model");
+		$list=$auto_model
+		->join("ftms_auto_modelid on modelid=ftms_auto_model.id")
+		->page($_GET['p'].',6')
+		->Field("ftms_auto_modelid.id,model_name,ftms_auto_modelid.is_show,modelid_name,best_behalf,show_type,form_type")
+		->select();
+		
+		$arr=[];
+		foreach ($list as $val) {
+			$val['best_behalf']=explode(",",$val['best_behalf']);
+			for ($i=0; $i <count($val['best_behalf']) ; $i++) { 
+				$val['best_behalf'][$i]=M("best_terms_car")->where("id=".$val['best_behalf'][$i])->getField("behalf_name");
+			}
+			$val['best_behalf']=implode(',',$val['best_behalf']);
+			$val['show_type']=M("modelid_type")->where("id=".$val['show_type'])->getField("type_name");
+			$val['form_type']=M("modelid_type")->where("id=".$val['form_type'])->getField("type_name");
+			$arr[]=$val;
+		}
+		$this->assign('list',$arr);
+		$count      = $auto_model->join("ftms_auto_modelid on modelid=ftms_auto_model.id")->count();
+		$Page       = new \Think\Page($count,6);
+		$Page->setConfig('prev','上一页^O^ ');
+		$Page->setConfig('next','下一页^O^ ');
+		$show       = $Page->show();
+		$this->assign('page',$show);
+		$this->display();
+	}
+
+
+
+
+
+
+
+	/**
+	 * 显示车型外观分类页面
+	 */
+	public function out_type()
+	{
+		$id=I("get.id");//车型id
+		$iid=array("id"=>$id);
+		$list=M("modelid_type")->where("id<=3")->select();
+		$this->assign("list",$list);
+		$this->assign("id",$iid);
+		$this->display();
+	}
+
+	/**
+	 * 更新车型外观选项
+	 */
+	public function sub_out()
+	{
+		$id=I("post.model_id");//车型id
+		$data['show_type']=I("post.out");
+		M("auto_modelid")->where("id=".$id)->save($data);
+		//header("Location: http://bbs.lampbrother.net"); 
+		//$this->redirect('Brandcars/vehicle_class', 5, '页面跳转中...');
+		$this->redirect("vehicle_class");
+	}
+
+	/**
+	 * 显示车型来源分类页面
+	 */
+	public function from_type()
+	{
+		$id=I("get.id");//车型id
+		$iid=array("id"=>$id);
+		$list=M("modelid_type")->where("id>3")->select();
+		$this->assign("list",$list);
+		$this->assign("id",$iid);
+		$this->display();
+	}
+
+	/**
+	 * 更新车型来源选项
+	 */
+	public function sub_from()
+	{
+		$id=I("post.model_id");//车型id
+		$data['form_type']=I("post.out");
+		M("auto_modelid")->where("id=".$id)->save($data);
+		$this->redirect("vehicle_class");
+	}
+
+
+
+
+	/**
+	 * 修改车辆精品分类页面
+	 */
+	public function best_type()
+	{
+		$id=I("get.id");//车型id
+		$iid=array("id"=>$id);
+		$list=M("best_terms_car")->select();
+		$this->assign("list",$list);
+		$this->assign("id",$iid);
+		$this->display();
+	}
+
+	/**
+	 * 修改车辆精品分类
+	 */
+	public function sub_best()
+	{
+		$id=I("post.model_id");//车型id
+		$from=I("post.from");
+		$count=count($from);
+		if($count==1)
+		{
+			$data['best_behalf']=$from[0];
+		}
+		else
+		{
+			$data['best_behalf']=implode(',',$from);
+		}
+		M("auto_modelid")->where("id=".$id)->save($data);
+		$this->redirect("best_manage");
+	}
+
+
+	/**
+	 * 修改汽车精品分类的显示与否
+	 */
+	public function is_show()
+	{
+		$id=I("post.id");
+		$is_show=I("post.is_show");
+		if($is_show==0)
+		{
+			$data['is_show']=1;
+		}
+		else
+		{
+			$data['is_show']=0;
+		}
+		M("auto_modelid")->where("id=".$id)->save($data);
+		echo 1;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public function ji()
+	{
+		$this->display();
+	}
+
+	public function pin()
+	{
+		$this->display();
+	}
+	public function cerenpin()
+	{
+		$name = $_GET['name'];
+		$name=htmlspecialchars($name);
+		echo "你的大名是：<font color=red>".$name."</font></br></br>";
+		for($i = 0;$i < strlen($name); $i++){
+		$a=$a+ord($name[$i]);
+		}
+		if($name=="田其旺"){
+		    $shuzi=100;
+		}else{
+		    $shuzi=($a*47+70)%100;
+		}
+		echo $name."的得分是<font color=blue>".$shuzi."</font></br></br>";
+		function getValue($shuzi){
+		if ($shuzi== 0) {
+		   echo "你一定不是人吧？怎么一点人品都没有？！";
+		} elseif (($shuzi>0)&&($shuzi<=5)) {
+		   echo  "算了，跟你没什么人品好谈的...";
+		} else if (($shuzi > 5) && ($shuzi <= 10)) {
+		      echo "是我不好...不应该跟你谈人品问题的...";
+		    } else if (($shuzi > 10) && ($shuzi <= 15)) {
+		      echo "杀过人没有?放过火没有?你应该无恶不做吧?";
+		    } else if (($shuzi > 15) && ($shuzi <= 20)) {
+		      echo "你貌似应该三岁就偷看隔壁大妈洗澡的吧...";
+		    } else if (($shuzi > 20) && ($shuzi <= 25)) {
+		      echo "你的人品之低下实在让人惊讶啊...";
+		    } else if (($shuzi > 25) && ($shuzi <= 30)) {
+		      echo "你的人品太差了。你应该有干坏事的嗜好吧?";
+		    } else if (($shuzi > 30) && ($shuzi <= 35)) {
+		      echo "你的人品真差!肯定经常做偷鸡摸狗的事...";
+		    } else if (($shuzi > 35) && ($shuzi <= 40)) {
+		      echo "你拥有如此差的人品请经常祈求佛祖保佑你吧...";
+		    } else if (($shuzi > 40) && ($shuzi <= 45)) {
+		      echo "老实交待..那些论坛上面经常出现的偷拍照是不是你的杰作?";
+		    } else if (($shuzi > 45) && ($shuzi <= 50)) {
+		      echo "你随地大小便之类的事没少干吧?";
+		    } else if (($shuzi > 50) && ($shuzi <= 55)) {
+		      echo "你的人品太差了..稍不小心就会去干坏事了吧?";
+		    } else if (($shuzi > 55) && ($shuzi <= 60)) {
+		      echo "你的人品很差了..要时刻克制住做坏事的冲动哦..";
+		    } else if (($shuzi > 60) && ($shuzi <= 65)) {
+		      echo "你的人品比较差了..要好好的约束自己啊..";
+		    } else if (($shuzi > 65) && ($shuzi <= 70)) {
+		      echo "你的人品勉勉强强..要自己好自为之..";
+		    } else if (($shuzi > 70) && ($shuzi <= 75)) {
+		      echo "有你这样的人品算是不错了..";
+		    } else if (($shuzi > 75) && ($shuzi <= 80)) {
+		      echo "你有较好的人品..继续保持..";
+		    } else if (($shuzi > 80) && ($shuzi <= 85)) {
+		      echo "你的人品不错..应该一表人才吧?";
+		    } else if (($shuzi > 85) && ($shuzi <= 90)) {
+		      echo "你的人品真好..做好事应该是你的爱好吧..";
+		    } else if (($shuzi > 90) && ($shuzi <= 95)) {
+		      echo "你的人品太好了..你就是当代活雷锋啊...";
+		    } else if (($shuzi > 95) && ($shuzi <= 99)) {
+		      echo "你是世人的榜样！";
+		    } else if ($shuzi == 100) {
+		      echo "天啦！你不是人！你是神！！！";
+		    } else {
+		      echo "你的人品竟然负溢出了...我对你无语..";
+		     }
+		}
+		getValue($shuzi);
+	}
+
+	public function ji1()
+	{
+		$count = 0;
+		for($gongji = 0; $gongji <= 100; ++$gongji) {
+			for($muji = 0; $muji <= 100; ++$muji) {
+				for($xiaoji = 0; $xiaoji <= 100; ++$xiaoji) {
+					if($gongji*5 + $muji*3 + $xiaoji/3 == 100 && $gongji + $muji + $xiaoji == 100) {
+					echo "公鸡有 $gongji 只；母鸡有 $muji 只；小鸡有 $xiaoji 只；<br />";
+					}
+					$count++;
+				}
+			}
+		} 
+	}
+}

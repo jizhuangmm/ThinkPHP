@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>算算你的人品BY其旺哥哥</title>
+<style type="text/css">
+.btn{background:#fff; color:#005681;border-width:1px;padding-left:15px;padding-right:15px;vertical-align:middle}
+.input{border:solid 1px #B6D9E3;padding:2px 0px 2px 1px;font-size:1.0em;vertical-align:middle}</style></head>
+<body><center><br><br><br><br><br><br>
+<form method="GET" action="{:U('Brandcars/cerenpin')}">
+输入你的姓名来算算你的人品：<br>
+<input type="text" name="name" maxlength=12 class=input>
+<input type=submit name="submit" value="我来看看" class=btn>
+<input type=reset name="reset" value="还是算了" class=btn>
+</form></center>
+<p align=center>程序制作：Hero旺©1.01 </p>
+</body>
+</html>

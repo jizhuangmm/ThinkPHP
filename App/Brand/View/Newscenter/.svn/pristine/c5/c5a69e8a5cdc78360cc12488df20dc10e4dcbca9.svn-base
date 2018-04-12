@@ -1,0 +1,133 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+<div id="banner">
+</div>
+<div id="icon">
+    <div class="icon-top">
+        <img class="icon-top-top-h" src="/static/img/img_xr/yysj_05.png">
+        <img class="icon-top-top-p" src="/static/img/img_xr/qxzsclx_09.png">
+    </div>
+    <form action="" method="post">
+        <div class="icon-top-img1">
+            <ul class=" clearfix">
+                <li>
+                    <img src="/static/img/img_xr/huangguan_13.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/kaluola_15.png">
+                    <p>CROWN 卡罗拉双擎</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li class="on">
+                    <img src="/static/img/img_xr/wchi_18.png">
+                    <p>CROWN 威驰</p>
+                    <label class="car-label"><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/kaluola_15.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/huangguan_13.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/kaluola_15.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/huangguan_13.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/huangguan_13.png">
+                    <p>CROWN 卡罗拉双擎</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/wchi_18.png">
+                    <p>CROWN 威驰</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/kaluola_15.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/huangguan_13.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+                <li>
+                    <img src="/static/img/img_xr/kaluola_15.png">
+                    <p>CROWN 皇冠</p>
+                    <label><input type="radio" name="car-active"></label>
+                </li>
+            </ul>
+        </div>
+        <div class="icon-center">
+            <div class="user-info clearfix">
+                <div class="user-name fl">
+                    <label>您的姓名</label>
+                    <div class="name-input">
+                        <input type="text" class="input" placeholder="请输入用户名">
+                <span class="gender">
+                    <label class="nan nan1"><input type="radio" checked name="gender">男</label>
+                    <label class="nan"><input type="radio" name="gender">女</label>
+                </span>
+                    </div>
+                </div>
+                <div class="user-tel fr">
+                    <label>电话号码</label><br>
+                    <input type="text" class="input1" placeholder="请输入手机号">
+                </div>
+            </div>
+            <div class="dealer">
+                <label class="label">选择离您最近的经销商</label><br>
+                <select class="dealer-province">
+                    <option value="">请选择省/市</option>
+                </select>
+                <select class="dealer-city">
+                    <option>请选择市/区</option>
+                </select>
+                <select class="dealer-store fr" style="padding-left: 15%;">
+                    <option>请选择经营店</option>
+                </select>
+            </div>
+            <div class="plan">
+                <label class="none">计划购车时间</label>
+                <label class="label-radio label1"><input type="radio" name="name" checked>一周内</label>
+                <label class="label-radio"><input type="radio" name="name">一个月以内</label>
+                <label class="label-radio"><input type="radio" name="name">3--6个月</label>
+                <label class="label-radio"><input type="radio" name="name">5个月以上</label>
+            </div>
+        </div>
+        <div class="icon-bottom">
+            <div id="allmap" style="width: 47.7%;height: 423px;"></div>
+            <div class="icon-bottom_footer">           	
+            <div class="block">
+                <input type="checkbox" style="vertical-align: top;margin-top: 4px;">
+                <span class="span1">我已阅读并同意隐私政策</span>
+                
+            </div>
+            <button>马上预约</button>
+        </div>
+        </div>
+        
+    </form>
+</div>
+</block>
+<block name="css">
+      <css href="/static/css/appointment.css" />
+</block>
+<block name="js">
+    <script type="text/javascript"src="http://api.map.baidu.com/api?v=2.0&ak=9OMGg7Q1c4I4cGeSFPf0FEHFgGOsriA1"></script>
+      <js href="/static/js/appointment.js" />
+</block>

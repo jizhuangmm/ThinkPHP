@@ -1,0 +1,34 @@
+<?php
+namespace Buy\Controller;
+
+use Think\Controller;
+
+class IndexController extends Controller
+{
+
+  // 预约试驾
+  public function appointment()
+  {
+    $this->display();
+  }
+  // 经销商查询
+  public function dealer_query()
+  {
+    $this->display();
+  }
+  // 报价咨询
+  public function ask_price()
+  {
+    $this->display();
+  }
+  // 购车计算器
+  public function buy_calculator()
+  {
+    $this->display();
+  }
+  // 电商中心
+  public function e_commerce()
+  {
+    $this->display();
+  }
+}

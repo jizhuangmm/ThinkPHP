@@ -1,0 +1,123 @@
+<img src="../../../../static/img/head-logo.png" alt="" class="logo1">
+<img src="../../../../static/img/head-logo2.png" alt="" class="logo2">
+<p class="city" data-id='0'>
+    北京 <img src="../../../../static/img/select.png" alt="">
+</p>
+<div class="citylist">
+    <ul>
+        <li style='border-bottom:1px solid #e5e5e5;font-weight:bold' class='nowCity'>热门</li>
+        <li style='border-bottom:1px solid #e5e5e5'>直辖市</li>
+        <li>福建</li>
+        <li>广东</li>
+        <li>湖北</li>
+        <li>湖南</li>
+        <li>江苏</li>
+        <li>四川</li>
+        <li style='border:none;'>浙江</li>
+    </ul>
+    <ul>
+        <li style='border-bottom:1px solid #e5e5e5; font-weight:bold'><span class='nowCity'>北京</span><span>上海</span><span>广州</span><span>深圳</span><span>成都</span><span>厦门</span><span>东莞</span><span>佛山</span></li>
+        <li style='border-bottom:1px solid #e5e5e5'><span>北京</span><span>重庆</span><span>上海</span><span>天津</span></li>
+        <li><span>厦门</span></li>
+        <li><span>广州</span><span>深圳</span><span>东莞</span><span>佛山</span></li>
+        <li><span>武汉</span></li>
+        <li><span>长沙</span></li>
+        <li><span>南京</span><span>苏州</span></li>
+        <li><span>成都</span></li>
+        <li style='border:none;'><span>杭州</span></li>
+    </ul>
+</div>
+<ul class="nav">
+    <li><a href="#">首页</a></li>
+    <li class='pinCar'><a href="">品牌车型</a></li>
+    <li><a href="#">购车支持</a></li>
+    <li><a href="#">车主中心</a></li>
+    <li><a href="#">品牌中心</a></li>
+    <li><a href="#">登录</a></li>
+</ul>
+<img src="../../../../static/img/search.png" alt="" class='search'>
+<div class="search2">
+    <input type="text" placeholder="请输入搜索的内容">
+    <button>GO</button>
+</div>
+<img src="../../../../static/img/tab-bor-top.png" alt="" class='tab-bor-top'>
+<table class='pin-car' border='0' cellpadding='0' cellspacing='0'>
+    <tr style='height:0.38rem;line-height:0.38rem;'>
+        <td colspan="3" style='width:7.01rem;border-right:1px solid #ccc;' align='center'>轿车</td>
+        <td style='width:2.57rem;border-right:1px solid #ccc;' align='center'>SUV</td>
+        <td style='width:2.6rem;border-right:1px solid #ccc;' align='center'>中型客车</td>
+        <td style='width:2.52rem;' align='center'>原装进口</td>
+    </tr>
+    <tr style='height:0.44rem;line-height:0.44rem'>
+        <td style='width:2.51rem;border-top:1px solid #ccc;' align='center'>花冠COROLLA EX</td>
+        <td style='width:2.31rem;border-top:1px solid #ccc;' align='center'>锐志 REIZ</td>
+        <td style='width:2.17rem;border-top:1px solid #ccc;border-right:1px solid #ccc;' align='center'>普锐斯 PRIUS</td>
+        <td style='width:2.58rem;border-top:1px solid #ccc;border-right:1px solid #ccc;' align='center'>兰德酷路泽 LAND CRUISER 200</td>
+        <td style='width:2.61rem;border-top:1px solid #ccc;border-right:1px solid #ccc;' align='center'>柯斯达 COASTER</td>
+        <td style='width:2.51rem;border-top:1px solid #ccc;' align='center'>普瑞维亚 PREVIA</td>
+    </tr>
+    <tr style='height:1.1rem;line-height:1.1rem；'>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt="">
+        </td>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+    </tr>
+    <tr style='height:0.31rem;line-height:0.31rem'>
+        <td align='center'>
+            <button>可以引导</button>
+            <button>留资话术</button>
+        </td>
+        <td></td>
+        <td style='border-right:1px solid #ccc'></td>
+        <td style='border-right:1px solid #ccc'></td>
+        <td style='border-right:1px solid #ccc'></td>
+        <td></td>
+    </tr>
+    <tr style='height:0.35rem;line-height:0.35rem'>
+        <td align='center'>威驰 VIOS</td>
+        <td align='center'>卡罗拉 COROLLA</td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center' style='border-right:1px solid #ccc;'>荣放 RAV4</td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center'>86</td>
+    </tr>
+    <tr style='height:1.1rem;line-height:1.1rem'>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center' style='border-right:1px solid #ccc;'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+    </tr>
+    <tr style='height:0.31rem;line-height:0.31rem'>
+        <td></td>
+        <td align='center'>
+            <button>可以引导</button>
+            <button>留资话术</button>
+        </td>
+        <td style='border-right:1px solid #ccc'></td>
+        <td style='border-right:1px solid #ccc'></td>
+        <td style='border-right:1px solid #ccc'></td>
+        <td></td>
+    </tr>
+    <tr style='height:0.33rem;line-height:0.33rem'>
+        <td align='center'>皇冠 CROWN</td>
+        <td align='center'>卡罗拉双引擎 COROLLA HYBRID</td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center' style='border-right:1px solid #ccc;'>普拉多PRADO</td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center'>HIACE</td>
+    </tr>
+    <tr style=''>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center' style='border-right:1px solid #ccc;'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+        <td align='center' style='border-right:1px solid #ccc;'></td>
+        <td align='center'><img src="../../../../static/img/carlist-car.png" alt=""></td>
+    </tr>
+</table>
+<script src='../../../../static/js/header.js'></script>

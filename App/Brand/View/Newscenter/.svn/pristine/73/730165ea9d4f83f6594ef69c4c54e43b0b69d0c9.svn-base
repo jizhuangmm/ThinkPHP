@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>{$pagetitle}丰田官网后台</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+   <link href="/static/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
+   <link href="/static/css/font-awesome.css" rel="stylesheet" />
+   <link href="/static/css/style.css" rel="stylesheet" />
+   <link href="/static/css/style-responsive.css" rel="stylesheet" />
+   <link href="/static/css/style-default.css" rel="stylesheet" id="style_color" />
+   <link href="/static/bootstrap/css/bootstrap-fullcalendar.css" rel="stylesheet" />
+   <link href="/static/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen">
+   <block name="css"></block>
+</head>
+<body class="fixed-top">
+   <div id="container" class="row-fluid">
+      
+      <div class="sidebar-scroll">
+        <div id="sidebar" class="nav-collapse collapse">
+
+         
+         <div class="navbar-inverse">
+            <form class="navbar-search visible-phone">
+               <input type="text" class="search-query" placeholder="Search" />
+            </form>
+         </div>
+         <foreach name="data" item="vo">
+         <ul class="sidebar-menu" style="padding-bottom:0;">
+              <li class="sub-menu active">
+                  <a class="" href="{:U('Index/index')}">
+                      <i class="icon-dashboard"></i>
+                      <span>{$vo.title}</span>
+                  </a>
+              </li>
+              <foreach name="vo.child" item="vi">
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-book"></i>
+                      <span>{$vi.title}</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                    <foreach name="vi.child" item="vp">
+                      <li><a class="" href="__APP__/{$vo.name}/{$vi.name}/{$vp.name}">{$vp.title}</a></li>
+                    </foreach>
+                  </ul>
+              </li>
+              </foreach>
+          </ul>
+        </foreach>
+      </div>
+      </div>
+      </div>
+</body>
+</html>

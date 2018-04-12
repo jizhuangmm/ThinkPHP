@@ -1,0 +1,363 @@
+<block name="css">
+		<link  rel="stylesheet" href="/static/css/jquery.fullPage.css"/>
+    <link rel="stylesheet" href="/static/css/common-head.css">
+		<link  rel="stylesheet" href="/static/css/model_list.css"/>
+</block>
+<block name="main">
+	<div id="dowebok">
+	    <div class="section  section1">
+	    	<header class="header">
+			</header>
+	        <h3>第一屏</h3>
+	    </div>
+	    <div class="section  section2">
+		    <div class="slide"><h3>第一屏</h3></div>
+	        <div class="slide"><h3>第二屏</h3></div>
+	        <div class="slide"><h3>第三屏</h3></div>
+	        <!--<h3>第二屏</h3>-->
+	    </div>
+	    <div class="section section3">
+	    	<div class="car_t">
+	        <div class="car_t_l">
+	       	<img src="/static/img/huang_r.png" title="皇冠">
+			</div>
+			<div class="car_t_y">
+			<label class="nan nan1"><input type="radio" checked name="gender" style="opacity: 0;">&nbsp;规格表</label>
+            <label class="nan nan2"><input type="radio" name="gender" style="opacity: 0;">&nbsp;配备表</label>
+            </div>
+	    	</div>
+	    	<div class="table">
+	    		<div class="table_left">
+	    			<ul id="table_ul">
+	    				<li id="quality">尺寸、质量<i></i></li>
+	    				<li id="engine">发动机<i></i></li>
+	    				<li id="braking" class="click_li">制动<i></i></li>
+	    				<li id="drive">驱动方式<i></i></li>
+	    				<li id=" appearance">外观<i></i></li>
+	    				<li id="view">视野<i></i></li>
+	    				<li id="decorate">内饰<i></i></li>
+	    				<li id="control">操控<i></i></li>
+	                    <li id="technology">科技<i></i></li>
+	    			</ul>
+	    		</div>
+	    	     	<div class="table_right">
+                    <table class="table_top" border="1" cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                        <tr class="tr-one">
+                            <td class="td-one" rowspan="3">型号</td>
+                            <td colspan="2">2.5L</td>
+                            <td colspan="5">2.0T</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td class="td-two">行政版</td>
+                            <td class="td-two">智享版</td>
+                            <td class="td-two">先锋版</td>
+                            <td class="td-two">时尚</td>
+                            <td class="td-two">精英版</td>
+                            <td class="td-two">豪华版</td>
+                            <td class="td-two">尊享版</td>
+
+                        </tr>
+                        <tr class="tr-two">
+                           <td class="gr">GRS218L-<br><span>DETBKC</span></td>
+                        <td class="gr">GRS218L-<br><span>DETSKC</span></td>
+                        <td class="gr">ARS212L-<br><span>DEZBTC</span></td>
+                        <td class="gr">ARS218L-<br><span>DEKXTC</span></td>
+                        <td class="gr">ARS212L-<br><span>DEZBTC</span></td>
+                        <td class="gr">ARS212L-<br><span>DEZBTC</span></td>
+                        <td class="gr">GRS218L-<br><span>DETSKC</span></td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>厂家建议零售价</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                        </tr>
+                    </table>
+                    <div id="quality_table">
+                        <table border="1 " cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                        <tr class="tr-two">
+                            <td class="table_bottom">尺寸及质量</td>
+                            <td colspan="3"></td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>长*宽*高 mm</td>
+                            <td colspan="3">5,020X1,805X1,480</td>
+                            <td colspan="4">5,020X1,805X1,480</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轴距</td>
+                            <td colspan="3">2,925</td>
+                            <td colspan="4">2,925</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轮距(前/后)</td>
+                            <td colspan="3">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>最小离地间隙(满载)mm</td>
+                            <td colspan="7"><span class="span1">140</span><span class="span2">140</span></td>
+                        </tr>
+                    </table>
+                     <div class="position"></div>
+                    </div>
+                    <div id="engine_table"><table border="1 " cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                        <tr class="tr-two">
+                            <td class="table_bottom">尺寸及质量</td>
+                            <td colspan="3"></td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>长*宽*高 mm</td>
+                            <td colspan="3">5,020X1,805X1,480</td>
+                            <td colspan="4">5,020X1,805X1,480</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轴距</td>
+                            <td colspan="3">2,925</td>
+                            <td colspan="4">2,925</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轮距(前/后)</td>
+                            <td colspan="3">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>最小离地间隙(满载)mm</td>
+                            <td colspan="7"><span class="span1">140</span><span class="span2">140</span></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div id="braking_table" class="showTable">
+                        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                            <tr class="tr-two">
+                                <td style="width:15%">尺寸及质量</td>
+                                <td style="width:36%"></td>
+                                <td style="width:48%"></td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>长*宽*高 mm</td>
+                                <td>5,020X1,805X1,480</td>
+                                <td >5,020X1,805X1,480</td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>轴距</td>
+                                <td>2,925</td>
+                                <td >2,925</td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>轮距(前/后)</td>
+                                <td >1540/1540</td>
+                                <td >1540/1540</td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>最小离地间隙(满载)mm</td>
+                                <td ><span class="span1">140</span><span class="span2">140</span></td>
+                            </tr>
+                        </table>
+                    </div>
+	    	</div>
+	    		<div class="table_right_right " style="display:none;background: red;">
+                    <table class="table_top" border="1" cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                        <tr class="tr-one">
+                            <td class="td-one" rowspan="3">型号</td>
+                            <td colspan="2">2.5L</td>
+                            <td colspan="5">2.0T</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td class="td-two">行政版</td>
+                            <td class="td-two">智享版</td>
+                            <td class="td-two">先锋版</td>
+                            <td class="td-two">时尚</td>
+                            <td class="td-two">精英版</td>
+                            <td class="td-two">豪华版</td>
+                            <td class="td-two">尊享版</td>
+
+                        </tr>
+                        <tr class="tr-two">
+                           <td class="gr">GRS218L-<br><span>DETBKC</span></td>
+                        <td class="gr">GRS218L-<br><span>DETSKC</span></td>
+                        <td class="gr">ARS212L-<br><span>DEZBTC</span></td>
+                        <td class="gr">ARS218L-<br><span>DEKXTC</span></td>
+                        <td class="gr">ARS212L-<br><span>DEZBTC</span></td>
+                        <td class="gr">ARS212L-<br><span>DEZBTC</span></td>
+                        <td class="gr">GRS218L-<br><span>DETSKC</span></td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>厂家建议零售价</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                            <td class="yellow">25.48万</td>
+                        </tr>
+                    </table>
+                    <div id="quality_table">
+                        <table border="1 " cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                        <tr class="tr-two">
+                            <td class="table_bottom">尺寸及质量</td>
+                            <td colspan="3"></td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>长*宽*高 mm</td>
+                            <td colspan="3">5,020X1,805X1,480</td>
+                            <td colspan="4">5,020X1,805X1,480</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轴距</td>
+                            <td colspan="3">2,925</td>
+                            <td colspan="4">2,925</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轮距(前/后)</td>
+                            <td colspan="3">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>最小离地间隙(满载)mm</td>
+                            <td colspan="7"><span class="span1">140</span><span class="span2">140</span></td>
+                        </tr>
+                    </table>
+                     <div class="position"></div>
+                    </div>
+                    <div id="engine_table"><table border="1 " cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                        <tr class="tr-two">
+                            <td class="table_bottom">尺寸及质量</td>
+                            <td colspan="3"></td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>长*宽*高 mm</td>
+                            <td colspan="3">5,020X1,805X1,480</td>
+                            <td colspan="4">5,020X1,805X1,480</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轴距</td>
+                            <td colspan="3">2,925</td>
+                            <td colspan="4">2,925</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>轮距(前/后)</td>
+                            <td colspan="3">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                            <td colspan="2">1,540/1,540</td>
+                        </tr>
+                        <tr class="tr-two">
+                            <td>最小离地间隙(满载)mm</td>
+                            <td colspan="7"><span class="span1">140</span><span class="span2">140</span></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div id="braking_table" class="showTable">
+                        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#a3a3a4">
+                            <tr class="tr-two">
+                                <td style="width:15%">尺寸及质量</td>
+                                <td style="width:36%"></td>
+                                <td style="width:48%"></td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>长*宽*高 mm</td>
+                                <td>5,020X1,805X1,480</td>
+                                <td >5,020X1,805X1,480</td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>轴距</td>
+                                <td>2,925</td>
+                                <td >2,925</td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>轮距(前/后)</td>
+                                <td >1540/1540</td>
+                                <td >1540/1540</td>
+                            </tr>
+                            <tr class="tr-two">
+                                <td>最小离地间隙(满载)mm</td>
+                                <td ><span class="span1">140</span><span class="span2">140</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+	    	</div>
+	        </div>
+	        </div>
+ <div class="section section4">
+	        	<!--<img src="/static/img/czym_02.png"> -->
+	        	<div class="section-left">
+	        		<ul class="clearfix">
+	        			<li><span><a><img src="/static/img/dzyp_11.png"></a></span><p>外装精品</p></li>
+	        			<li><span><a><img src="/static/img/dzyp_11.png"></a></span><p>内装精品</p></li>
+	        			<li><span><a><img src="/static/img/dzyp_11.png"></a></span><p>电子用品</p></li>
+	        			<li class=" section_leli"><span><a><img src="/static/img/dzyp_11.png"></a></span><p>其他用品</p></li>
+	        		</ul>
+	        	</div>
+	    </div>
+
+
+	    <div class="section section5">
+	    	<div class="bg_img_1" style="width:100%;height:100%;">
+	    	</div>
+	    	<div class="bg_img_2" style="width:100%;height:100%;">
+	    	</div>
+	    	<div class="bg_img_3" style="width:100%;height:100%;">
+	    	</div>
+	            <div class="activity_text">
+				<p>将者同行，尊享体验</p>
+				<span style="font-size:0.15rem;display:block;text-align:center;padding:24px 24px;">全新CROWN皇冠D-4ST 2.0T+绝“+”登场</span>
+				<a href="#" style="display: block;">了解详情</a>
+			</div>
+			<div class="bottom_img">
+				<img src="/static/img/bottom_img.png">
+			</div>
+	    </div>
+	    <div class="section fp-height-auto">
+		    <footer class="footer">
+	    	</footer>
+	    </div>
+    </div>
+</block>
+<block name="js">
+<script src='/static/js/header.js'></script>
+<script src="/static/js/mode_list.js"></script>
+<script src="/static/js/jquery.fullPage.js"></script>
+<script>
+    	$('#dowebok').fullpage();
+    	$('#dowebok').fullpage({
+	        'verticalCentered': false,
+	        'css3': true,
+	        'sectionsColor': ['#254875', '#00FF00', '#254587', '#695684','#191919'],
+	         anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+	        menu:'#menu'
+     	});
+     	setInterval(function(){
+	        $.fn.fullpage.moveSlideRight();
+	    }, 4000);
+    if($("body").hasClass("fg-viewing-page1")==false){
+    	$(".carrige").css("top","0px")
+    }else{
+    	$(".carrige").css("top","8.5%")
+    }
+
+   
+ $('.section-left li').hover(function(){
+ 	$(this).addClass('section_leli').siblings().removeClass('section_leli')
+ },function(){
+ 	$(this).removeClass('section_leli')
+ })
+
+
+
+
+</script>
+
+</block>

@@ -1,0 +1,10 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+       <div>积分管理</div>
+</block>
+<block name="css">
+  <css href="/static/css/points.css" />
+</block>
+<block name="js">
+  <js href="/static/js/points.js" />
+</block>

@@ -1,0 +1,50 @@
+<div class="more">
+    <div class="more-one">
+        <dl>
+            <dt><img src="../../../../static/img/people.png" alt="" ondragstart="return false"></dt>
+            <dd>
+                <p style='color:#a6a6a6;font-size:0.23rem;margin-bottom:0.09rem'>客户服务中心</p>
+                <p style='color:#8d3226;font-size:0.14rem;margin-bottom:0.25rem;'>全年无休，24小时服务</p>
+                <p style='color:#bebebe;font-size:0.14rem;margin-bottom:0.09rem;'>800-810-1210 <span style='color:#606060;'>(座机拨打)</span></p>
+                <p style='color:#bebebe;font-size:0.14rem;'>400-810-1210 <span style='color:#606060;'>(手机拨打)</span></p>
+            </dd>
+        </dl>
+    </div>
+    <div class="more-two">
+        <ul style='margin-left:27.8%;'>
+            <li><a href="#">会员登录</a></li>
+            <li><a href="#">FTMS管理系统</a></li>
+            <li><a href="#">招标公告</a></li>
+            <li><a href="#">网站地图</a></li>
+        </ul>
+        <ul style='margin-left:12.5%;'>
+            <li><a href="#">网站政策</a></li>
+            <li><a href="#">经销商招募</a></li>
+            <li><a href="#">加入我们</a></li>
+        </ul>
+    </div>
+    <div class="more-three">
+        <p>更多优惠在这里：</p>
+        <img src="../../../../static/img/weixin.png" alt="" ondragstart="return false" class='weixin'>
+        <img src="../../../../static/img/cat.png" alt="" ondragstart="return false" class='tcat'>
+    </div>
+</div>
+<p class="group">
+    友情链接：<span style='margin-left:0.52rem;'>中国第一汽车股份</span><span style='margin-left:0.29rem;'>天津一汽丰田汽车有限公司</span><span style='margin-left:0.36rem;'>四川一汽丰田汽车有限公司</span><span style='margin-left:0.35rem'>一汽财务</span><span style='margin-left:0.34rem'>丰田汽车金融（中国）有限公司</span><span style='margin-left:0.4rem;'>丰田汽车（中国）官网</span>
+</p>
+<div class="copyrighted">
+    <p style='padding-top:0.57rem;padding-bottom:0.28rem;'>一汽丰田汽车销售有限公司版权所有 Copyright © 2016 FAW TOYOTA Motor Sales Co., LTD</p>
+    <p style='padding-bottom:0.4rem;'>京ICP备07503373号-1 | 京公安备案110105019374号</p>
+</div>
+<script>
+    $('.weixin').hover(function () {
+        $(this).attr('src', '../../../../static/img/weixin2.png')
+    }, function () {
+        $(this).attr('src', '../../../../static/img/weixin.png')
+    })
+    $('.tcat').hover(function () {
+        $(this).attr('src', '../../../../static/img/cat2.png')
+    }, function () {
+        $(this).attr('src', '../../../../static/img/cat.png')
+    })
+</script>

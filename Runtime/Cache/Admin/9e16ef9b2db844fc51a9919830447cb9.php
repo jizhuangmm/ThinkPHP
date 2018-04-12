@@ -1,0 +1,95 @@
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html>
+
+
+ <html lang="en"> 
+
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<head>
+   <meta charset="utf-8" />
+   <title>丰田官网后台登陆</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="" name="author" />
+   <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="/static/bootstrap/cssbootstrap-responsive.min.css" rel="stylesheet" />
+   <link href="/static/css/font-awesome.css" rel="stylesheet" />
+   <link href="/static/css/style.css" rel="stylesheet" />
+   <link href="/static/css/style-responsive.css" rel="stylesheet" />
+   <link href="/static/css/style-default.css" rel="stylesheet" id="style_color" />
+</head>
+
+
+<body class="lock">
+    <div class="lock-header">
+        
+        <a class="center" id="logo" href="#">
+            <img class="center" alt="logo" src="/static/img/logo.png">
+        </a>
+        
+    </div>
+    <div class="login-wrap">
+        <div class="metro single-size red">
+            <div class="locked">
+                <i class="icon-lock"></i>
+                <span>登录</span>
+            </div>
+        </div>
+        <form action="<?php echo U('Login/validation_login');?>" method="post">
+        <div class="metro double-size green">
+                <div class="input-append lock-input">
+                    <input type="text" class="" placeholder="Username" name="username">
+                </div>
+        </div>
+        <div class="metro double-size yellow">
+                <div class="input-append lock-input">
+                    <input type="password" class="" placeholder="Password" name="password">
+                </div>
+        </div>
+        <div class="metro single-size terques login">
+                <button type="submit" class="btn login-btn">
+                    登录
+                    <i class=" icon-long-arrow-right"></i>
+                </button>
+        </div>
+        </form>
+        <!-- <div class="metro double-size navy-blue ">
+            <a href="#" class="social-link">
+                <i class="icon-facebook-sign"></i>
+                <span>Facebook 登录</span>
+            </a>
+        </div>
+        <div class="metro single-size deep-red">
+            <a href="#" class="social-link">
+                <i class="icon-google-plus-sign"></i>
+                <span>Google 登录</span>
+            </a>
+        </div>
+        <div class="metro double-size blue">
+            <a href="#" class="social-link">
+                <i class="icon-twitter-sign"></i>
+                <span>Twitter 登录</span>
+            </a>
+        </div>
+        <div class="metro single-size purple">
+            <a href="#" class="social-link">
+                <i class="icon-skype"></i>
+                <span>Skype 登录</span>
+            </a>
+        </div> -->
+        <div class="login-footer">
+            <div class="remember-hint pull-left">
+                <input type="checkbox" id=""> 记住密码
+            </div>
+            <div class="forgot-hint pull-right">
+                <a id="forget-password" class="" href="javascript:;">忘记密码?</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+</html>

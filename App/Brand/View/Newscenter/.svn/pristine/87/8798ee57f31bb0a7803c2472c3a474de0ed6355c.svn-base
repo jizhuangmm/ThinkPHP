@@ -1,0 +1,13 @@
+<?php 
+ function getTree($data,$pid)
+ {
+ 	$list=array();
+ 	foreach($data as $val){
+ 		if($val['pid']==$pid)
+ 		{
+ 			$val['child']=getTree($data,$val['id']);
+ 			$list[]=$val;
+ 		}
+ 	}
+ 	return $list;
+ }

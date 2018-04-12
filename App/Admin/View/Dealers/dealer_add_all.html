@@ -1,0 +1,156 @@
+﻿<extend name="Common:base" />
+<block name="main">
+   
+            <div class="row-fluid">
+               <div class="span12">
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                   <h3 class="page-title">
+                   经销商添加
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="{:U('dealers_list')}">经销商列表</a>
+                       </li>
+                   </ul>
+               </div>
+            </div>
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 经销商列表 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                           <form action="{:U('dealer_add_all')}" method="post">
+                           <table id="tab" border="2" width="100%" align="center">
+        
+                            <tr class="control-group">
+									<th>经销商代码</th>
+									<th>网点简称</th>
+									<th>公司名称</th>
+									<th>车牌类型</th>
+									<th>省份</th>
+									<th>城市</th>
+									<th>地区</th>
+									<th>详细地址</th>
+									<th>邮编</th>
+									<th>销售电话</th>
+									<th>经度</th>
+									<th>纬度</th>
+									<th>操作</th>
+                            </tr>
+							
+						</table>
+						<div class="form-actions">
+								
+                                <input type="submit" class="btn btn-success" value="添加">
+                                <button type="button" id="but" class="btn" >增加</button>
+                        </div>
+						</form>
+                        </div>
+				</div>
+			</div>
+		</div>
+
+   
+    <script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+   <script type="text/javascript" charset="utf-8">
+	
+	$(document).ready(function(){
+       //<tr/>居中
+       $("#tab tr").attr("align","center");
+       
+       //增加<tr/>
+      $("#but").click(function(){
+         var _len = $("#tab tr").length;        
+           $("#tab").append("<tr id="+_len+" align='center'>"
+                               +"<td><input type='text' name='code[]' style='width:80px;height=5px;border:0px' /></td>"
+                                +"<td><input type='text' name='abb_web[]' style='width:50px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='company[]' style='width:50px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='licence_plate[]' style='width:50px;height=5px;border:0px'/></td>"
+                               
+                                +"<td><input type='text' name='province[]' style='width:20px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='city[]' style='width:20px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='district[]' style='width:20px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='address[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='postcode[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='sell_mobile[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='longitude[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='latitude[]' style='width:30px;height=5px;border:0px'/></td>"
+                                
+                               
+                               +"<td><a href=\'#\' onclick=\'deltr("+_len+")\'>删除</a></td>"
+                           +"</tr>");            
+       })    
+   })
+    
+    //删除<tr/>
+    var deltr =function(index){
+       var _len = $("#tab tr").length;
+       $("tr[id='"+index+"']").remove();//删除当前行
+        for(var i=index+1,j=_len;i<j;i++)
+        {
+            var nextTxtVal = $("#desc"+i).val();
+           $("tr[id=\'"+i+"\']")
+               .replaceWith("<tr id="+(i-1)+" align='center'>"
+                               +"<td><input type='text' name='code[]' style='width:50px;height=5px;border:0px' /></td>"
+                                +"<td><input type='text' name='abb_web[]' style='width:50px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='company[]' style='width:50px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='licence_plate[]' style='width:50px;height=5px;border:0px'/></td>"
+                                
+								+"<td><input type='text' name='province[]' style='width:20px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='city[]' style='width:20px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='district[]' style='width:20px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='address[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='postcode[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='sell_mobile[]' style='width:30px;height=5px;border:0px'/></td>"
+								+"<td><input type='text' name='longitude[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><input type='text' name='latitude[]' style='width:30px;height=5px;border:0px'/></td>"
+                                +"<td><a href=\'#\' onclick=\'deltr("+(i-1)+")\'>删除</a></td>"
+                           +"</tr>");
+       }           
+    }
+
+   </script>
+
+</block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

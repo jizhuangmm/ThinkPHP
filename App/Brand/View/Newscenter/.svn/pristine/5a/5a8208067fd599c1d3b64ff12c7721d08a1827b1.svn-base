@@ -1,0 +1,35 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+    <div>
+        <img src="/static/img/img_xq/cx_banner.png" style="width:100%;">
+    </div>
+    <div id="main">
+        <div style="height:165px;text-align: center">
+            <img class="img_text" src="/static/img/img_xq/cx_text.png">
+        </div>
+        <div style="overflow:hidden;width:100%;">
+            <div class="ul_img">
+                <ul class=img_list style="width:80%;margin:0  auto;overflow:hidden;">
+                    <li><img src="/static/img/img_xq/cx_1.png" alt=""></li>
+                    <li><img src="/static/img/img_xq/cx_2.png" alt=""></li>
+                    <li><img src="/static/img/img_xq/cx_3.png" alt=""></li>
+                </ul>
+                <ul class=img_list style="width:80%;margin:0  auto;overflow:hidden;">
+                    <li><img src="/static/img/img_xq/cx_4.png" alt=""></li>
+                    <li><img src="/static/img/img_xq/cx_5.png" alt=""></li>
+                    <li><img src="/static/img/img_xq/cx_6.png" alt=""></li>
+                </ul>
+            </div>
+            <p class="see" id="cp">
+                <img src="../../../../static/img/img_xq/bottom_img.png">
+                <span href="#">查看更多</span>
+            </p>
+        </div>
+    </div>
+</block>
+<block name="css">
+      <css href="/static/css/promotion.css" />
+</block>
+<block name="js">
+      <js href="/static/js/promotion.js" />
+</block>

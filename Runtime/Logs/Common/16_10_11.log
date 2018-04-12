@@ -1,0 +1,108 @@
+[ 2016-10-11T00:06:09+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001527s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T00:06:09+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001269s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T01:28:09+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T01:28:09+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001240s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T01:55:19+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001262s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T01:55:19+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000224s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001472s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T01:55:20+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001158s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T21:59:07+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002818s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T21:59:07+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001038s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T22:02:32+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001831s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T22:02:32+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001518s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T22:02:32+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T22:04:58+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001356s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T22:04:59+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001754s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T22:04:59+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T23:01:18+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/jquery-1.8.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001204s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T23:01:18+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001848s ]
+ERR: 无法加载模块:Ftms
+
+[ 2016-10-11T23:01:18+08:00 ] 127.0.0.1 /ftms/index.php/ftms/static/js/header.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001436s ]
+ERR: 无法加载模块:Ftms
+

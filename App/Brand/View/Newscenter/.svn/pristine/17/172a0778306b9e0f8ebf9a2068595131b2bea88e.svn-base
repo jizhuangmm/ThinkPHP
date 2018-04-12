@@ -1,0 +1,175 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+<div class="banner">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="/static/img/ban.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="/static/img/ban.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="/static/img/ban.png" alt="">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+<div class="star-car" style='-webkit-user-select: none;'>
+  <p class='star'>STAR MODELS</p>
+  <p class='car_star'>明星车型</p>
+  <button class='all-car'>查看全部车型</button>
+  <div class="star-left"></div>
+  <div class="star-right"></div>
+  <div class="starCar">
+    <dl>
+      <dt>
+        <img src="/static/img/kaluo.png" alt="" ondragstart="return false">
+      </dt>
+      <dd>
+        <a href="#">卡罗拉 COROLLA</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <img src="/static/img/huang.png" alt="" ondragstart="return false">
+      </dt>
+      <dd>
+        <a href="#">皇冠 CROWN</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <img src="/static/img/weichi.png" alt="" ondragstart="return false">
+      </dt>
+      <dd>
+        <a href="#">威驰 VIOS</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <img src="/static/img/pula.png" alt="" ondragstart="return false">
+      </dt>
+      <dd>
+        <a href="#">普拉多 PRADO</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <img src="/static/img/pula.png" alt="" ondragstart="return false">
+      </dt>
+      <dd>
+        <a href="#">普拉多 PRADO</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <img src="/static/img/pula.png" alt="" ondragstart="return false">
+      </dt>
+      <dd>
+        <a href="#">普拉多 PRADO</a>
+      </dd>
+    </dl>
+  </div>
+</div>
+<div class="news">
+  <div class="new-one">
+    <p>将行同者 尊享体验</p>
+  </div>
+  <div class="new-two">
+    <div class='new-two-o'>
+      <p>将行同者 尊享体验</p>
+    </div>
+    <div class='new-two-t'>
+      <p>一汽丰田 奇幻世界</p>
+    </div>
+  </div>
+  <div class="new-three">
+    <div class='new-three-o'>
+      <img src="/static/img/sale.png" alt="" class='sale' ondragstart="return false">
+    </div>
+    <div class='new-three-t'>
+      <p>2016威驰燃情夏日“足”够精彩</p>
+    </div>
+  </div>
+</div>
+<div class="new-zi">
+  <p>
+    NEWS<img src="/static/img/jian.png" alt="" ondragstart="return false">
+  </p>
+  <p>新闻资讯</p>
+</div>
+<div class="user">
+  <div class="user-o">
+    <p>感恩用户，2016年度一汽丰田卡罗拉俱乐部-会员主题日启动</p>
+  </div>
+  <div class="user-t">
+    <div class="user-t-o">
+      <div class="wenzi">
+        <p style='margin-top: 6%; font-size: 14px;'>
+          <a href="#">感恩用户，2016年度一起丰田卡罗拉俱乐部,会员主题日启动</a>
+        </p>
+        <p style='font-size: 12px'>
+          <a href="#">2016.08.28</a>
+        </p>
+        <p style='margin-top: 6%; font-size: 14px;'>
+          <a href="#">白金荣耀卡罗拉双擎7月新增领先版</a>
+        </p>
+        <p style='font-size: 12px'>
+          <a href="">2016.08.28</a>
+        </p>
+      </div>
+    </div>
+    <div class="user-t-t">
+      <p>“峻岭极先锋”京城收官 RAV4百城终极之旅即将启程</p>
+    </div>
+  </div>
+</div>
+<div class="list">
+  <dl>
+    <dt>
+      <img src="/static/img/yuyue.png" alt="" ondragstart="return false">
+    </dt>
+    <dd>
+      <a href="#">预约试驾</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <img src="/static/img/cuxiao.png" alt="" ondragstart="return false">
+    </dt>
+    <dd>
+      <a href="#">促销活动</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <img src="/static/img/jinrong.png" alt="" ondragstart="return false">
+    </dt>
+    <dd>
+      <a href="#">金融服务</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <img src="/static/img/jinxiao.png" alt="" ondragstart="return false">
+    </dt>
+    <dd>
+      <a href="#">经销商查询</a>
+    </dd>
+  </dl>
+</div>
+</block>
+<block name="css">
+  <css href="/static/css/swiper-3.3.1.min.css" />
+  <css href="/static/css/index.css" />
+</block>
+<block name="js">
+  <js href='/static/js/swiper-3.3.1.min.js' />
+  <js href='/static/js/mousewheel.js' />
+  <js href='/static/js/index.js' />
+</block>

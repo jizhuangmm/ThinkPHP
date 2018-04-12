@@ -1,0 +1,179 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+    <!--广告-->
+    <div>
+        <img src="/static/img/banner.png" alt="" style="width: 100%;">
+    </div>
+    <!--详情列表-->
+        <!--最新动态-->
+        <div class='tabbed_content'>
+        <div class='tabs' style="">
+            <div class='moving_bg'> &nbsp; </div>
+            <span class="tab_item" index="0">最新动态</span>
+            <span class="tab_item" index="1">新闻资讯</span>
+            <span class="tab_item" index="2">媒体中心</span>
+            <!--日期-->
+            <div style="position:relative;top:65px;left:500px;">
+            <div class="aboluo-calendar-select-year">&nbsp;</div>
+            <div class="aboluo-calendar-month">&nbsp;
+                <a class="aboluo-month-a-perv" href="javascript:;"></a>
+                <a class="aboluo-month-a-next" href="javascript:;"></a>
+            </div>
+            </div>
+            <div class='slide_content'>
+                <div class='tabslider'>
+                    <div>
+                        <ul class="img_list img_top" style="margin-top: 0;" >
+                        <li>
+                            <a href="zuixindongtai.html"><img src="/static/img/img_1.png" alt=""></a>
+                            <p>一汽丰田顾客个人信息保护基本方针</p>
+                            <span style="display: block">2014-03-14</span>
+                        <li>
+                            <a href="zuixindongtai.html"><img src="/static/img/img_2.png" alt=""></a>
+                            <p>全新RAV4荣放自信上市...</p>
+                            <span style="display: block">2014-03-14</span>
+                        </li>
+                        <li class="last">
+                            <a href="zuixindongtai.html"><img src="/static/img/img_3.png" alt=""></a>
+                            <p>一汽丰田顾客个人信息保护基本方针</p>
+                            <span style="display: block">2014-03-14</span>
+                        </li>
+                        <li>
+                            <a href="zuixindongtai.html"><img src="/static/img/img_4.png" alt=""></a>
+                            <p>一汽丰田顾客个人信息保护基本方针</p>
+                            <span style="display: block">2014-03-14</span>
+                        </li>
+                        <li>
+                            <a href="zuixindongtai.html"><img src="/static/img/img_5.png" alt=""></a>
+                            <p>全新RAV4荣放自信上市...</p>
+                            <span style="display: block">2014-03-14</span>
+                        </li>
+                        <li class="last">
+                            <a href="zuixindongtai.html"><img src="/static/img/img_6.png" alt=""></a>
+                            <p>一汽丰田顾客个人信息保护基本方针</p>
+                            <span style="display: block">2014-03-14</span>
+                        </li>
+                    </ul>
+                        <p class="see" >
+                            <span>查看更多</span>
+                            <img src="/static/img/bottom_img.png" alt="" >
+                        </p>
+                    </div>
+                   <div class="bg">
+                       <ul class="new">
+                           <li>
+                               <ul class="detail_list text_top">
+                                   <li class="font_style">感恩用户,2016年度一汽丰田卡罗拉俱乐部</li>
+                                   <li class="font_style">-会员主题日启动</li>
+                                   <li class="date">2016-06-14</li>
+                                   <li>作为全球最畅销的汽车,COROLLA在全球拥有</li>
+                                   <li>4300万的传奇销量...</li>
+                                   <li><a href="#"><button>查看详情</button></a></li>
+                               </ul>
+                           </li>
+                       <li>
+                           <ul class="detail_list text_top">
+                               <li class="font_style">白金荣耀拉罗拉双擎07月新增领先版</li>
+                               <li class="date_h">2016-03-14</li>
+                               <li>一汽丰田于2016年7月1日新增卡罗拉双擎领</li>
+                               <li>先版领先版基于先锋版配置升级...</li>
+                               <li><a href="#"><button>查看详情</button></a></li>
+                           </ul>
+                       </li>
+                       <li>
+                           <ul class="detail_list text_top">
+                               <li class="font_style"> "峻岭极先锋"京城收官 RAV4百城终极之旅</li>
+                               <li class="font_style">即将启程</li>
+                               <li class="date">2016-03-14</li>
+                               <li>2016年6月5日,“一汽丰田RAV4车主百城荣</li>
+                               <li>耀接力赛”的第三线路...</li>
+                               <li><a href="#"><button>查看详情</button></a></li>
+                           </ul>
+                       </li>
+                       <li>
+                           <ul class="detail_list">
+                               <li class="font_style"> 感恩用户,2016年度一汽丰田卡罗拉俱乐部</li>
+                               <li class="font_style">-会员主题日启动</li>
+                               <li class="date">2016-06-14</li>
+                               <li>作为全球最畅销的汽车,COROLLA在全球拥有</li>
+                               <li>超过4300万的传奇销量...</li>
+                               <li><a href="#"><button>查看详情</button></a></li>
+                           </ul>
+                       </li>
+                       <li>
+                           <ul class="detail_list">
+                               <li class="font_style">白金荣耀卡罗拉双擎07月新增领先版</li>
+                               <li class="date_h"> 2016-03-14</li>
+                               <li>一汽丰田于2016年7月1日新增卡罗拉双擎领</li>
+                               <li>先版领先版基于先锋版配置升级...</li>
+                               <li><a href="#"><button>查看详情</button></a></li>
+                           </ul>
+                       </li>
+                       <li>
+                           <ul class="detail_list">
+                               <li class="font_style"> "峻岭极先锋"京城收官 RAV4百城终极之旅</li>
+                               <li class="font_style">即将启程</li>
+                               <li class="date"> 2016-03-14</li>
+                               <li>2016年6月5日,“一汽丰田RAV4车主百城荣</li>
+                               <li>耀接力赛”的第三线路...</li>
+                               <li><a href="#"><button>查看详情</button></a></li>
+                           </ul>
+                       </li>
+                   </ul>
+                       <p class="see" >
+                           <span >查看更多</span>
+                           <img src="/static/img/bottom_img.png" alt="">
+                       </p>
+                   </div>
+                    <!--<!-媒体中心&ndash;&gt;-->
+                    <div>
+                        <ul class="img_list img_top" style="margin-top: 0;" >
+                            <li>
+                                <a href="#"><img src="/static/img/img_1.png" alt=""></a>
+                                <p>一汽丰田顾客个人信息保护基本方针</p>
+                                <span style="display: block">2014-03-14</span>
+                            <li>
+                                <a href="#"><img src="/static/img/img_2.png" alt=""></a>
+                                <p>全新RAV4荣放自信上市...</p>
+                                <span style="display: block">2014-03-14</span>
+                            </li>
+                            <li class="last">
+                                <a href="#"><img src="/static/img/img_3.png" alt=""></a>
+                                <p>一汽丰田顾客个人信息保护基本方针</p>
+                                <span style="display: block">2014-03-14</span>
+                            </li>
+                            <li>
+                                <a href="#"><img src="/static/img/img_4.png" alt=""></a>
+                                <p>一汽丰田顾客个人信息保护基本方针</p>
+                                <span style="display: block">2014-03-14</span>
+                            </li>
+                            <li>
+                                <a href="#"><img src="/static/img/img_5.png" alt=""></a>
+                                <p>全新RAV4荣放自信上市...</p>
+                                <span style="display: block">2014-03-14</span>
+                            </li>
+                            <li class="last">
+                                <a href="#"><img src="/static/img/img_6.png" alt=""></a>
+                                <p>一汽丰田顾客个人信息保护基本方针</p>
+                                <span style="display: block">2014-03-14</span>
+                            </li>
+                        </ul>
+                        <p class="see" >
+                            <span>查看更多</span>
+                            <img src="/static/img/bottom_img.png" alt="" >
+                        </p>
+                    </div>
+                </div>
+                <!--<br style='clear: both' />-->
+            </div>
+        </div>
+    </div>
+        <!--页尾-->
+</block>
+<block name="css">
+    <css href="/static/css/brand.css" />
+</block>
+<block name="js">
+    <js href="/static/js/brand.js" />
+    <js href='/static/js/lanren.js' />
+</block>

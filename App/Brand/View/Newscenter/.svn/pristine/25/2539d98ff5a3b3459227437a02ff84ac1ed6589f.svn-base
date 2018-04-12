@@ -1,0 +1,181 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+use Org\Util\Rbac;
+
+class SystemController extends CommonController
+{
+	//显示用户信息
+    public function user()
+    {
+        $user=M("user_info")
+        ->join("ftms_role_user on user_id=uid")
+        ->join("ftms_role on role_id=ftms_role.id")
+        ->Field("uid,username,last_login_time,login_ip,name")
+        ->select();
+        $this->assign("user",$user);
+        $this->display();
+    }
+
+    /**
+     * 新增用户
+     */
+    public function add_user()
+    {
+        $role=M("role")->Field("id,name")->select();
+        $this->assign("role",$role);
+        $this->display();
+    }
+
+    public function user_add()
+    {
+        $name=I("post.username");
+        $data['username']=$name;
+        $user=M("user_info")->where(array('username' =>$name ))->find();
+        if($user) $this->error("用户名重复","add_user",5);
+        $data['password']=md5(I("post.password"));
+        $user_id=M("user_info")->add($data);
+        $dat['role_id']=I("post.role_id");
+        $dat['user_id']=$user_id;
+        M("role_user")->add($dat);
+        $this->error("添加成功","user",2);
+    }
+
+    /**
+     * 修改用户信息页面
+     */
+    public function up_user()
+    {
+        $uid=I("get.uid");
+        $user=M("user_info")
+        ->join("ftms_role_user on user_id=uid")
+        ->where("uid=$uid")
+        ->Field("uid,username,role_id")
+        ->find();
+        $role=M("role")->Field("id,name")->select();
+        $this->assign("role",$role);
+        $this->assign("user",$user);
+        $this->assign("uid",$uid);
+        $this->display();
+    }
+
+    /**
+     * 修改用户信息
+     */
+    public function update_user()
+    {
+        $uid=I("post.uid");
+        $data['username']=I("post.username");
+        M("user_info")->where("uid=$uid")->save($data);
+        $role_user=M("role_user")->where("user_id=$uid")->find();
+        if($role_user)
+        {
+            $da['role_id']=I("post.role_id");
+            M("role_user")->where("user_id=$uid")->save($da);
+        }
+        else
+        {
+            $da['user_id']=$uid;
+            $da['role_id']=I("post.role_id");
+            M("role_user")->add($da);
+        }
+        $this->success("用户信息更新成功","user",3);
+    }
+
+
+    /**
+     * 添加节点
+     */
+    public function add_node()
+    {
+        $user=M("node")->select();
+        $this->data=getTree($user,0);
+        // echo "<pre>";
+        // print_r($this->data);die;
+        $this->display();
+    }
+
+    /**
+     * 添加节点
+     */
+    public function node_add()
+    {
+        if(IS_POST)
+       {
+            $node=M("node");
+            $node->create();
+            if($node->add())
+            {
+                $this->success("添加成功","add_node");
+                die;
+            }
+            else
+            {
+                $this->error("添加失败","add_node");
+            }           
+       }
+       else
+       {
+            $this->error("添加失败","add_node");
+            die;
+       }
+    }
+
+
+    /**
+     * 角色列表显示
+     */
+    public function role()
+    {
+        if(!Rbac::AccessDecision())
+        {
+
+            echo "权限不足";die;
+        }
+        $role=M("role")->select();
+        $this->assign("role",$role);
+        $this->display();
+    }
+    /**
+     * 角色分配权限
+     */
+    public function access()
+    {
+        $this->rid=I("get.rid");
+        $user=M("node")->select();
+        $this->node=getTree($user,0);
+        // echo "<pre>";
+        // print_r($this->node);die;
+        $this->display();
+    }
+
+    /**
+     * 分配
+     */
+    public function add_access()
+    {
+        if(IS_POST)
+        {
+            $check=I("post.check");
+            $rid=I("post.rid");
+            foreach($check as $val)
+            {
+                $explode=explode("|",$val);
+                $arr[]=array("role_id"=>$rid,"node_id"=>$explode[0],"level"=>$explode[1]);
+            }
+            M("access")->where("role_id='$rid'")->delete();
+            if(M("access")->addALL($arr))
+            {
+                $this->success("分配权限成功","access",3);
+            }
+            else
+            {
+                $this->error("分配权限失败","access",3);
+            }
+
+        }
+    }
+
+}

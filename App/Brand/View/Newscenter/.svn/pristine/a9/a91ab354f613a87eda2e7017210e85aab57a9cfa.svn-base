@@ -1,0 +1,119 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+    <div class="banner1"></div>
+    <div class="icon">
+        <div id="position1" style="display: none;">
+            <div id="position2"></div>
+        </div>
+        <div class="icon-top">
+            <div class="icon-top-left">
+                <h2>经销商查询</h2>
+                <p>DEALER SEARCH</p>
+            </div>
+            <div class="icon-top-right">
+
+                <select class="dealer-province">
+                    <option value="">北京市</option>
+                </select>
+                <select class="dealer-province1">
+                    <option value="">北京市</option>
+                </select>
+
+                <div class="icon-top-left-bottom">
+                    <input type="text" placeholder="输入经销商名称" />
+                </div>
+            </div>
+
+            <div id="icon-bottom clearfix">
+                <div id="allmap">
+
+                </div>
+
+                <div class="icon-bottom-right">
+                    <div class="icon-bottom-right-top">
+                        <p>共找到15个搜索结果</p>
+                    </div>
+                    <div class="icon-bottom-right-bottom clearfix">
+                        <div class="icon-bottom-right-bottom-top">
+                            <img class="img-left " src="/static/img/img_xr/wan_05.png" /><h4 class="h4">北京广通丰田</h4><img class="img-right " src="/static/img/img_xr/guanbi_08.png">
+                        </div>
+                        <div class="icon-bottom-right-bottom-bottom" style="display: block;">
+                            <div class="img-p">
+                                <img src="/static/img/img_xr/common-head-dianhua_09.png">
+                                <p>010-62916666</p>
+                            </div>
+                            <div class="img-b ">
+                                <img src="/static/img/img_xr/common-head-wz_13.png">
+                                <p>北京市朝阳区德外花虎沟20号</p>
+                            </div>
+                            <button class="button1">预约试驾</button>
+                            <button class="button2">进入经销商页面</button>
+
+                        </div>
+                    </div>
+                    <div class="icon-bottom-right-bottom">
+                        <div class="icon-bottom-right-bottom-top">
+                            <img class="img-left " src="/static/img/img_xr/tu_13.png" /><h4 class="h1">北京博丰长久顺义丰田</h4><img class="img-right1" src="/static/img/img_xr/guanbi_08.png">
+                        </div>
+                        <div class="icon-bottom-right-bottom-bottom1" style="display: none;">
+                            <div class="img-p">
+                                <img src="/static/img/img_xr/common-head-dianhua_09.png">
+                                <p>010-62916666</p>
+                            </div>
+                            <div class="img-b">
+                                <img src="/static/img/img_xr/common-head-wz_13.png">
+                                <p>北京市朝阳区德外花虎沟20号</p>
+                            </div>
+                            <button class="button1">预约试驾</button>
+                            <button class="button2">进入经销商页面</button>
+
+                        </div>
+                    </div>
+                    <div class="icon-bottom-right-bottom">
+                        <div class="icon-bottom-right-bottom-top">
+                            <img class="img-left " src="/static/img/img_xr/tu3_16.png" /><h4 class="h2">北京北苑丰田</h4><img class="img-right2" src="/static/img/img_xr/guanbi_08.png">
+                        </div>
+                        <div class="icon-bottom-right-bottom-bottom2" style="display: none;">
+                            <div class="img-p">
+                                <img src="/static/img/img_xr/common-head-dianhua_09.png">
+                                <p>010-62916666</p>
+                            </div>
+                            <div class="img-b">
+                                <img src="/static/img/img_xr/common-head-wz_13.png">
+                                <p>北京市朝阳区德外花虎沟20号</p>
+                            </div>
+                            <button class="button1">预约试驾</button>
+                            <button class="button2">进入经销商页面</button>
+
+                        </div>
+                    </div>
+                    <div class="icon-bottom-right-bottom">
+                        <div class="icon-bottom-right-bottom-top">
+                            <img class="img-left " src="/static/img/img_xr/tu4_18.png" /><h4 class="h3">北京金冠兴业丰田</h4><img class="img-right3" src="/static/img/img_xr/guanbi_08.png">
+                        </div>
+                        <div class="icon-bottom-right-bottom-bottom3" style="display: none;">
+                            <div class="img-p">
+                                <img src="/static/img/img_xr/common-head-dianhua_09.png">
+                                <p>010-62916666</p>
+                            </div>
+                            <div class="img-b">
+                                <img src="/static/img/img_xr/common-head-wz_13.png">
+                                <p>北京市朝阳区德外花虎沟20号</p>
+                            </div>
+                            <button class="button1">预约试驾</button>
+                            <button class="button2">进入经销商页面</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span></span>
+        </div>
+    </div>
+</block>
+<block name="css">
+  <css href="/static/css/dealer-query.css" />
+</block>
+<block name="js">
+  <js href="/static/js/dealer-query.js" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9OMGg7Q1c4I4cGeSFPf0FEHFgGOsriA1"></script>
+</block>

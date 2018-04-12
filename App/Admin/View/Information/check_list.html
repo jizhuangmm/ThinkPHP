@@ -1,0 +1,145 @@
+
+<include file="Common:header"/>
+      
+       <block name="main">
+    
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                   审核列表
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="{:U('info_list')}">资讯列表</a>
+                           
+                       </li>
+                       
+                       
+                      
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 审核列表 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+                           <table border="2" width="100%" align="center">
+								<tr>
+									<th>资讯ID</th>
+									<th>标题</th>
+									<th>发布者</th>
+									<th>概要</th>
+									<th>图片</th>
+									<th>发布时间</th>
+									<th>类型</th>
+									<th>操作</th>
+									
+								</tr>
+								<foreach name="checkList" item="list">
+								<tr align="center">
+									<th><input type="checkbox" name="id[]" value="{$list['id']}">{$list['id']}</th>
+									<th>{$list['title']}</th>
+									<th>{$list['author']}</th>
+									<th>{$list['summary']}</th>
+									<th><img src="__ROOT__/{$list['thumb_img']}"></th>
+									<th>{$list['time']}</th>
+									<th>{$list['type']}</th>
+									<th><a href="{:U('information/check?id='.$list['id'])}">通过</a>|<a href="{:U('information/check?id='.$list['id'].'&draft='.$list['draft'])}">不通过</a></th>
+								</tr>
+								</foreach>
+								<tr>
+									<td colspan="3">
+										<button class="btn btn-success" id="all">全选</button>
+										<button class="btn btn-success" id="uncheck">清除</button>
+										<input class="btn btn-success" type="button" value="一键通过">
+									</td>
+									<td colspan="6">{$show}</td>
+									
+									
+								</tr>
+							</table>
+                        </div>
+				</div>
+      
+			</div>
+   
+	</div>
+	
+   
+  
+   
+
+   
+     <script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+   <script type="text/javascript" charset="utf-8">
+	$(function(){
+        $('#all').click(function(){
+                $('input[name="id[]"]').prop('checked',true);
+            });
+       
+		 $('#uncheck').click(function(){
+                $('input[name="id[]"]').prop('checked',false);
+            });	
+			
+		$('input:button').click(function(){
+            var data = $(':checkbox[name="id[]"]').serialize();
+			console.log(data);
+            if(!confirm('确认通过？')){
+                return;
+            }
+            if(data.length==0){
+                alert('至少选择一个');
+                return;
+            }
+            location.href='{:U("check")}?'+data;
+			});
+			
+        });
+		
+
+   </script>
+
+
+  </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+
+<extend name="Common:base" />
+      
+   <block name="main">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RhXyFo0zdsGiiXSrD3VRYd2UjBGza1QE&coor=bd09ll"></script>
+
+      
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                    经销商查询
+                   </h3>
+                  
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 经销商查询 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+                            <form action="{:U('cartool/dealers')}" method="post" id="form" class="form-horizontal" enctype="multipart/form-data">
+							
+							 <div class="control-group">
+                                <label class="control-label">您当前位置</label>
+                                <div class="controls">
+								 <input type="text" class="span6 " style="margin: 0 auto;width:auto" id="ip" name="location"  />
+									
+                                </div>
+                            </div>
+							
+							<div class="control-group">
+                                <label class="control-label">请输入经销商</label>
+                                <div class="controls">
+                                    <input type="text" class="span6  tooltips" style="margin: 0 auto;width:auto" data-trigger="hover" name="dealer_name" value=""/>
+                                </div>
+                            </div>
+							
+                            <div class="form-actions">
+								<input type="submit"  class="btn" name="sub" value="查询">
+                            </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+         
+
+      </div>
+	   <script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+	<script type="text/javascript">
+	// 百度地图API功能  根据ip定位
+	var map = new BMap.Map("ip");
+	var point = new BMap.Point({$data['log']},{$data['lat']});
+	map.centerAndZoom(point,12);
+
+	function myFun(result){
+		var cityName = result.name;
+		map.setCenter(cityName);
+		$('#ip').val(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+</script>
+      
+     </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+ <html>
+   <head>
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+       <title>选择发布资讯类型</title>
+       
+   </head>
+   <body>
+	<a href="{:U('info_add?type=favorable')}"> 优惠信息</a>
+	<a href="{:U('info_add?type=new_car')}">新车资讯</a>
+   </body>
+ </html>

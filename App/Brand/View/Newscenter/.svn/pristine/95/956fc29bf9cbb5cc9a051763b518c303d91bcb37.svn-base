@@ -1,0 +1,14 @@
+<?php
+namespace Admin\Model;
+use Think\Model;
+class CarModel extends Model{
+
+	/**
+	 * 汽车列表
+	 */
+	public function getList()
+	{
+		$list=$this->find();
+		return $list;
+	}
+}

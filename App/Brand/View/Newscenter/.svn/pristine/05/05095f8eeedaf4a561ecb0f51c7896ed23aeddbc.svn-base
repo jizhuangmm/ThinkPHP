@@ -1,0 +1,434 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+
+class BasicinfController extends CommonController
+{
+	//显示企业风采
+	public function enterprise_style()
+	{
+    $brand=M('enterprise_style');
+   
+    $count = $brand->count();
+    $Page = new \Think\Page($count,5);// 实例化分页类 传入总记录数
+    
+    $show = $Page->show();// 分页显示输出
+    $data = $brand->order('id')->limit($Page->firstRow.','.$Page->listRows)->select(); // $Page->firstRow 起始条数 $Page->listRows 获取多少条
+    $this->assign('data',$data);
+    $this->assign('page',$show);// 赋值分页输出
+    $this->display(); 
+	}
+  //企业风采详情
+  public function enterprise_details()
+  {
+        $id = I('get.id');
+        $admin = M('enterprise_style');
+        $result = $admin->where(array('id'=>$id))->find();
+        $this->result = $result;
+        $this->display();
+      }
+  //新建企业风采
+  public function enterprise_add_uplode()
+  {
+    $data = I('post.');
+
+    $rootPath = 'upload/basic/';
+    $today = date('Ymd');      
+    $targetFolder = $rootPath . $today;
+    if (!file_exists($targetFolder)) {
+      mkdir($targetFolder, 0777);
+    }
+    if($_FILES['video_img'] && $_FILES['video_img']['name'] != ''){
+      $saveName = date('YmdHis') . rand(1000, 9999);
+      $img_name =  $_FILES['video_img']['tmp_name'];
+      $fileParts = pathinfo($_FILES['video_img']['name']);
+      $filetype = strtolower($fileParts['extension']);
+      $fileTypes = array('wmv', 'mp3', 'mp4', 'flv');
+      if(!in_array($filetype, $fileTypes)) {
+        die('不正确的文件格式');
+      } 
+      $fileurl = $today . '/' . $saveName . "." . $filetype;
+      $piclist = $today . '/' . $saveName . "_s." . $filetype;
+      $upfile = $rootPath . '/' . $fileurl;
+      move_uploaded_file ( $img_name, $upfile);
+
+      $flv =  $upfile;
+      $jpg =  $rootPath . '/' . $piclist;
+      $cmd = "ffmpeg.exe -i $flv -f image2 -ss 5 -s 200*150 -vframes 1 $jpg";
+      exec ( $cmd );
+      $data['video'] = $fileurl;
+      $data['video_img'] = $piclist;
+    }
+    if($_FILES['image'] && $_FILES['image']['name'] != ''){
+  		$img_name = $_FILES['image']['tmp_name'];
+  		
+  		$image = new \Think\Image();
+  		$image->open($img_name);
+  		$filetype = $image->type();
+  		$filetype = str_replace("jpeg", "jpg", $filetype);
+  		
+  		$filename = date('YmdHis') . mt_rand(1000, 9999);
+  		$imgurl = $filename . "." . $filetype;
+  		$img = $targetFolder . '/' . $imgurl;
+  		$imglist = $filename . "_l." . $filetype;
+  		$imgl = $targetFolder . '/' . $imglist;
+  		
+  		/* 验证文件格式 */
+  		$fileTypes = array (
+  				'jpg',
+  				'jpeg',
+  				'gif',
+  				'png'
+  		);
+  		
+  		if (in_array($filetype, $fileTypes)) {
+  			$image->save($img);
+  			$image->thumb(150, 150)->save($imgl);
+  			$data['image'] = $today . '/' . $imgurl;
+  			$data['piclist'] = $today . '/' . $imglist;
+  		} else {
+  			echo '不正确的图片格式.';
+  		}
+          
+      if($_FILES['music'] && $_FILES['music']['name'] != ''){
+      var_dump($_FILES);
+        die;
+        $music_name = $_FILES['music']['tmp_name'];
+
+        $fileParts = pathinfo($_FILES['music']['name']);
+        $filetype = strtolower($fileParts['extension']);
+        $fileTypes = array('wmv', 'mp3', 'wav');
+        if(!in_array($filetype, $fileTypes)) {
+          die('不正确的文件格式');
+        }
+        $saveName = date('YmdHis') . mt_rand(1000, 9999);
+        $music = $today . '/' . $saveName . "." . $filetype;
+        $upfile = $rootPath . '/' . $music;
+        move_uploaded_file($music_name, $upfile);
+        $data['music'] = $music;
+      }      
+    }
+    $Style = M('enterprise_style');      
+    if($Style->add($data)){
+
+        $this->success('数据已写入','enterprise_style' ); 
+    } else {
+      $this->error('数据写入错误！','enterprise_style');
+    }
+  }
+  //编辑企业风采页面展示
+	public function enterprise_edit()
+ { 
+         $id = I('get.id');
+          $admin = M('enterprise_style');
+          $result = $admin->where(array('id'=>$id))->find();
+          $this->result = $result;
+          $this->display();
+	
+	}
+  //删除企业风采
+	public function enterprise_delete()
+	{
+		$id = I('get.id');
+            $admin = M('enterprise_style');
+            $result=$admin->where('id='.$id)->delete();
+            if($result){
+                $this->success('删除成功',U('Admin/Basicinf/enterprise_style'));                
+            }else{
+                $this->error('删除失败',U('Admin/Basicinf/enterprise_style'));
+            }
+	}
+  //编辑企业风采展示
+	public function enterprise_edit_uplode()
+	{        $data=I('post.');
+           $rootpath='uplode/basic';
+           $today=data('Ymd');
+           $targetFolder=$rootpath.$today;
+           if(!file_exists($targetFolder)){
+                mkdir($targetFolder, 0777);
+           }
+           if ( $_FILES['video_img'] && $_FILES['video_img']['name']!=='' ) {
+          $saveName = date ( 'YmdHis' ) . rand ( 1000, 9999 );//名称 
+          $img_name=$_FILES['video_img']['tmp_name'];
+        $fileParts = pathinfo($_FILES['video_img']['name']);
+       
+        $filetype = strtolower($fileParts['extension']);
+        $fileTypes = array ('wmv', 'mp3', 'mp4', 'flv');
+        if (! in_array ( $filetype, $fileTypes )) {
+            die ( '不正确的文件格式' );
+        } 
+        $fileurl = $today . '/' . $saveName . "." . $filetype;
+        $piclist = $today . '/' . $saveName . "_s." . $filetype;
+        $upfile = $rootPath . '/' . $fileurl;//视频路径
+         $_POST['video']= $upfile ;
+        move_uploaded_file ( $img_name, $upfile);
+    $flv =  $upfile;  
+    $jpg =  $rootPath . '/' . $piclist; //缩略图路径
+    // 以下指令中的 200*150 为截取缩略图的宽与高，可根据实际需要调整
+    $cmd = "ffmpeg.exe -i $flv -f image2 -ss 5 -s 200*150 -vframes 1 $jpg";
+      //执行命令
+    exec ( $cmd );
+     $data['video']= $fileurl;
+     $data['video_img']= $piclist;
+        }
+     if($_FILES['image']&& $_FILES['image']['name']!==''){
+          $image_name=$_FILES['image']['tmp_name'];
+         $image=new \Think\Image();；
+        $image->open($image_name);
+        $filetype=$image->type();
+        $filetype = str_replace("jpeg", "jpg", $filetype);
+        $filename=date('YmdHis').mt_rand(1000,9999);
+
+        $upload->exts=array('jpg','gif','png','jpeg'); //允许上传文件类型
+        $upload->maxSize=10145728;//设置附件上传大小
+        $upload->savename='time';//
+       
+        $upload->rootpath='./Uploads/';//设置文件上传根目录
+        $uplode->savePath = '';//设置文件上传（子）目录
+        $info=$upload->upload();
+         if($info){
+             foreach ($info as $file) {
+           $file_path='./Uploads/'.$file['savepath'].$file['savename'];
+           $file_mini='./Uploads/'. $file['savepath'].'mini'.$file['savename'];
+           $image=new \Think\Image();
+          $image->open($file_path);
+          $image->thumb(50,50)->save($file_mini);
+        }
+
+         $_POST['image']=$file_mini;//小图
+        }
+        else{         
+            exit($this->uploader->getError()); //输出错误信息  
+        }
+             
+     } 	
+           if($_FILES['music']){
+           	if (!empty($_FILES['music']['name'])) {
+           		 $upload = new \Think\Upload();// 实例化上传类  
+				   $upload->maxSize=0;//设置附件上传大小
+                   $upload->savename='time';//
+		           $upload->exts = array('mp3', 'wmv', 'wav');// 设置附件上传类型  
+		           $upload->rootpath='./Uploads/';//设置文件上传根目录
+		           $uplode->savePath = '';//设置文件上传（子）目录
+		           $info=$upload->upload();
+           if($info) {
+			// 上传成功   
+			    foreach ($info as $file) {
+               $file_pathing='Uploads/'.$file['savepath'].$file['savename'];
+                $_POST['music']=$file_pathing;
+			}
+
+		}else{               
+			$this->error($upload->getError()); // 上传错误提示错误信息
+				    }
+           	   }	
+			}
+			$vide=M('enterprise_style');			
+           if($_POST){
+           	  $vide->data($_POST)->save();
+                $this->success('修改成功','enterprise_style' ); 
+            }else{
+               $this->error('修改失败', 'enterprise_style');
+            }
+ }
+	
+	//显示品牌历程
+	public function brand_history()
+	{  
+		$brand=M('brand_course');
+    $count = $brand->count();
+    $Page = new \Think\Page($count,5);// 实例化分页类 传入总记录数
+
+    $show = $Page->show();// 分页显示输出
+    $data = $brand->order('id')->limit($Page->firstRow.','.$Page->listRows)->select(); // $Page->firstRow 起始条数 $Page->listRows 获取多少条
+    $this->assign('data',$data);
+    $this->assign('page',$show);// 赋值分页输出
+
+    $this->display(); 
+		
+	}
+  //新建品牌历程页面展示
+	public function brand_add()
+	{   
+        $this->display();
+	}
+  //新建品牌历程
+public function brand_add_uplode()
+{    if($_POST){
+           if($_FILES['img']){         
+            $rootPath = 'upload';//路径            
+            $today = date ( 'Y-m-d' );//日期            
+            $saveName = date ( 'YmdHis' ) . rand ( 1000, 9999 );//名称          
+            $targetFolder = 'upload/' . $today;//完整路径
+           if (! file_exists ( $targetFolder )) {
+        mkdir ( $targetFolder, 0777 );
+        }
+           if (! empty ( $_FILES['img']['name'] )) {
+        $img_name =  $_FILES['img']['tmp_name'];
+        $fileParts = pathinfo($_FILES['img']['name']);
+       
+        $filetype = strtolower($fileParts['extension']);
+        $fileTypes = array ('wmv', 'mp3', 'mp4', 'flv');
+        if (! in_array ( $filetype, $fileTypes )) {
+            die ( '不正确的文件格式' );
+        }           
+        $num_rand = mt_rand ( 1000, 9999 );
+        $fileurl = $today . '/' . $saveName . "." . $filetype;
+        $piclist = $today . '/' . $saveName . "_s." . $filetype;
+        $upfile = $rootPath . '/' . $fileurl; //视频路径      
+         $_POST['video']= $upfile ;
+        move_uploaded_file ( $img_name, $upfile);
+
+    // 如果是视频FFMpeg截图(注：具体的文件路径请参考实际情况)
+    $flv =  $upfile;
+    $piclist = $today . '/' . $saveName . '_s.jpg';
+    //缩略图路径
+    $jpg =  $rootPath . '/' . $piclist;
+     $_POST['img']= $jpg;
+    // 以下指令中的 200*150 为截取缩略图的宽与高，可根据实际需要调整
+    $cmd = "ffmpeg.exe -i $flv -f image2 -ss 5 -s 200*150 -vframes 1 $jpg";
+    //执行命令
+    exec ( $cmd );
+        }
+          }
+          $vide=M('brand_course');
+         if($vide->add($_POST)){
+          $this->success('数据写入成功！','brand_history' ); 
+          }else{
+        $this->error('数据写入错误！','brand_history');
+            }      
+     } 
+
+}
+  //编辑品牌历程页面展示
+	public function brand_edit()
+	{   
+
+       $id = I('get.id');
+            $admin = M('brand_course');
+            $result = $admin->where(array('id'=>$id))->find();
+            $this->result = $result;
+            $this->display();	
+	}
+//编辑品牌历程
+ public function brand_edit_uplode()
+ {       
+            $rootPath = 'upload'; //路径           
+            $today = date ( 'Y-m-d' ); //日期            
+            $saveName = date ( 'YmdHis' ) . rand ( 1000, 9999 );//名称
+            $targetFolder = 'upload/' . $today;//完整路径
+           if (! file_exists ( $targetFolder )) {
+           mkdir ( $targetFolder, 0777 );
+             }
+           if (!empty( $_FILES['img']['name'] )) {
+        $img_name =  $_FILES['img']['tmp_name'];
+        $fileParts = pathinfo($_FILES['img']['name']);
+        $filetype = strtolower($fileParts['extension']);
+        $fileTypes = array ('wmv', 'mp3', 'mp4', 'flv');
+        if (! in_array ( $filetype, $fileTypes )) {
+            die ( '不正确的文件格式' );
+            }           
+        $num_rand = mt_rand ( 1000, 9999 );
+        $fileurl = $today . '/' . $saveName . "." . $filetype;
+        $piclist = $today . '/' . $saveName . "_s." . $filetype;
+        $upfile = $rootPath . '/' . $fileurl;//视频路径
+
+         $_POST['video']=$upfile;
+           move_uploaded_file ( $img_name, $upfile);
+    // 如果是视频FFMpeg截图(注：具体的文件路径请参考实际情况)
+    $flv =  $upfile;
+    $piclist = $today . '/' . $saveName . '_s.jpg';  
+    $jpg =  $rootPath . '/' . $piclist;//缩略图路径
+     $_POST['img']= $jpg;
+    // 以下指令中的 200*150 为截取缩略图的宽与高，可根据实际需要调整
+    $cmd = "ffmpeg.exe -i $flv -f image2 -ss 5 -s 200*150 -vframes 1 $jpg";  
+    exec ( $cmd ); //执行命令
+        }
+             $vide=M('brand_course');
+           if($_POST){
+             	$vide->data($_POST)->save();
+                $this->success('修改成功','brand_history' ); 
+            }else{
+               $this->error('修改失败', 'brand_history');
+            }           
+    
+} 
+//删除品牌历程
+	   public function brand_delete()
+     {
+            $id = I('get.id');
+            $admin = M('brand_course');
+            $result=$admin->where('id='.$id)->delete();
+            if($result){
+                $this->success('删除成功',U('Admin/Basicinf/brand_history'));
+                
+            }else{
+                $this->error('删除失败',U('Admin/Basicinf/brand_history'));
+            }
+  }
+ 
+	//显示联系我们
+	public function contact_us()
+{   
+       $brand=M('contact_us');
+    $count = $brand->count();
+    $Page = new \Think\Page($count,5);// 实例化分页类 传入总记录数
+    $show = $Page->show();// 分页显示输出
+    $data = $brand->order('id')->limit($Page->firstRow.','.$Page->listRows)->select(); // $Page->firstRow 起始条数 $Page->listRows 获取多少条
+    $this->assign('data',$data);
+    $this->assign('page',$show);// 赋值分页输出
+    $this->display(); // 输出模板
+}
+//新建联系我们
+  public function contact_add()
+  {  
+    $vide=M('contact_us');
+          if($_POST){
+            if( $vide->add($_POST)){
+               $this->success('数据写入成功！','contact_us' ); 
+            }else{
+         $this->error('数据写入错误！','contact_us');
+      }   
+      }  
+      $this->display(); 
+ } 
+
+  //编辑联系我们页面展示
+  public function contact_edit()
+  {
+
+            $id = I('get.id');
+            $admin = M('contact_us');
+            $result = $admin->where(array('id'=>$id))->find();
+            $this->result = $result;
+            $this->display(); 
+ }  
+//编辑联系我们
+ public function contact_us_edit()
+ {
+       $vide=M('contact_us');
+       if($_POST){
+      $vide->data($_POST)->save();
+               $this->success('数据写入成功！','contact_us' ); 
+            }else{
+         $this->error('数据写入错误！','contact_us');
+      }   
+ }
+
+//删除联系我们
+  public function contact_delete()
+  {
+
+            $id = I('get.id');
+            $admin = M('contact_us');
+            if($admin->where('id='.$id)->delete()){
+                $this->success('删除成功',U('Admin/Basicinf/contact_us'));
+                
+            }else{
+                $this->error('删除失败',U('Admin/Basicinf/contact_us'));
+            }
+
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+</head>
+<body bgcolor="gray">
+	<form action="{:U('Brandcars/sub_from')}" method="post">
+		<table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="red" bgcolor="gray">
+			<tr>
+				<td>分类选项</td>
+				<td>
+				<volist name="list" id="vo">
+				<input type="radio" name="out" value="{$vo.id}" />{$vo.type_name}
+				</volist>
+				<input type="hidden" name="model_id" value="{$id.id}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>提交吧</td>
+				<td><input type="submit" value="提交吧" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

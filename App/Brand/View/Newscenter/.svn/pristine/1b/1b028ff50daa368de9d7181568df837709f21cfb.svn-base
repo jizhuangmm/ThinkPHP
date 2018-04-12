@@ -1,0 +1,143 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+use Org\Util\Rbac;
+
+class MaterialController extends CommonController
+{
+
+	//显示分类
+	public function classification()
+	{
+        $classify=M("material_classify")->order('id')->select();
+        $this->assign("classify",$classify);
+		$this->display();
+	}
+	//显示应用
+	public function application()
+	{
+		$application=M("material_application")->order('id')->select();
+        $this->assign("application",$application);
+		$this->display();
+	}
+	//显示列表
+	public function material_list()
+	{
+		$material=M("material")->where('status=0')->order('id')->select();
+
+		/*foreach ($material as $key => $value) {
+			
+			$user['uid']=array('in',array($material[$key]['user_id']));
+			$users=array_unique($user['uid']);print_r($users);
+		}
+			$user_id=M("user_info")->where($user)->select();
+			
+			$material['user_id']=$user_id[$key]['username'];
+		die;*/
+        $this->assign("material",$material);
+		$this->display();
+	}
+	//添加素材分类
+	public function classify_add(){
+
+		$data['name']=I("post.username");
+		if(M("material_classify")->add($data)){
+			$this->success("素材分类添加成功","classification",2);
+		}else{
+			$this->error("素材分类添加失败","classification",2);
+		}
+	}
+	//删除素材分类
+	public function classify_del(){
+        $id['id']=I("get.id");
+        if(M("material_classify")->where($id)->delete()){
+        	$this->success("素材分类删除成功","classification",2);
+        }else{
+        	$this->error("素材分类删除失败","classification",2);
+        }
+    }
+   	//添加素材分类
+	public function application_add(){
+
+		$data['name']=I("post.username");
+		if(M("material_application")->add($data)){
+			$this->success("素材应用添加成功","application",2);
+		}else{
+			$this->error("素材应用添加失败","application",2);
+		}
+	}
+	//删除素材应用
+	public function application_del(){
+        $id['id']=I("get.id");
+        if(M("material_application")->where($id)->delete()){
+        	$this->success("素材应用删除成功","application",2);
+        }else{
+        	$this->error("素材应用删除失败","application",2);
+        }
+    }
+    //素材显示应用和分类
+    public function add_material(){
+    	$application=M("material_application")->order('id')->select();
+    	$classify=M("material_classify")->order('id')->select();
+        $this->assign("classify",$classify);
+        $this->assign("application",$application);
+        $this->display();
+
+    }
+    //添加素材
+    public function material_add(){
+    	if(I("post.")!=''){
+    	$data['title']=I("post.title");
+    	$data['name']=I("post.name");
+    	$application_id=I("post.application_id");
+    	$data['application_id']=implode(',',$application_id); 
+    	$data['classify_id']=I("post.classify_id");
+    	$data['content']=I("post.content");
+    	$data['date']=date("Y-m-d H:i:s");
+    	$data['user_id']=session("uid");
+    	if(M("material")->add($data)){
+			$this->success("素材添加成功","material_list",2);
+		}else{
+			$this->error("素材添加失败","material_list",2);
+		}
+		}
+    }
+    //删除素材
+    public function material_del(){
+    	$id['id']=I("get.id");
+    	$data['status'] = 1;
+        if(M("material")->where($id)->save($data)){
+        	$this->success("素材删除成功","material_list",2);
+        }else{
+        	$this->error("素材删除失败","material_list",2);
+        }
+    }
+    //显示素材修改页面
+    public function material_up(){
+    	$id['id']=I("get.id");
+    	$material_list=M("material")->where($id)->select();
+        $this->assign("material_list",$material_list);
+    	$this->display();
+    }
+    //修改素材
+    public function material_pro(){
+    	$id['id']=I("post.material_id");
+    	
+    	$data['title']=I("post.title");
+    	$data['name']=I("post.name");
+    	$application_id=I("post.application_id");
+    	$data['application_id']=implode(',',$application_id); 
+    	$data['classify_id']=I("post.classify_id");
+    	$data['content']=I("post.content");
+    	$data['date']=date("Y-m-d H:i:s");
+    	$data['user_id']=session("uid");
+    	dump($data);
+    	if(M("material")->where($id)->save($data)){
+        	$this->success("素材修改成功","material_list",2);
+        }else{
+        	$this->error("素材修改失败","material_list",2);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>百元百鸡</title>
+</head>
+<body>
+<h1>百元百鸡</h1>
+<span>100元钱买100只鸡，公鸡5元一只、母鸡3元一只、小鸡1元三只，问公鸡、母鸡、小鸡各多少只？
+</span>
+<input type="text" id="enen" value="" onclick="ji()" />
+</body>
+<script>
+function ji()
+{
+	var count = 0;
+	for(var gongji = 0; gongji <= 100; ++gongji) {
+		for(var muji = 0; muji <= 100; ++muji) {
+			for(var xiaoji = 0; xiaoji <= 100; ++xiaoji) {
+				if(gongji*5 + muji*3 + xiaoji/3 == 100 && gongji + muji + xiaoji == 100) {
+				alert("公鸡有"+gongji+"只母鸡有"+muji+"只；小鸡有"+ xiaoji+"只；<br />");
+				}
+				count++;
+			}
+		}
+	} 
+}
+
+</script>
+</html>

@@ -1,0 +1,58 @@
+
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+
+    <h3 class="page-title">企业风采</h3>
+    <ul class="breadcrumb">
+      <li><a href="{:U('Admin/Basicinf/enterprise_style')}">企业风采</a> <span class="divider">/</span></li>
+      <li class="active">详情</li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+         <!--  <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div> -->
+        </form>
+      </li>
+    </ul>
+    <div>
+            企业简介：{$result.introduce}<br/>
+            具体内容：{$result.centent}<br/>
+            图片：<img src="__ROOT__/{$result.image}"> <br>
+            链接：<a href="{$result.url}">{$result.url}</a><br/>
+            音频：<audio controls="controls">  
+                     <source src="__ROOT__/{$result.music}" /> 
+                  </audio> <br/> 
+            时间：{$result.time}<br/>
+            显示：<input type="radio"  value="1" <php> if($result['is_show']== 1){ echo      
+                 "checked required"; } </php> id="male" name="is_show" > 是
+                 <input type="radio" value="2"  <php> if($result['is_show'] == 2){ echo "checked required" ;}</php> id="female" name="is_show">否 <br/>
+             视频 :<video src="__ROOT__/{$result.video}" width="352" height="264" controls autobuffer></video><br/>
+ 
+             <object height="150"  width="150" classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95"> 
+                  <param name="AutoStart" value="0" /> 
+                  <param name="FileName" value="__ROOT__/{$result.video}" /> 
+                  </object> 
+                  <br/>
+                  <input type="button" value="取消" onclick="javascrtpt:window.location.href='{:U('Admin/Basicinf/enterprise_style')}'">  
+             </div>
+  </div>
+</div>
+</block>

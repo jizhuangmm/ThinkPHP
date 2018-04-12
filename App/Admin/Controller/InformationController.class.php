@@ -1,0 +1,564 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+
+class InformationController extends CommonController{
+
+    /**
+	*
+	* 发布资讯
+	*	1、图片上传
+	*	2、缩率图裁剪上传
+	*/
+	public function sel_type(){
+		
+		$this->display();
+	}
+	public function info_add(){
+		
+        $model = M('information');
+		$type = $_GET['type'];
+		$this->assign('type',$type);
+		// $_POST['type']=$type;
+        if($_POST){
+			//实时更改时间
+			$_POST['date'] = date('Y-m-d');
+            $_POST['time'] = date('Y-m-d H:i:s');
+			
+			//更改显示状态
+            $_POST['display_status'] = 1;
+			//图片上传
+			$upload = new \Think\Upload();// 实例化上传类
+			$upload->maxSize   =     3145728 ;// 设置附件上传大小
+			$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+			$upload->rootPath  =    './upload';    //根下面的目录
+			$upload->savePath  =      '/image/'; // 设置附件上传目录
+			$upload->saveName  =    ['uniqid','pic'];//设置保存前缀
+			$upload->subName   =    ['date','Y-m-d'];  //以日期方式保存
+			
+			//上传文件并返回信息
+			$info = $upload->upload();
+			$thumbVal = true;
+			if($info){     //更新的话，一定要写这个判断
+				//遍历信息 取得路径和文件名
+				if($thumbVal){
+					$thumb = new \Think\Image();
+					$width = '80px';
+					$height = '50px';
+					foreach($info as $file){
+						$thumb_file = 'upload'.$file['savepath'].$file['savename'];
+						$thumb_path = 'upload'.$file['savepath'].'thumb'.$file['savename'];
+					}
+					$info_thumb =  $thumb->open($thumb_file)->thumb( $width, $height )->save( $thumb_path );
+					//保存缩率图路径到POST中
+					$_POST['thumb_img'] = $thumb_path;
+				}
+				
+				foreach($info as $file){
+					$img = 'upload'.$file['savepath'].$file['savename'];
+				}
+				//把文件名存到POST中 方便create使用
+				$_POST['image'] = $img;
+			}
+				
+				//除去提交按钮
+				unset($_POST['sub']);
+		
+				
+				
+				//添加
+			$re = $model->add($_POST);
+				//判断添加成功或失败
+				if($re){
+					$this->success('马上去审核',U('information/check_list'));
+				}else{
+					$this->error('添加失败');
+				}
+        }else{
+            $this->display();
+        }
+	}
+	
+	/**
+	*
+	* 资讯列表
+	*	通过审核的资讯展示
+	*/
+	public function info_list(){
+			$model = M("information");
+			$where = " check_status=1 and display_status=1";
+			$total = $model->where($where)->count();
+			
+			
+			//每页显示条数
+			$pagesize = 15;
+			//实例化分页类
+			$opage = new \Think\Page($total,$pagesize);
+			//查询
+			$this->infoList = $model->where($where)->limit($opage->firstRow,$opage->listRows)->select();
+			$opage->setConfig('prev','上一页');
+			$opage->setConfig('next','下一页');
+			$opage->setConfig('first','首页');
+			$opage->setConfig('last','尾页');
+			$this->show = $opage->show();
+			
+		
+		
+			//分配变量
+			
+			$this->display();
+	}
+		 
+	/*
+	* 资讯审核列表
+	* 
+	*/
+	function check_list(){
+			$model = M('information');
+			//查询待审核数据
+			
+			$where = " check_status = 0";
+			$total = $model->where($where)->count();
+			
+			
+			//每页显示条数
+			$pagesize = 5;
+			//实例化分页类
+			$opage = new \Think\Page($total,$pagesize);
+			//查询
+			$this->checkList = $model->where($where)->limit($opage->firstRow,$opage->listRows)->select();
+			$opage->setConfig('prev','上一页');
+			$opage->setConfig('next','下一页');
+			$opage->setConfig('first','首页');
+			$opage->setConfig('last','尾页');
+			$this->show = $opage->show();
+			
+			
+			$this->display();
+	} 
+    
+    /*
+	* 资讯审核
+	*	支持单条和一键审核
+	*		审核通过，资讯列表展示，不通过草稿箱保存
+	*/
+    function check(){
+		$id = I('get.id',0,'');
+        $model = M('information');
+		//判断接收的ID是否是数组
+		if(is_array($id)){
+			//批量删除，拆分ID
+			$where = " id in (".implode(',',$id).")";
+			
+		}else{
+			$where = " id=".$id;
+		}
+		
+		//判断是否放进草稿箱
+		if($_GET['draft'] && $_GET['draft']==1){
+				// $_GET['draft']=0;
+				// $_GET['check_status']=0;
+				$model->draft=0;
+				$model->check_status=0;
+				
+		}else{
+		
+			if($_GET['check_status'] && $_GET['check_status']==1){
+				// $_GET['check_status']=0;
+				$model->check_status=0;
+			}else{
+				//$_GET['check_status']=1;
+				$model->check_status=1;
+			}
+			
+		}
+		$re = $model->where($where)->save();
+		//判断成功与否
+		if($re){
+			$this->success('成功',U('information/info_list'));
+		}else{
+			$this->error('失败');
+		}
+	
+    }
+	
+	/*
+	* 完后资讯添加
+	*	1、图片上传，包括缩率图
+	*	2、视频上传，包括裁剪图
+	*	3、动画上传
+	*/
+	function info_finish_add(){
+		
+		if($_POST){
+			$model = M('information');
+			//更新为当前时间
+			$_POST['date'] = date('Y-m-d');
+			$_POST['time'] = date('y-m-d H:i:s');
+			//图片
+			
+			if($_FILES['image']){
+				
+					//上传图片
+					$upload = new \Think\Upload();// 实例化上传类
+					$upload->maxSize   =     3145728 ;// 设置附件上传大小
+					$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+					$upload->rootPath  =    './upload';    //根下面的public
+					$upload->savePath  =      '/image/'; // 设置附件上传目录
+					$upload->saveName  =    ['uniqid','pic'];//设置保存前缀
+					$upload->subName   =    ['date','Y-m-d'];  //以日期方式保存
+					
+					//上传文件并返回信息
+					$info = $upload->upload();
+					//缩率图裁剪上传
+					$thumbVal = true;
+					
+					if($info){     //更新的话，一定要写这个判断
+						//遍历信息 取得路径和文件名
+						
+						if($thumbVal){
+							//实例化缩率图类
+							$thumb = new \Think\Image();
+							//设置缩率图宽度
+							$width = '80px';
+							//设置缩率图高度
+							$height = '50px';
+							
+							foreach($info as $file){
+								//被裁剪图片路径
+								$thumb_file = 'upload'.$file['savepath'].$file['savename'];
+								//缩率图存放路径
+								$thumb_path = 'upload'.$file['savepath'].'thumb'.$file['savename'];
+							}
+							
+							$info_thumb =  $thumb->open($thumb_file)->thumb( $width, $height )->save( $thumb_path );
+							//保存缩率图路径到POST中
+							$_POST['th	umb_img'] = $thumb_path;
+						}
+						
+						foreach($info as $file){
+							$img = 'upload'.$file['savepath'].$file['savename'];
+						}
+						//把文件名存到POST中 方便create使用
+						$_POST['image'] = $img;
+					}else{
+						$this->error($upload->getError());
+					}
+			}
+			//视频
+			if($_FILES['video']){
+					//路径
+					$rootPath = 'upload/video';
+					//日期
+					$today = date ( 'Y-m-d' );
+					//名称
+					$saveName = date ( 'YmdHis' ) . rand ( 1000, 9999 );
+					//完整路径拼接
+					$targetFolder = 'upload/video/' . $today;
+					if (! file_exists ( $targetFolder )) {
+						mkdir ( $targetFolder, 0777 );
+					}
+					//判断文件是否存在
+					if (! empty ( $_FILES )) {
+						$img_name = $_FILES ['video'] ['tmp_name'];
+						$fileParts = pathinfo($_FILES['video']['name']);
+						//后缀名转小写
+						$filetype = strtolower($fileParts['extension']);
+						//文件允许格式
+						$fileTypes = array ('mp3', 'mp4', 'flv','wmv');
+						if (! in_array ( $filetype, $fileTypes )) {
+							die ( '不正确的文件格式' );
+						}
+						
+						$num_rand = mt_rand ( 1000, 9999 );
+						
+						$fileurl = $today . '/' . $saveName . "." . $filetype;
+						//拼接视频名称
+						$piclist = $today . '/' . $saveName . "_s." . $filetype;
+						$upfile = $rootPath . '/' . $fileurl;
+						//拼接视频路径
+						$video = $rootPath . '/' . $piclist;
+						//将视频路径存储到数据库
+						$_POST['video'] = $video;
+						move_uploaded_file ( $img_name, $upfile );
+					}
+
+					// 如果是视频FFMpeg截图(注：具体的文件路径请参考实际情况)
+					//$ffmpeg = '/static/ffmpeg/ffmpeg.exe';
+					$flv = $upfile;
+					
+					
+					$piclist = $today . '/' . $saveName . '_s.jpg';
+					$jpg =  $rootPath . '/' . $piclist;
+					//将缩略图路径存储到数据库
+					$_POST['video_img'] = $jpg;
+					
+					// 以下指令中的 200*150 为截取缩略图的宽与高，可根据实际需要调整
+					$cmd = "ffmpeg.exe -i $flv -f image2 -ss 5 -s 50*80 -vframes 1 $jpg";
+					//执行命令
+					exec ( $cmd );
+					
+			}
+			
+			if($_FILES['flash']){
+				
+					$rootPath = 'upload/flash';
+					$today = date ( 'Y-m-d' );
+					$saveName = date ( 'YmdHis' ) . rand ( 1000, 9999 );
+					$targetFolder = 'upload/flash/' . $today;
+					if (! file_exists ( $targetFolder )) {
+						mkdir ( $targetFolder, 0777 );
+					}
+					if (! empty ( $_FILES )) {
+						$img_name = $_FILES ['flash'] ['tmp_name'];
+						$fileParts = pathinfo($_FILES['flash']['name']);
+						$filetype = strtolower($fileParts['extension']);
+						$fileTypes = array ('jpg', 'gif', 'png', 'jpeg', 'mp3', 'mp4', 'flv','wmv');
+						if (! in_array ( $filetype, $fileTypes )) {
+							die ( '不正确的文件格式' );
+						}
+
+							$num_rand = mt_rand ( 1000, 9999 );
+							$fileurl = $today . '/' . $saveName . "." . $filetype;
+							$piclist = $today . '/' . $saveName . "_s." . $filetype;
+							$upfile = $rootPath . '/' . $fileurl;
+							
+							$flash = $rootPath . '/' . $piclist;
+						
+							$_POST['flash'] = $flash;
+							move_uploaded_file ( $img_name, $upfile );
+					}
+
+					// 如果是视频FFMpeg截图(注：具体的文件路径请参考实际情况)
+					//$ffmpeg = __ROOT__.'/static/ffmpeg/ffmpeg.exe';
+					$flv = $upfile;
+					
+					
+					$piclist = $today . '/' . $saveName . '_s.jpg';
+					$jpg =  $rootPath . '/' . $piclist;
+					$_POST['flash_img'] = $jpg;
+					
+					// 以下指令中的 200*150 为截取缩略图的宽与高，可根据实际需要调整
+						$cmd = "ffmpeg.exe -i $flv -f image2 -ss 5 -s 50*80 -vframes 1 $jpg";
+					
+					exec ( $cmd );
+					
+			}
+			
+				//更改资讯类型
+				$_POST['new']=0;
+				//更改审核状态
+				$_POST['check_status']=1;
+				//添加
+				$re = $model->add($_POST);
+				if($re){
+					$this->success('添加成功',U('info_list'));
+				}else{
+					$this->error('添加失败');
+				}
+				
+			
+		}else{
+			$this->display();
+		}
+		
+		
+	}
+	
+	/*
+	*
+	* 资讯编辑
+	*	
+	*/
+	function info_save(){
+			$id = I('get.id',0,'intval');
+			$model = M('information');
+			
+			if($id){
+				$where = " id = ".$id;
+				$info = $model->where($where)->find();
+				$this->assign('info',$info);
+				
+			}
+			//接收提交值
+			if($_POST){
+				
+			
+				unset($_POST['sub']);
+				//更新为当前时间
+				// $_POST['time'] = date('Y-m-d H:i:s');
+				$where = " id=".$_POST['id'];
+				$re = $model->where($where)->save($_POST);
+			
+			
+				if($re){
+					$this->success('修改成功',U('info_list'));
+					
+				}else{
+					$this->error('修改失败');
+				}
+			}else{
+				$this->display();
+			}
+	}
+	
+	
+    /*
+	* 资讯删除
+	*	支持单条和批量删除
+	*/
+    function info_del(){
+        $model = M('information');
+         $id = I('get.id',0,'');
+		//判断ID是不是数组
+		if(is_array($id)){
+			//批量删除
+			$where = " id in(".implode(",",$id).")";
+		}else{
+			$where = " id=".$id;
+		}
+		
+		$re = $model->where($where)->delete();
+		if($re){
+			$this->success('删除成功',U('info_list'));
+		}else{
+			$this->error('删除失败');
+		}
+    }
+
+	/*
+	*	推荐图
+	*	
+	*/
+	function info_recommend(){
+		if($_GET['id']){
+			$model = M('information');
+			$where = " id=".$_GET['id'];
+			$recommend = $model->field('recommend')->where($where)->find();
+				if($recommend['recommend'] ==1 ){
+					$this->error('不可重复推荐');
+				}else{
+					
+					$_GET['recommend'] = 1;
+					$re = $model->where($where)->save($_GET);
+					if($re){
+						$this->success('推荐成功',U('info_list'));
+					}else{
+						$this->error('推荐失败');
+					}
+				}
+		}
+			
+	}
+	/*
+	*
+	*草稿箱
+	*
+	**/
+	public function draft_box(){
+        $model = M('information');
+        $where = " check_status=0 and draft=0";
+        $draftList = $model->where($where)->select();
+        $this->assign('draftList',$draftList);
+		$this->display();
+    }
+	
+	/*
+	*	草稿箱内容删除
+	*
+	*/
+    function draft_del(){
+        $model = M('information');
+        $id = I('get.id',0,'');
+		//判断ID是不是数组
+		if(is_array($id)){
+			//批量删除
+			$where = " id in(".implode(",",$id).")";
+		}else{
+			$where = " id=".$id;
+		}
+		
+		$re = $model->where($where)->delete();
+		if($re){
+			$this->success('删除成功',U('draft_box'));
+		}else{
+			$this->error('删除失败');
+		}
+        
+    }
+
+	/*
+	*
+	* 草稿箱内容编辑
+	*	
+	***/
+    function draft_save(){
+        $id = I('get.id',0,'intval');
+        $model = M('information');
+	
+        if($id){
+            $draft=$model->find($id);
+            $this->assign('draft',$draft);
+        }
+			
+		if($_POST){
+			
+			$upload =new \Think\Upload();
+			$upload->maxSize   =     3145728 ;// 设置附件上传大小
+			$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+			$upload->rootPath  =    './upload';    //根下面的public
+			$upload->savePath  =      '/image/'; // 设置附件上传目录
+			$upload->saveName  =    ['uniqid','pic'];//设置保存前缀
+			$upload->subName   =    ['date','Y-m-d'];  //以日期方式保存
+			$info=$upload->upload();
+			$thumbVal = true;
+			
+			if($info) {
+				if($thumbVal){
+					//实例化缩率图类
+					$thumb = new \Think\Image();
+					//设置缩率图宽度
+					$width = '80px';
+					//设置缩率图高度
+					$height = '50px';
+					
+					foreach($info as $file){
+						//被裁剪图片路径
+						$thumb_file = 'upload'.$file['savepath'].$file['savename'];
+						//缩率图存放路径
+						$thumb_path = 'upload'.$file['savepath'].'thumb'.$file['savename'];
+					}
+					
+					$info_thumb =  $thumb->open($thumb_file)->thumb( $width, $height )->save( $thumb_path );
+					//保存缩率图路径到POST中
+					$_POST['thumb_img'] = $thumb_path;
+				}
+				
+				//大图上传
+				foreach($info as $file){
+					$img = 'upload'.$file['savepath'].$file['savename'];
+				}
+					$_POST['image']=$img;
+			}
+			
+			$where = " id=".$_POST['id'];
+			$re = $model->where($where)->save($_POST);
+				if($re) {
+					//删除原图片
+					$path = $_POST['simg'];
+					if($info && file_exists($path)){
+						@unlink($path);
+					}
+					
+					 $info=['status'=>1, 'url'=>'draft_box', 'info'=>'编辑成功'];
+				
+				} 
+				
+				echo json_encode($info);
+		}else{
+				
+				$this->display();
+		}
+    }
+}

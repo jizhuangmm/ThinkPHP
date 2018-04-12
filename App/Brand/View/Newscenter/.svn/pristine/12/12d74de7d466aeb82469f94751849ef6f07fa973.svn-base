@@ -1,0 +1,464 @@
+﻿<include file="Common:header"/>
+      
+        
+      <div id="main-content">
+         
+         <div class="container-fluid">
+               
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i> 
+                        <span class="settings">
+                            <span class="text">theme color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                       typography
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="#">home</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="#">ui elements</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li class="active">
+                           typography
+                       </li>
+                       <li class="pull-right search-wrap">
+                           <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+                               <div class="input-append search-input-area">
+                                   <input class="" id="appendedinputbutton" type="text">
+                                   <button class="btn" type="button"><i class="icon-search"></i>  </button>
+                               </div>
+                           </form>
+                       </li>
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span8" id="right_column">
+                
+                <div class="widget green">
+                    <div class="widget-title">
+                        <h4><i class=" icon-trophy"></i>  general</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+									<a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h3>headings</h3>
+                                <h1>h1. heading 1</h1>
+                                <h2>h2. heading 2</h2>
+                                <h3>h3. heading 3</h3>
+                                <h4>h4. heading 4</h4>
+                                <h5>h5. heading 5</h5>
+                                <h6>h6. heading 6</h6>
+                            </div>
+                            <div class="span6">
+                                <h3>texts</h3>
+                                <p class="muted">fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                                <p class="text-warning">etiam porta sem malesuada magna mollis euismod.</p>
+                                <p class="text-error">donec ullamcorper nulla non metus auctor fringilla.</p>
+                                <p class="text-info">aenean eu leo quam. pellentesque ornare sem lacinia quam venenatis.</p>
+                                <p class="text-success">duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                
+
+                
+                <div class="widget yellow">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i>  sample text</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+									<a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h3>sample text with lead body</h3>
+                                <p class="lead">
+                                    lead body. lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit. curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. nulla tellus elit, varius non commodo eget, mattis vel eros. in sed ornare nulla.
+                                </p>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit. curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. nulla tellus elit, varius non commodo eget, mattis vel eros. in sed ornare nulla.
+                                </p>
+                            </div>
+                            <div class="span6">
+                                <h3>sample text</h3>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit. curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. nulla tellus elit, varius non commodo eget, mattis vel eros. in sed ornare nulla.
+                                </p>
+                                <p>nullam quis risus eget urna mollis ornare vel eu leo. cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                <p>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. donec sed odio dui.</p>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h3>address</h3>
+                                <div class="well">
+                                    <address>
+                                        <strong>vector lab, inc.</strong><br />
+                                        dreamland ave, suite 73<br />
+                                        au, pc 1361<br />
+                                        <abbr title="phone">p:</abbr> (123) 456-7891
+                                    </address>
+                                    <address>
+                                        <strong>full name</strong><br />
+                                        <a href="mailto:#">first.last@email.com</a>
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <h3>some more text here</h3>
+                                <p>nullam quis risus eget urna mollis ornare vel eu leo. cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                <p>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. donec sed odio dui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="widget blue">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> blockquotes</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+									<a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <blockquote>
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. integer posuere erat a ante. duis mollis, est non commodo luctus, nisi erat porttitor ligula integer posuere erat a ante.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. integer posuere erat a ante.</p>
+                            <small>someone famous <cite title="source title">source title</cite></small>
+                        </blockquote>
+                        <div class="clearfix">
+                            <blockquote class="pull-right">
+                                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. integer posuere erat a ante.</p>
+                                <small>someone famous <cite title="source title">source title</cite></small>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="widget purple">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> description lists</h4>
+                                    <span class="tools">
+                                    <a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+                                    </span>
+                    </div>
+                    <div class="widget-body">
+                        <dl>
+                            <dt>description lists</dt>
+                            <dd>a description list is perfect for defining terms. etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod.</dd>
+                            <dt>euismod</dt>
+                            <dd>vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                            <dd>donec id elit non mi porta gravida at eget metus.</dd>
+                            <dt>malesuada porta</dt>
+                            <dd>etiam porta sem malesuada magna mollis euismod.</dd>
+                            <dt>jhon doe </dt>
+                            <dd>etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod.</dd>
+                        </dl>
+                    </div>
+                </div>
+                
+                
+                <div class="widget orange">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> horizontal description lists</h4>
+                                    <span class="tools">
+                                    <a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+                                    </span>
+                    </div>
+                    <div class="widget-body">
+                        <dl class="dl-horizontal">
+                            <dt>description lists</dt>
+                            <dd>a description list is perfect for defining terms.</dd>
+                            <dt>euismod</dt>
+                            <dd>vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                            <dd>donec id elit non mi porta gravida at eget metus.</dd>
+                            <dt>malesuada porta</dt>
+                            <dd>etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. </dd>
+                            <dt>description lists</dt>
+                            <dd>a description list is perfect for defining terms. a description list is perfect for defining terms. a description list is perfect for defining terms. a description list is perfect for defining terms.</dd>
+                            <dt>euismod</dt>
+                            <dd>vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                            <dd>donec id elit non mi porta gravida at eget metus.</dd>
+                            <dt>malesuada porta</dt>
+                            <dd>etiam porta sem malesuada magna mollis euismod. etiam porta sem malesuada magna mollis euismod. </dd>
+                        </dl>
+                    </div>
+                </div>
+                
+            </div>
+                <div class="span4">
+                
+                <div class="widget orange">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> ordered lists</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <ol>
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>consectetur adipiscing elit</li>
+                            <li>integer molestie lorem at massa</li>
+                            <li>facilisis in pretium nisl aliquet</li>
+                            <li>nulla volutpat aliquam velit</li>
+                            <li>facilisis in pretium nisl aliquet</li>
+                            <li>faucibus porta lacus fringilla vel</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>eget porttitor lorem</li>
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>consectetur adipiscing elit</li>
+                            <li>integer molestie lorem at massa</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> unordered lists</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <ul>
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>consectetur adipiscing elit</li>
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>integer molestie lorem at massa</li>
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>facilisis in pretium nisl aliquet</li>
+                            <li>
+                                nulla volutpat aliquam velit
+                                <ul>
+                                    <li>phasellus iaculis neque</li>
+                                    <li>purus sodales ultricies</li>
+                                    <li>vestibulum laoreet porttitor sem</li>
+                                    <li>ac tristique libero volutpat at</li>
+                                </ul>
+                            </li>
+                            <li>faucibus porta lacus fringilla vel</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>eget porttitor lorem</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <div class="widget purple">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> unstyled lists</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="unstyled">
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>consectetur adipiscing elit</li>
+                            <li>integer molestie lorem at massa</li>
+                            <li>facilisis in pretium nisl aliquet</li>
+                            <li>
+                                nulla volutpat aliquam velit
+                                <ul>
+                                    <li>phasellus iaculis neque</li>
+                                    <li>purus sodales ultricies</li>
+                                    <li>vestibulum laoreet porttitor sem</li>
+                                    <li>ac tristique libero volutpat at</li>
+                                </ul>
+                            </li>
+                            <li>faucibus porta lacus fringilla vel</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>eget porttitor lorem</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>lorem ipsum dolor sit amet</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <div class="widget green">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> letter list </h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="upper-alpha">
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>consectetur adipiscing elit</li>
+                            <li>integer molestie lorem at massa</li>
+                            <li>facilisis in pretium nisl aliquet</li>
+                            <li>
+                                nulla volutpat aliquam velit
+                                <ul>
+                                    <li>phasellus iaculis neque</li>
+                                    <li>purus sodales ultricies</li>
+                                    <li>vestibulum laoreet porttitor sem</li>
+                                    <li>ac tristique libero volutpat at</li>
+                                </ul>
+                            </li>
+                            <li>faucibus porta lacus fringilla vel</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>eget porttitor lorem</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>lorem ipsum dolor sit amet</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <div class="widget blue">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> roman list  </h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="roman-list">
+                            <li>lorem ipsum dolor sit amet</li>
+                            <li>consectetur adipiscing elit</li>
+                            <li>integer molestie lorem at massa</li>
+                            <li>facilisis in pretium nisl aliquet</li>
+                            <li>
+                                nulla volutpat aliquam velit
+                                <ul>
+                                    <li>phasellus iaculis neque</li>
+                                    <li>purus sodales ultricies</li>
+                                    <li>vestibulum laoreet porttitor sem</li>
+                                    <li>ac tristique libero volutpat at</li>
+                                </ul>
+                            </li>
+                            <li>faucibus porta lacus fringilla vel</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>eget porttitor lorem</li>
+                            <li>aenean sit amet erat nunc</li>
+                            <li>lorem ipsum dolor sit amet</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <div class="widget yellow">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> iconic lists</h4>
+									<span class="tools">
+									<a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+									</span>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="unstyled icons">
+                            <li><i class="icon-ok"></i>  lorem ipsum dolor sit amet</li>
+                            <li><i class="icon-fire"></i>  consectetur adipiscing elit</li>
+                            <li><i class="icon-bolt"></i>  integer molestie lorem at massa</li>
+                            <li><i class="icon-pencil"></i>  facilisis in pretium nisl aliquet</li>
+                            <li><i class="icon-book"></i> 
+                                nulla volutpat aliquam velit
+                                <ul class="icons">
+                                    <li><i class="icon-leaf"></i>  phasellus iaculis neque</li>
+                                    <li><i class="icon-link"></i>  purus sodales ultricies</li>
+                                    <li><i class="icon-lock"></i>  vestibulum laoreet porttitor sem</li>
+                                    <li><i class="icon-random"></i>  ac tristique libero volutpat at</li>
+                                </ul>
+                            </li>
+                            <li><i class="icon-pushpin"></i>  faucibus porta lacus fringilla vel</li>
+                            <li><i class="icon-plane"></i>  aenean sit amet erat nunc</li>
+                            <li><i class="icon-cogs"></i>  eget porttitor lorem</li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+            </div>
+            </div>
+         
+      </div>
+        
+   </div>
+   </div>
+   
+
+   
+   <div id="footer">
+       2013 &copy; metro lab dashboard.
+   </div>
+   
+
+       
+   
+   <script src="/static/js/jquery-1.8.3.min.js"></script>
+   <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+   <script src="/static/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+   <script src="/static/js/bootstrap.min.js"></script>
+   <script src="/static/js/jquery.scrollto.min.js"></script>
+
+   
+   <!--[if lt ie 9]>
+   <script src="http://www.js-css.cn/js/excanvas.js"></script>
+   <script src="http://www.js-css.cn/js/respond.js"></script>
+   <![endif]-->
+
+   
+   <script src="/static/js/common-scripts.js"></script>
+
+   
+
+
+   
+</body>
+
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+</html>

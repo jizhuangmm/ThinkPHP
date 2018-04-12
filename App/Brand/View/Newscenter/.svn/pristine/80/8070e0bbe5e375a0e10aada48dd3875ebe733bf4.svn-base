@@ -1,0 +1,38 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+use Org\Util\Rbac;
+
+class IndexController extends CommonController
+{
+	//显示后台主页
+    public function index()
+    {
+        // echo "<pre>";
+        // print_r($_SESSION);die;
+        $this->display();
+    }
+
+    /**
+     * 左侧边栏
+     * @return [type] [description]
+     */
+    public function left()
+    {
+        $user=M("user_info")
+        ->join("ftms_role_user on user_id=ftms_user_info.uid")
+        ->join("ftms_role on ftms_role.id=role_id")
+        ->join("ftms_access on ftms_role_user.role_id=ftms_access.role_id")
+        ->join("ftms_node on ftms_node.id=ftms_access.node_id")
+        ->Field("ftms_node.id,ftms_node.name,ftms_node.title,ftms_node.pid,ftms_node.level")
+        ->where("uid=".session("uid"))
+        ->select();
+        $this->data=getTree($user,0);
+        // echo "<pre>";
+        // print_r($this->data);die;
+        $this->display();
+    }
+
+}

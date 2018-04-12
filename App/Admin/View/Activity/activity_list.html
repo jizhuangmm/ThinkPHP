@@ -1,0 +1,198 @@
+﻿
+
+<extend name="Common:base" />
+      
+       <block name="main">
+    
+            
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+                   活动列表
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="{:U('activity_finish_add?id='.$data['id'])}">添加</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="{:U('information/draft_box')}">草稿箱</a>
+							<span class="divider">/</span>
+                       </li>
+                       
+                      <li>
+                           <a href="{:U('undisplay')}">隐藏活动</a>
+                          <span class="divider">/</span>
+                       </li>
+					   <li>
+                           <a href="{:U('template?id='.$data['id'])}">模板管理</a>
+                       </li>
+                   </ul>
+                   
+               </div>
+            </div>
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 活动列表 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                        <div class="widget-body">
+                            
+							
+							<table border="2" width="100%" align="center">
+								<tr>
+									<th><input type="checkbox" id="othercheck">ID</th>
+									<?php
+										if(!empty($data[0])){
+									?>
+									<foreach name="data[0]" item="list">
+										<for start="0" end="count($list)"  >
+										<th>{$list}</th>
+										</for>
+									</foreach>
+									<?php
+										}else{
+									?>
+										<th>标题</th>
+										<th>经销商名称</th>
+										<th>内容简介 </th>
+										<th>作者</th>
+										<th>区域</th>
+										<th>更新时间</th>
+										
+									<?php
+										}
+									?>
+									<th>操作</th>
+									
+									
+								</tr>
+								
+									<?php
+										if(!empty($data[1])){
+									?>
+										<tr align="center">
+										<td><input type="checkbox" name="id[]" value="{$data['id']}">{$data['id']}</td>
+										<foreach name="data[1]" item="list">
+											
+											<for start="0" end="count($list)"  >
+											<td>{$list}</td>
+											</for>
+											
+										</foreach>
+										<td colspan="4"><a href="{:U('activity_save?id='.$data['id'].'&aaa=1')}">修改</a>|<a href="{:U('activity_del?id='.$data['id'].'&new=1')}">删除</a>|<a href="{:U('activity_recommend?id='.$data['id'].'&new=1')}">推荐</a>|<a href="{:U('activity_dp?id='.$data['id'].'&display_status='.$data['display_status'].'&new=1')}">屏蔽</a></td>
+										</tr>
+									<?php
+										}else{
+									?>
+										<foreach name="actList" item="list">
+											<tr align="center">
+												<td ><input type="checkbox" name="id[]" value="{$list['id']}">{$list['id']}</td>
+												<td>{$list['title']}</td>
+												<td>{$list['dealer_name']}</td>
+												<td>{$list['brief']}</td>
+												<td>{$list['author']}</td>
+												<td>{$list['area']}</td>
+												<td>{$list['time']}</td>
+												<td colspan="4"><a href="{:U('activity_save?id='.$list['id'])}">修改</a>|<a href="{:U('activity_del?id='.$list['id'])}">删除</a>|<a href="{:U('activity_recommend?id='.$list['id'])}">推荐</a>|<a href="{:U('activity_dp?id='.$list['id'].'&display_status='.$list['display_status'])}">屏蔽</a></td>
+											</tr>
+										</foreach>
+									<?php
+										}
+									?>
+									
+								
+							
+								<tr>
+								<!-- <td><button id="all">全选</button></td>
+								<td><button id="uncheck">清除</button></td>
+								<td><button id="othercheck">反选</button></td> -->
+								 <td align="center"><input type="button" class="btn" value="全部删除"></td>
+								 <td colspan="11" align="right">{$show}</td>
+								</tr>
+								
+								
+							</table>
+							
+							
+                         
+                        </div>
+				</div>
+      
+			</div>
+   
+	</div>
+	
+   
+   
+
+   
+    <script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+   <script type="text/javascript" charset="utf-8">
+	$(function(){
+        //$('#all').click(function(){
+              //  $('input[name="id[]"]').prop('checked',true);
+           // });
+        //$('#uncheck').click(function(){
+                //$('input[name="id[]"]').prop('checked',false);
+            //});
+        $('#othercheck').click(function(){
+                $('input[name="id[]"]').each(function(){
+                        $(this).prop('checked',!$(this).prop('checked'));
+                    });
+            });
+			
+			
+		$('input:button').click(function(){
+            var data = $(':checkbox[name="id[]"]').serialize();
+			console.log(data);
+            if(!confirm('确认删除？')){
+                return;
+            }
+            if(data.length==0){
+                alert('至少选择一个');
+                return;
+            }
+            location.href='{:U("activity_del")}?'+data;
+			});
+			
+        });
+		
+
+   </script>
+
+
+ </block>
+
+
+
+
+
+
+
+
+
+

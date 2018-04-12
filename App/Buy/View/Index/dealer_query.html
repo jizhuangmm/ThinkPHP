@@ -1,0 +1,209 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RhXyFo0zdsGiiXSrD3VRYd2UjBGza1QE&coor=bd09ll"></script>
+
+    <div class="banner1"></div>
+    <div class="icon">
+        <div id="position1" style="display: none;">
+            <div id="position2"></div>
+        </div>
+        <div class="icon-top">
+            <div class="icon-top-left">
+                <h2>经销商查询</h2>
+                <p>DEALER SEARCH</p>
+            </div>
+            <div class="icon-top-right">
+
+                <select class="dealer-province" id='province' onchange="provinces()">
+							<option value="0">请选择</option>
+                            <volist name="province_id" id="province_id">
+							<option value="{$province_id.provincecode}">{$province_id.province_name}</option>
+                            </volist>
+                </select>
+                <select class="dealer-province1" name="city" id='cityid' onchange="citys()" onclick="theLocation()">
+                     <option value="0">请选择</option>
+                </select>
+                <div class="icon-top-left-bottom">
+                    <input type="text" id="dealer" onkeyup ='getvalue();' placeholder="输入经销商名称" />
+                </div>
+            </div>
+
+            <div id="icon-bottom clearfix">
+                <div id="allmap" style="width: 730px;height: 480px; margin-left:-5px; "></div>
+
+                <div id="dealers" class="icon-bottom-right">
+                    <div class="icon-bottom-right-top">
+                        <p>共找到{$num}个搜索结果</p>
+                    </div>
+					
+					<foreach name="dealers" item="list">
+						<div class="icon-bottom-right-bottom clearfix">
+							<div class="icon-bottom-right-bottom-top">
+								<img class="img-left " src="__ROOT__/static/img/img_xr/wan_05.png" /><h4 class="h4">{$list['dealer_name']}</h4><img class="img-right " src="__ROOT__/static/img/img_xr/guanbi_08.png">
+							</div>
+							<div class="icon-bottom-right-bottom-bottom" style="display: block;">
+								<div class="img-p">
+									<img src="__ROOT__/static/img/img_xr/common-head-dianhua_09.png">
+									<p>{$list['sell_mobile']}</p>
+								</div>
+								<div class="img-b ">
+									<img src="__ROOT__/static/img/img_xr/common-head-wz_13.png">
+									<p>{$list['address']}</p>
+								</div>
+								<a href="{:U('appointment?id='.$list['id'])}"><button class="button1">预约试驾</button></a>
+								<button class="button2">进入经销商页面</button>
+
+							</div>
+						</div>
+					</foreach>
+                </div>
+            </div>
+            <span></span>
+        </div>
+    </div>
+	
+	
+	
+	<script type="text/javascript">
+		
+	function provinces(){
+        var province = $('#province').val();
+        $.ajax({
+			type:"POST",
+			url:"{:U('province')}",
+			dataType:"json",
+			data:{'province':province},
+			success:function(data){
+				var ss='';
+				for(var i=0; i<data.length; i++){
+					ss+= "<option value='"+data[i]['city_name']+"'>"+data[i]['city_name']+"</option>";
+				}
+				$("#cityid").html(ss);
+			 }
+        }); 
+    }
+	
+	//获取经销商
+	function getvalue(){
+		var dealername = $('#dealer').val();
+		$.ajax({
+			type:"POST",
+			url:"{:U('dealer')}",
+			dataType:"json",
+			data:{'dealername':dealername},
+			success:function(data){
+				var ss='';
+				if(data){
+					for(var i=0; i<data.length; i++){
+						ss+='<div class="icon-bottom-right-bottom clearfix">';
+						ss+='<div class="icon-bottom-right-bottom-top">';
+						ss+='<img class="img-left" src="__ROOT__/static/img/img_xr/wan_05.png" /><h4 class="h4">'+data[i]['dealer_name']+'</h4><img class="img-right " src="__ROOT__/static/img/img_xr/guanbi_08.png">';
+						ss+='</div>';
+						ss+='<div class="icon-bottom-right-bottom-bottom" style="display: block;">';
+						ss+='<div class="img-p">';
+						ss+='<img src="__ROOT__/static/img/img_xr/common-head-dianhua_09.png">';
+						ss+='<p>'+data[i]['sell_mobile']+'</p>';
+						ss+='</div><div class="img-b ">';
+						ss+='<img src="__ROOT__/static/img/img_xr/common-head-wz_13.png">';
+						ss+='<p>'+data[i]['address']+'</p>';
+						ss+='</div>'
+						ss+='<a href="'+'{:U("appointment?id=".'+data[i]["id"]+')}"><button class="button1">预约试驾</button></a>';
+						ss+='<button class="button2">进入经销商页面</button>';
+						ss+='</div>';
+						ss+='</div>';
+					
+					}
+					$("#dealers").html(ss);
+				}else{
+					$("#dealers").html('暂无经销商信息').css('color','red');
+				}
+				
+				
+				
+				
+			 }
+        }); 
+	}
+	
+	
+	//获取城市
+	function citys(){
+        var city = $('#cityid').val();
+        $.ajax({
+			type:"post",
+			url:"{:U('dealer')}",
+			dataType:"json",
+			data:{'city':city},
+			success:function(data){
+				var ss='';
+				if(data){
+					for(var i=0; i<data.length; i++){
+						ss+='<div class="icon-bottom-right-bottom clearfix">';
+						ss+='<div class="icon-bottom-right-bottom-top">';
+						ss+='<img class="img-left" src="__ROOT__/static/img/img_xr/wan_05.png" /><h4 class="h4">'+data[i]['dealer_name']+'</h4><img class="img-right " src="__ROOT__/static/img/img_xr/guanbi_08.png">';
+						ss+='</div>';
+						ss+='<div class="icon-bottom-right-bottom-bottom" style="display: block;">';
+						ss+='<div class="img-p">';
+						ss+='<img src="__ROOT__/static/img/img_xr/common-head-dianhua_09.png">';
+						ss+='<p>'+data[i]['sell_mobile']+'</p>';
+						ss+='</div><div class="img-b ">';
+						ss+='<img src="__ROOT__/static/img/img_xr/common-head-wz_13.png">';
+						ss+='<p>'+data[i]['address']+'</p>';
+						ss+='</div>'
+						ss+='<a href="{:U("appointment?id=".'+data[i]["id"]+')}"><button class="button1">预约试驾</button></a>';
+						ss+='<button class="button2">进入经销商页面</button>';
+						ss+='</div>';
+						ss+='</div>';
+					}
+					$("#dealers").html(ss);
+				}else{
+					$("#dealers").html('暂无经销商信息').css('color','red');
+				}
+				
+			 }
+        }); 
+    }
+	
+	
+	
+	
+	</script>
+	
+	<script type="text/javascript">
+	var map = new BMap.Map("allmap");            // 创建Map实例
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+	var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map, autoViewport:true}
+	});
+	// 百度地图API功能
+	
+	function theLocation(){
+		var city = document.getElementById("cityid").value;
+		local.searchNearby("一汽丰田", city);
+	}
+	
+	
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+	
+	function myFun(result){
+		var cityName = result.name;
+		map.setCenter(cityName);
+		
+		local.searchNearby("一汽丰田", cityName);
+	}
+	
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+
+	</script>
+</block>
+<block name="css">
+  <css href="__ROOT__/static/css/dealer-query.css" />
+</block>
+<block name="js">
+	<!-- <js href="__ROOT__/static/js/dealer-query.js" /> -->
+	
+  <script src="__ROOT__/static/js/jQuery-1.12.3.js"></script>
+
+</block>

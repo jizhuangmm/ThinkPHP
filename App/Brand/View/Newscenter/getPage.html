@@ -1,0 +1,12 @@
+<foreach name="infoList" item="list">
+							   <li>
+								   <ul class="detail_list text_top">
+									   <li class="font_style">{$list['title']}</li>
+									  <!--  <li class="font_style">-{$list['summary']}</li> -->
+									   <li class="date">{$list['date']}</li>
+									   <li><?php echo substr($list['text'],0,23)?>...</li>
+									  <!--  <li>4300万的传奇销量...</li> -->
+									   <li><a href="{:U('detail?id='.$list['id'])}"><button>查看详情</button></a></li>
+								   </ul>
+							   </li>
+</foreach>

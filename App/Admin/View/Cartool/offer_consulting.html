@@ -1,0 +1,97 @@
+<extend name="Common:base" />
+      
+   <block name="main">
+            <div class="row-fluid">
+               <div class="span12">
+                   
+                   <div id="theme-change" class="hidden-phone">
+                       <i class="icon-cogs"></i>
+                        <span class="settings">
+                            <span class="text">Theme Color:</span>
+                            <span class="colors">
+                                <span class="color-default" data-style="default"></span>
+                                <span class="color-green" data-style="green"></span>
+                                <span class="color-gray" data-style="gray"></span>
+                                <span class="color-purple" data-style="purple"></span>
+                                <span class="color-red" data-style="red"></span>
+                            </span>
+                        </span>
+                   </div>
+                   
+                  
+                   <h3 class="page-title">
+					报价咨询
+                   </h3>
+                  
+               </div>
+            </div>
+            
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                    <div class="widget green">
+					 <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> 报价咨询 </h4>
+                            <span class="tools">
+                            <a href="javascript:;" class="icon-chevron-down"></a>
+                            <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                        </div>
+                          <table border="2" width="100%" align="center">
+        
+                            <tr class="control-group">
+									
+									<th>车薪</th>
+									<th>经销商名称</th>
+									<th>省份</th>
+									<th>城市</th>
+									<th>姓名</th>
+									<th>称谓</th>
+									<th>联系方式</th>
+									<th>咨询底价</th>
+									<th>操作</th>
+									
+                            </tr>
+							<foreach name="priceList" item="list">
+								<tr align="center">
+									
+									<td>{$list['car_price']}</td>
+									<td>{$list['dealer_name']}</td>
+									<td>{$list['province']}</td>
+									<td>{$list['city']}</td>
+									<td>{$list['buy_name']}</td>
+									<td>{$list['appellation']}</td>
+									<td>{$list['contact_way']}</td>
+									<td>{$list['low_price']}</td>
+									
+									<td>
+									<input id="over" style="border:0px;width:50px;background-color:white;" value="待联系"/><br/>
+									<a href="{:U('offer_del?id='.$list['id'])}">删除</a>
+									</td>
+								
+								</tr>
+							
+							</foreach>
+							
+						</table>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+      </div>
+	  <script src="__ROOT__/static/js/jQuery-1.12.3.js"> </script>
+	  <script type="text/javascript">
+	  //给循环的值追加点击事件
+		 $(document).ready(function(){
+			$("[id=over]").each(function(){
+				$(this).click(function(){
+						$(this).css('color','red').val('已完成').attr('disabled','disabled');
+					});
+				});
+		}); 
+	
+	  </script>
+	  
+     </block>

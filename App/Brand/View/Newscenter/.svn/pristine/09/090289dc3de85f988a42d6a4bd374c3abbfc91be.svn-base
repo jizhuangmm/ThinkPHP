@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>{$pagetitle}丰田官网后台</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+   <link href="/static/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
+   <link href="/static/css/font-awesome.css" rel="stylesheet" />
+   <link href="/static/css/style.css" rel="stylesheet" />
+   <link href="/static/css/style-responsive.css" rel="stylesheet" />
+   <link href="/static/css/style-default.css" rel="stylesheet" id="style_color" />
+   <link href="/static/bootstrap/css/bootstrap-fullcalendar.css" rel="stylesheet" />
+   <link href="/static/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen">
+   <block name="css"></block>
+</head>
+<body class="fixed-top">
+  <js href="/static/js/jquery-1.8.3.min.js"/>
+  <js href="/static/js/jquery.nicescroll.js"/>
+  <js href="/static/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"/><!--未确定-->
+  <js href="/static/js/jquery.slimscroll.min.js"/><!--未确定-->
+  <js href="/static/js/fullcalendar.min.js"/>
+  <js href="/static/js/jquery.easy-pie-chart.js"/>
+  <js href="/static/js/jquery.sparkline.js"/>
+  <js href="/static/js/chart.js"/>
+  <js href="/static/js/jquery.scrollto.min.js"/>
+  <js href="/static/js/common-scripts.js"/>
+  <js href="/static/js/easy-pie-chart.js"/>
+  <js href="/static/js/sparkline-chart.js"/>
+  <js href="/static/js/home-page-calender.js"/>
+  <js href="/static/js/home-chartjs.js"/>
+  <js href="/static/js/ckeditor.js"/>
+  <js href="/static/js/jquery.duallistbox-1.3.js"/>
+  <js href="/static/js/jquery.toggle.buttons.js"/>
+  <js href="/static/js/chosen.jquery.min.js"/>
+  <js href="/static/js/wysihtml5-0.3.0.js"/>
+  <js href="/static/js/jquery.uniform.min.js"/>
+  <js href="/static/js/clockface.js"/>
+  <js href="/static/js/jquery.tagsinput.min.js"/>
+  <js href="/static/js/date.js"/>
+  <js href="/static/js/daterangepicker.js"/>
+  <js href="/static/bootstrap/js/bootstrap.min.js"/>
+  <js href="/static/bootstrap/js/bootstrap-fileupload.js"/>
+  <js href="/static/bootstrap/js/bootstrap-wysihtml5.js"/>
+  <js href="/static/bootstrap/js/bootstrap-datepicker.js"/>
+  <js href="/static/bootstrap/js/bootstrap-colorpicker.js"/>
+  <js href="/static/bootstrap/js/bootstrap-timepicker.js"/>
+  <js href="/static/bootstrap/js/bootstrap-inputmask.min.js"/>
+  <js href="/static/js/jquery.fancybox.pack.js"/>
+  <js href="/static/js/form-component.js"/>
+   
+   <!--[if lt IE 9]>
+   <script src="http://www.js-css.cn/js/excanvas.js"></script>
+   <script src="http://www.js-css.cn/js/respond.js"></script>
+   <![endif]-->
+</body>
+</html>

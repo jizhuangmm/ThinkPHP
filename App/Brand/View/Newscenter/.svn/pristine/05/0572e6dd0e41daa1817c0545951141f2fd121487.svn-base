@@ -1,0 +1,88 @@
+<?php
+namespace Admin\Controller;
+
+use Think\Controller;
+use Admin\Controller\CommonController;
+
+class LeaveinfoController extends CommonController
+{
+
+	/**
+	 *	显示留资页面
+	 *	查询ftms_customer_data表
+	 */
+	public function leaveinfo()
+	{
+		$customer=M("customer_data")->where("is_del!=1")->select();
+		foreach ($customer as &$val) {
+			$val['dealers']=M("dealers")->where("id=".$val['dealers'])->getField("dealer_name");
+		}
+		$this->assign("customer",$customer);
+		$this->display();
+	}
+
+	/**
+	 * 新增用户留资信息
+	 */
+	public function add_customer()
+	{
+		$dealers=M("dealers")->Field("id,dealer_name")->select();
+		$this->assign("dealers",$dealers);
+		$this->display();
+	}
+
+	/**
+	 * 添加留资信息
+	 */
+	public function customer_add()
+	{
+		$data['name']=I("post.name");
+		$data['sex']=I("post.sex");
+		$data['phone']=I("post.phone");
+		$ip = get_client_ip();
+		$Ip = new \Org\Net\IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
+		$area = $Ip->getlocation($ip); // 获取某个IP地址所在的位置
+		$data['address']=$area['country'];
+		$data['dealers']=I("post.dealers");
+		$data['createtime']=time();
+		M("customer_data")->add($data);
+		$this->success("添加成功","leaveinfo",1);
+	}
+
+	public function update_customer()
+	{
+		$id=I("get.id");
+		$msg=M("customer_data")->where("id=".$id)->find();
+		$dealers=M("dealers")->Field("id,dealer_name")->select();
+		$this->assign("dealers",$dealers);
+		$this->assign("msg",$msg);
+		$this->assign("id",$id);
+		$this->display();
+	}
+
+
+	/*
+	修改用户留资信息
+	 */
+	public function customer_update()
+	{
+		$id=I("post.id");
+		$data['name']=I("post.name");
+		$data['sex']=I("post.sex");
+		$data['phone']=I("post.phone");
+		$data['dealers']=I("post.dealers");
+		M("customer_data")->where("id=".$id)->save($data);
+		$this->success("修改成功","leaveinfo",1);
+	}
+
+	/*
+	删除信息(回收站)
+	 */
+	public function del_customer()
+	{
+		$id=I('post.id');
+		$data['is_del']=1;
+		M("customer_data")->where("id=".$id)->save($data);
+		echo 1;
+	}
+}

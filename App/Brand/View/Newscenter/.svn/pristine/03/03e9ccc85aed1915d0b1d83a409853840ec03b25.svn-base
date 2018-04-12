@@ -1,0 +1,255 @@
+<extend name="./static/tpl/common.html" />
+<block name="main">
+<div id="banner">
+    <div class="banner-hp">
+        <h1>车主服务</h1>
+        <p>OWNERS SERVICE</p>
+    </div>
+</div>
+<div class="icon">
+    <div class="icon-top clearfix">
+        <label class="nan nan1"><input type="radio" checked name="gender" id="reservation-1">预约保养</label>
+        <label class="nan"><input type="radio" name="gender" id="reservation-2">预约维修</label>
+        <input type="hidden" id="sex" value="1">
+    </div>
+    <div class="maintain">
+        <div class="icon-conter icon-left">
+            <table>
+                <tr>
+                    <td class="pr10">姓名</td>
+                    <td class="contet_name">
+                        <input type="text" class="input" placeholder="请输入姓名"/>
+                        <div class="msg">
+                            <label class="check">
+                                <span class="sex sex_all_a">&nbsp;&nbsp;&nbsp;</span>
+                                <input type="radio" name="msg" checked="checked" value="1">男
+                            </label>
+                            <label class="check">
+                                <span class="sex_s sex_all_b">&nbsp;&nbsp;&nbsp;</span>
+                                <input type="radio" name="msg" checked="" value="2">女
+                            </label>
+                        </div>
+                    </td>
+                    <td class="pr10">电话</td>
+                    <td><input type="tel" class="input tel" placeholder="请输入11位手机号"/></td>
+                </tr>
+                <tr>
+                    <td class="pr10">选择车系</td>
+                    <td class="select">
+                        <select style="float:left;">
+                            <option value="0">请选择</option>
+                            <option value="1">2333</option>
+                            <option value="2">2233</option>
+                            <option value="3">2223</option>
+                            <option value="4">4233</option>
+                        </select>
+                        <select style="float:right;">
+                            <option value="0">请选择</option>
+                            <option value="1">1333</option>
+                            <option value="2">2333</option>
+                            <option value="3">3333</option>
+                            <option value="4">4333</option>
+                        </select>
+                    </td>
+
+                    <td class="pr10">车牌号</td>
+                    <td><input type="text" class="input" placeholder="请填写车牌号"/></td>
+                </tr>
+                <tr>
+                    <td class="pr10">行驶公里数</td>
+                    <td class="size"><input type="number" class="input" placeholder="请填写行驶公里数"/>
+                        <p class="num">公里</p></td>
+                    <td class="pr10">购车时间</td>
+						<td class="rl1"><input type="text" class="input"  readonly placeholder="请选择购车时间" /><img  id="datepicker_buyTime"   src="/static/img/rli_17.png"  ></td>
+                </tr>
+                <tr>
+                    <td class="pr10">选择经销商</td>
+                    <td class="select">
+                        <select style="float:left;">
+                            <option value="0">北京</option>
+                            <option value="1">2333</option>
+                            <option value="2">2233</option>
+                            <option value="3">2223</option>
+                            <option value="4">4233</option>
+                        </select>
+                        <select style="float:right;">
+                            <option value="0">北京</option>
+                            <option value="1">1333</option>
+                            <option value="2">2333</option>
+                            <option value="3">3333</option>
+                            <option value="4">4333</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="hode">
+                            <option value="0">请选择经销商</option>
+                            <option value="1">北京</option>
+                            <option value="2">上海</option>
+                            <option value="3">广州</option>
+                            <option value="4">深圳</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr10">预约时间</td>
+						<td class="rl1"><input type="text" class="input" readonly placeholder="请选择预约时间" /><img id="datepicker_showTime1" src="/static/img/rli_17.png" ></td>
+                    <td>
+                        <select class="time">
+                            <option value="1">13:00-13:30</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="icon-bottom">
+        	<div class="icon-bottom-top">请选择你要保养的项目</div>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="tr-top" style="display: none;">
+                    <td>项目名称</td>   
+                </tr>
+                <tr>
+                    <td>检查 调整点火系统</td>
+                    <td class="last"></td>
+                  
+                    </td>
+                </tr>
+                <tr>
+                    <td>调整制动/传动/转向/排气系统/前后悬挂/底盘</td>
+                    <td class="last"></td>
+                  
+                </tr>
+                <tr>
+                    <td>冷却系统/燃油系统/变速箱油</td>
+                    <td class="last on"></td>
+                   
+                </tr>
+                <tr>
+                    <td>门锁、铰链、天窗、发动机盖锁及后行李箱锁</td>
+                    <td class="last"></td>
+                   
+                </tr>
+                <tr>
+                    <td>脱胎换位</td>
+                    <td class="last"></td>
+                    
+                </tr>
+                <tr>
+                    <td>轮胎状况/电瓶状况</td>
+                    <td class="last"></td>
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="icon-bottom_footer">
+            <div class="block">
+                <input type="checkbox" style="vertical-align: top;margin-top: 4px;">
+                <span class="span1">我已阅读并同意</span>
+                <span class="span">《隐私政策》</span>
+            </div>
+            <button>马上预约</button>
+        </div>
+    </div>
+    <div class="vindicate">
+        <div class="icon-conter icon-left">
+
+          <table>
+              <tr>
+                  <td class="pr10">您的姓名</td>
+                  <td class="contet_name vindicate_name">
+                      <input type="text" class="input" placeholder="请输入姓名"/>
+                      <div class="msg">
+                          <label class="check">
+                              <span class="sex sex_all_a">&nbsp;&nbsp;&nbsp;</span>
+                              <input type="radio" name="msg" checked="checked" value="1">男
+                          </label>
+                          <label class="check">
+                              <span class="sex_s sex_all_b">&nbsp;&nbsp;&nbsp;</span>
+                              <input type="radio" name="msg" checked="" value="2">女
+                          </label>
+                      </div>
+                  </td>
+                  <td class="pr10">电话号码</td>
+                  <td class="vindicate_tel"><input type="tel" class="input tel" placeholder="请输入11位手机号"/></td>
+              </tr>
+                <tr>
+                    <td class="pr10">选择车型</td>
+                    <td class="select" colspan="3">
+                        <select style="float:left;" class="vindicate_car_left">
+                            <option value="0">请选择</option>
+                            <option value="1">2333</option>
+                            <option value="2">2233</option>
+                            <option value="3">2223</option>
+                            <option value="4">4233</option>
+                        </select>
+                        <select style="float:left;margin-left:6px;" class="vindicate_car_right">
+                            <option value="0">请选择</option>
+                            <option value="1">1333</option>
+                            <option value="2">2333</option>
+                            <option value="3">3333</option>
+                            <option value="4">4333</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr10">选择经销商</td>
+                    <td class="select">
+                        <select style="float:left;" class="select1">
+                            <option value="0">请选择省/市</option>
+                            <option value="1">2333</option>
+                            <option value="2">2233</option>
+                            <option value="3">2223</option>
+                            <option value="4">4233</option>
+                        </select>
+                        <select style="float:right;" class="select2">
+                            <option value="0">请选择市/区</option>
+                            <option value="1">1333</option>
+                            <option value="2">2333</option>
+                            <option value="3">3333</option>
+                            <option value="4">4333</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <select class="hode">
+                            <option value="0">请选择经销商</option>
+                            <option value="1">北京</option>
+                            <option value="2">上海</option>
+                            <option value="3">广州</option>
+                            <option value="4">深圳</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr10">预约时间</td>
+                    <td class="rl1"><input type="text" class="input" readonly placeholder="请选择预约时间" /><img id="datepicker_showTime2" src="/static/img/rli_17.png" ></td>
+                    <td colspan="2">
+                        <select class="time">
+                            <option value="1">13:00-13:30</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="icon-bottom_footer">
+        	<div class="block">
+                <input type="checkbox" style="vertical-align: top;margin-top: 4px;">
+                <span class="span1">我已阅读并同意隐私政策</span>
+            </div>
+            <button>马上预约</button>
+        </div>
+    </div>
+</div>
+</block>
+<block name="css">
+  <css href="/static/css/bywx.css" />
+  <css href="/static/css/pikaday.css" />
+</block>
+<block name="js">
+  <js href="/static/js/bywx.js" />
+  <js href="/static/js/pikaday.min.js" />
+</block>

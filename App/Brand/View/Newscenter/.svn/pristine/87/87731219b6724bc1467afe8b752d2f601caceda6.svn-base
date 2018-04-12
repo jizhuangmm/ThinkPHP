@@ -1,0 +1,59 @@
+<?php
+namespace Brand\Controller;
+
+use Think\Controller;
+
+class FtmsController extends Controller
+{
+
+  // 企业介绍
+  public function intro()
+  {
+    $this->display();
+  }
+  // 品牌历程
+  public function process()
+  {
+    $this->display();
+  }
+  // 品牌服务
+  public function services()
+  {
+    $this->display();
+  }
+  // 安全技术
+  public function safety()
+  {
+    $this->display();
+  }
+  // 加入我们
+  public function joinus()
+  {
+    $this->display();
+  }
+  //社会招聘
+  public function recruit()
+  {
+     $brand=M('recruit');
+
+    $count = $brand->count();// 查询满足要求的总记录数 $map表示查询条件
+    $Page = new \Think\Page($count,5);// 实例化分页类 传入总记录数
+    
+    $show = $Page->show();// 分页显示输出
+    $data = $brand->order('id')->limit($Page->firstRow.','.$Page->listRows)->select(); // $Page->firstRow 起始条数 $Page->listRows 获取多少条
+     $this->assign('count', $count);
+    $this->assign('data',$data);// 赋值数据集
+    $this->assign('page',$show);// 赋值分页输出
+    $this->display(); // 输出模板
+   
+  }
+  //社会招聘详情
+  public function recruit_details()
+  {
+   $id = I('get.id');
+   $admin = M('recruit');
+   $this->result = $admin->find($id);
+   $this->display();
+
+ }
+}

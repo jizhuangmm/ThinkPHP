@@ -1,0 +1,24 @@
+<?php
+namespace Brand\Controller;
+
+use Think\Controller;
+
+class NewscenterController extends Controller
+{
+  
+  // 最新动态
+  public function recent()
+  {
+    $this->display();
+  }
+  // 新闻动态
+  public function news()
+  {
+    $this->display();
+  }
+  // 媒体中心
+  public function mediacenter()
+  {
+    $this->display();
+  }
+}

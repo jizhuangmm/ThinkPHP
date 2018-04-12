@@ -1,0 +1,54 @@
+<extend name="Common:base" />
+<block name="main">
+<div class="row-fluid">
+  <div class="span12">
+
+    <div id="theme-change" class="hidden-phone">
+      <i class="icon-cogs"></i> 
+      <span class="settings"> 
+        <span class="text">主题颜色:</span>
+        <span class="colors">
+          <span class="color-default" data-style="default"></span>
+          <span class="color-green" data-style="green"></span>
+          <span class="color-gray" data-style="gray"></span>
+          <span class="color-purple" data-style="purple"></span>
+          <span class="color-red" data-style="red"></span>
+        </span>
+      </span>
+    </div>
+
+    <h3 class="page-title">添加素材分类</h3>
+    <ul class="breadcrumb">
+      <li><a href="#">首页</a> <span class="divider">/</span></li>
+      <li class="active">素材库<span class="divider">/</span></li>
+      <li class="active">添加素材分类 </li>
+      <li class="pull-right search-wrap">
+        <form action="http://www.js-css.cn/divcss/admin/metro/search_result.html" class="hidden-phone">
+          <div class="input-append search-input-area">
+            <input class="" id="appendedInputButton" type="text">
+            <button class="btn" type="button">
+              <i class="icon-search"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+    </ul>
+
+
+ <div class="space15"></div>
+ <form action="__URL__/classify_add" class="form-horizontal" method="post">
+    <div class="control-group">
+        <label class="control-label">分类名称</label>
+        <div class="controls">
+            <input type="text" name="username" />
+        </div>
+    </div>
+    <div class="form-actions">
+        <input type="submit" value="添加">
+        
+    </div>
+</form>
+
+  </div>
+</div>
+</block>

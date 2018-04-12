@@ -1,0 +1,523 @@
+﻿.banner{
+    width: 100%;
+    position: relative;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.pic-left{
+    position: absolute;
+    width: 0.44rem;
+    height: 0.83rem;
+    left: 0.76rem;
+    top: 2.71rem;
+    background: url(../img/jian-pic.png);
+    background-size: cover;
+    z-index: 999;
+}
+.pic-right{
+    position: absolute;
+    width: 0.44rem;
+    height: 0.83rem;
+    right: 0.76rem;
+    top: 2.71rem;
+    background: url(../img/jian-pic.png) 100%;
+    background-size: cover;
+    z-index: 999;
+}
+
+.star-car{
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+.star-left{
+    width: 10%;
+    height: 5.34rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background:#000;
+    cursor: pointer;
+    z-index:99;
+    opacity:0;
+}
+.star-right{
+    width: 10%;
+    height: 5.34rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background:#000;
+    cursor: pointer;
+    z-index:99;
+    opacity:0;
+}
+.star{
+    font-family: 'Microsoft Yi Baiti';
+    font-size: 0.8rem;
+    color: #616161;
+    width: 100%;
+    margin-top: 0.78rem;
+    text-align: center;
+}
+.car_star{
+    width: 100%;
+    text-align: center;
+    margin: 0.43rem 0;
+    font-size: 0.16rem;
+    color: #303030;
+}
+.all-car{
+    width: 2.4rem;
+    height: 0.49rem;
+    border: 0;
+    background: #00609a;
+    color: #fff;
+    text-align: center;
+    line-height: 0.49rem;
+    margin: auto;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 0.43rem;
+}
+.starCar{
+    width:96%;
+    margin: auto;
+    display: -webkit-box;
+}
+.starCar dl{
+    width: 24%;
+}
+.starCar dl dt{
+    width: 100%;
+    height: 2.66rem;
+    position: relative;
+    cursor: pointer;
+}
+.starCar dl dt img{
+    position: absolute;
+    right: 0;
+    bottom: 0.3rem;
+    width: 80%;
+    display: inline;
+}
+.starCar dl:nth-of-type(4) dt img{
+    right: 10%;
+}
+.starCar dl dd{
+    width: 100%;
+    text-align: center;
+    line-height:1.33rem;
+    font-size: 16px;
+    color: #666666;
+    font-family: 'Microsoft Yi Baiti';
+}
+.starCar dl dd a:hover{
+    color: #ea4b35;
+}
+.news{
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    cursor: pointer;
+}
+.news img{
+    width:100%;
+}
+.new-one{
+    width:  44.1%;
+    margin-right: 0.4%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background: url(../../static/img/new-one.png);
+    background-size: cover;
+}
+.news p{
+    width: 100%;
+    height: 0.87rem;
+    position: absolute;
+    left: 0;
+    bottom: -0.87rem;
+    background: rgba(0,0,0,0.5);
+    font-size: 0.18rem;
+    color: #fff;
+    text-indent: 0.32rem;
+    line-height: 0.87rem;
+}
+.new-two{
+    width: 27.5%;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    overflow: hidden;
+}
+.new-two div{
+    -webkit-box-flex:1;
+}
+.new-two-o{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.07rem;
+    background: url(../../static/img/new-two-o.png);
+    background-size: cover;
+}
+.new-two-t{
+    position: relative;
+    overflow: hidden;
+    background: url(../../static/img/new-two-w.png);
+    background-size: cover;
+}
+.new-three-t{
+    position: relative;
+    overflow: hidden;
+    background: url(../../static/img/new-three-t.png);
+    background-size: cover;
+}
+.new-three{
+    width: 27.6%;
+    margin-left: 0.4%;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    overflow: hidden;
+}
+.new-three div{
+    -webkit-box-flex:1;
+}
+.new-three .new-three-o .sale{
+    width: 59%;
+    position: absolute;
+    left: 20.5%;
+    top: 21.5%;
+    cursor: pointer;
+}
+
+.new-three-o{
+    margin-bottom: 0.07rem;
+    position: relative;
+    overflow: hidden;
+    background: #f3c500;
+}
+.new-zi{
+    width: 100%;
+    height: auto;
+}
+.new-zi p:nth-of-type(1){
+    font-size: 1rem;
+    font-family: 'Microsoft Yi Baiti';
+    color: #616161;
+    text-indent: 6.97rem;
+    padding-top: 0.6rem;
+}
+.new-zi p:nth-of-type(2){
+    font-size: 0.16rem;
+    color: #616161;
+    text-indent: 50.7%;
+    padding-bottom: 0.5rem;
+}
+.new-zi img{
+    display: inline;
+    width: 0.9rem;
+    margin-left: 0.14rem;
+}
+.user{
+    width: 100%;
+    display: -webkit-box;
+}
+.user-o{
+    width: 60.4%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background: url(../../static/img/user-o.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.user-o p{
+    width: 100%;
+    height: 0.7rem;
+    position: absolute;
+    left: 0;
+    bottom: -0.7rem;
+    background: rgba(0,0,0,0.5);
+    font-size: 0.16px;
+    color: #fff;
+    text-indent: 0.27rem;
+    line-height: 0.7rem;
+}
+.user-o img{
+    width: 100%;
+}
+.user-t{
+    width: 39%;
+    margin-left: 0.5%;
+    height: 100%;
+}
+.user-t img{
+    width: 100%;
+}
+.user-t-o{
+    margin-bottom: 1.2%;
+    position: relative;
+    height: 34.3%;
+    background: url(../../static/img/user-w.png);
+    background-size: cover;
+}
+.wenzi {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.wenzi p{
+    color: #fff;
+    text-indent: 0.4rem;
+}
+.wenzi p:nth-of-type(1){
+    font-size: 0.16rem;
+    margin-top: 0.38rem;
+}
+.wenzi p:nth-of-type(2){
+    font-size: 0.14rem;
+}
+.wenzi p:nth-of-type(3){
+    font-size: 0.16rem;
+    margin-top: 0.51rem;
+}
+.wenzi p:nth-of-type(4){
+    font-size: 0.14rem;
+}
+.wenzi p a{
+    color: #fff;
+}
+.user-t-t{
+    position: relative;
+    overflow: hidden;
+    height: 64.5%;
+    background:url(../../static/img/user-t.png);
+    background-size: cover;
+    cursor: pointer;
+}
+.user-t-t p{
+    width: 100%;
+    height: 0.7rem;
+    position: absolute;
+    left: 0;
+    bottom: -0.7rem;
+    background: rgba(0,0,0,0.5);
+    font-size: 0.16rem;
+    color: #fff;
+    text-indent: 0.27rem;
+    line-height: 0.7rem;
+}
+.list{
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    display: -webkit-box;
+    background: #ecf0f1;
+}
+.list dl{
+    -webkit-box-flex:1;
+    display: -webkit-box;
+    padding-left: 1.5rem;
+}
+.list dl dt img{
+    width: 0.72rem;
+    margin-top: 0.85rem;
+}
+.list dl dd{
+    font-size: 17px;
+    margin-left: 0.18rem;
+}
+.list dl dd a{
+    color: #242525;
+}
+.list dl dd a:hover{
+    color: #ea4b35;
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background: #191919;
+    padding-top: 0.76rem;
+}
+.more{
+    width: 12.8rem;
+    margin: auto;
+    height: auto;
+    display: -webkit-box;
+    padding-bottom: 0.88rem;
+    font-family: '微软雅黑';
+}
+.more-one{
+    width: 4.59rem;
+    height: 1.7rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.29rem;
+    border-right: 1px dashed #262626;
+}
+.more-one dl{
+    width: 100%;
+    display: -webkit-box;
+}
+.more-one dl dt{
+    width: 1.11rem;
+}
+.more-one dl dt img{
+    width: 100%;
+}
+.more-one dl dd{
+    -webkit-box-flex:1;
+    margin-left: 0.3rem;
+}
+.more-one dl dd p{
+    width: 100%;
+}
+
+.more-two{
+    width: 4.95rem;
+    height: 1.7rem;
+    border-right: 1px dashed #262626;
+    padding-top: 0.21rem;
+    padding-bottom: 0.13rem;
+    display: -webkit-box;
+}
+.more-two ul{
+    -webkit-box-flex:1;
+}
+.more-two ul li{
+    color: #a6a6a6;
+    font-size: 0.14rem;
+    line-height: 0.35rem;
+}
+.more-two ul li a:hover{
+    color: #c4baba;
+}
+.more-three{
+    width: 2.19rem;
+    margin-left: 1.07rem;
+    padding-top: 0.21rem;
+}
+.more-three p{
+    color: #797979;
+    font-size: 0.2rem;
+    margin-bottom: 0.26rem;
+}
+.more-three img{
+    display: inline;
+    cursor: pointer;
+    width:0.81rem;
+}
+.group{
+    width: 76.2%;
+    margin: auto;
+    font-size: 12px;
+    color: #7e7e7e;
+    padding-bottom:0.63rem;
+}
+.copyrighted{
+    width: 100%;
+    border-top: 1px solid #303030;
+}
+.copyrighted p{
+    width: 100%;
+    text-align: center;
+    color: #7e7e7e;
+    font-size: 12px;
+}
+.fix{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+@-webkit-keyframes da{
+    0%{
+        background: #f3c500;
+    }
+    100%{
+        background: #014fa1;
+    }
+}
+.now {
+    animation-name: da;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+.bg{
+    background: #f2f2f2;
+}
+.bor_bot_no{
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+.tab-bor-top{
+    position: absolute;
+    width: 0.16rem;
+    top: 0.63rem;
+    left: 5.9rem;
+    z-index: 1000;
+    display: none;
+}
+/*.pin-car{
+    width: 14.74rem;
+    height: 5.74rem;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    left: 1.07rem;
+    top:0.71rem;
+    z-index: 999;
+    background: #fff;
+    font-size:12px;
+    color: #666;
+    display: none;
+}
+.pin-car button{
+    width: 1.04rem;
+    height: 0.31rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #666;
+    line-height: 0.31rem;
+}
+*/
+.swiper-button-prev {
+  background: url(/static/img/jian-pic.png) no-repeat;
+  opacity: 0.5;
+  background-size: cover;
+  left: 7%;
+  width: 70px;
+  height: 70px;
+}
+
+.swiper-button-next {
+  background: url(/static/img/jian-pic.png) 100% no-repeat;
+  opacity: 0.5;
+  background-size: cover;
+  right: 7%;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+}
+.swiper-pagination-bullet {
+  background: #fff;
+  width: 10px;
+  height: 10x;
+  z-index: 10;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}

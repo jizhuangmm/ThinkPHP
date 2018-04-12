@@ -1,0 +1,72 @@
+<extend name="./static/tpl/base.html" />
+<block name="main">
+
+<h1 class="text-center">消息推送{$Think.version}</h1>
+<form id="binding-form" method="post" action="">
+    <div class="form-group">
+     <label for="openid" class="col-sm-1 control-label">接收人</label>
+     <div class="col-sm-11">
+       <!-- <select  id="openid" name="openid" class="form-control">
+         <pigcmslist array="caruser" foreach="vo">
+           <option value="{pigcms:$vo.wecha_id}">{pigcms:$vo.car_userName}</option>
+         </pigcmslist>
+       </select> -->
+       <input type="text" name="openid" id="openid" class="form-control" placeholder="请输入接收者OpenID">
+     </div>
+   </div>
+    <div class="form-group">
+        <label for="content" class="col-sm-1 control-label">消息内容</label>
+       <div class="col-sm-11">
+          <textarea class="form-control" id="content" name="content" rows="8" placeholder="消息内容"></textarea>
+       </div>
+    </div>
+    <input type="hidden" id="token" name="token" value="{pigcms:$Think.get.token}">
+    <!-- <input type="hidden" id="openid" name="openid" value="{pigcms:$openid}"> -->
+    <div class="text-center">
+        <button type="submit" id="submit-btn" class="btn btn-primary">提交</button>
+    </div>
+</form>
+{$Think.session.access_token}
+<div id="tip-text" class="text-center">快乐生活每一天！</div>
+
+<style>
+#submit-btn{margin: 50px;}
+</style>
+
+</block>
+<block name="js">
+
+<script>
+    $("#submit-btn").click(function(){
+        /* var token = $("#token").val();
+        var name = $("#car_userName").val();
+        var vin = $("#vin").val(); */
+        var openid = $("#openid").val();
+        var content = $("#content").val();
+        /* if(name == "" || openid == "" || content == "") {
+            alert("姓名、Openid、内容不能为空！");
+            return false;
+        } */
+        $.ajax({
+            type : "POST",
+            url : "/Home/Index/sendmsg",
+            dataType : "json",
+            data : {
+                "content": content,
+                "openid": openid
+            },
+            beforeSend : function() {
+                $('#tip-text').html("正在提交，请稍候...<br>OpenID：" + openid);
+            },
+            success : function(json) {
+                if (json.success === 1) {
+                    var html = "<p>恭喜！消息推送成功！</p>";
+                    $('#tip-text').append(html);
+                  //window.location.href = "/index.php?g=Activity&m=Custom&a=template&customid=" + json.customid + "&activityid=" + json.activityid;
+                }
+            }
+        });
+        return false;
+    });
+</script>
+</block>
